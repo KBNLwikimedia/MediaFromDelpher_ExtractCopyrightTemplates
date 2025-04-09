@@ -29,6 +29,8 @@ dates, for review and documentation purposes.
 - Outputs results to:
   - Console (one line per file with all extracted info)
   - Excel file (`*_commons_templates_output_<date>.xlsx`) with URLs and linked templates
+     - Excel file (`*_commons_templates_output_<date>-cleaned.xlsx`) is a munually
+       cleaned version of the first file, where any non-copyright templates, incorrect dates and other 'noise' that we did not manage to get filtered out by the Python script have been manually removed as a post-processing step.
 
 ### Output:
 - File URL
