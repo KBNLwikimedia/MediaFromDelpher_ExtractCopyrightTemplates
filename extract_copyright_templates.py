@@ -526,7 +526,7 @@ def process_templates_for_category(include_term, exclude_term):
 
         safe_category = include_term.replace(" ", "_")  # "Media_from_Delpher"
         timestamp = datetime.datetime.now().strftime("%d%m%Y")
-        filename = f"{safe_category}_commons_templates_output_{timestamp}.xlsx"
+        filename = f"{safe_category}-Extracted_copyright_templates-{timestamp}.xlsx"
         df.to_excel(filename, index=False)
         print(f"Results written to {filename}")
 
