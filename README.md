@@ -62,6 +62,9 @@ Attempts to derive a simplified creation or publication date from template metad
 - `pandas`
 - `openpyxl` (for Excel export)
 
+### See also
+* Same code as notebook on PAWS: https://hub-paws.wmcloud.org/user/OlafJanssen/lab/tree/MediaFromDelpher_ExtractCopyrightTemplates/extract_copyright_templates.ipynb
+
 ### Author:
 - Olaf Janssen, Wikimedia coordinator @KB national library of the Netherlands (via ChatGPT)
 - Last updated: 9 April 2025
