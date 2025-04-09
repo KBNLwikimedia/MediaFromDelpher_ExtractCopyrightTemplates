@@ -1,66 +1,44 @@
 ## Extract PD-like templates from Wikimedia Commons files in 'Media from Delpher' category
 
-### Overview
-This script identifies and extracts potentially Public Domain (PD) or PD-like licensing templates from files hosted on Wikimedia Commons, specifically those categorized under:
+### Purpose:
+This script identifies potentially public domain (PD) or PD-like license templates
+in Wikimedia Commons files categorized under:
 
 * Category:Media from Delpher
-* But excluding: Category:Scans from the Internet Archive
+* Excluding: Category:Scans from the Internet Archive
 
-The goal is to help detect files with licensing metadata that suggest they are in the public domain, but which are not explicitly tagged using standard Internet Archive or PD templates.
+These templates are often indicative of public domain status, but not explicitly
+tagged as such. The script extracts them, alongside simplified creation/publication
+dates, for review and documentation purposes.
 
-### How it works:
-1. **File Discovery**
-Uses the MediaWiki API to query Commons for files in the target category (`Media from Delpher`)
-   while excluding those in a known-safe PD category (`Scans from the Internet Archive`).
+### Key Features:
 
+- Uses the MediaWiki API to search for Commons files in the desired category.
+- Fetches the raw wikitext of each file page.
+- Isolates wrapper templates like {{Information}}, {{Photograph}}, {{Artwork}}, and {{Book}}.
+- Extracts relevant templates from top-level usage or embedded fields like:
+  - |permission=
+  - |date=
+  - |publication date=
+- Handles multiline and nested template values reliably.
+- Extracts a simplified creation date from various formats:
+  - {{circa|1930}}, {{taken on|1918-12-21}}, {{other date|between|1890|1900}}, etc.
+- Supports date formats: YYYY, YYYY-MM, YYYY-MM-DD
+- Returns the most recent valid year if multiple are present.
+- Excludes known irrelevant templates via a robust filtering system.
+- Outputs results to:
+  - Console (one line per file with all extracted info)
+  - Excel file (`*_commons_templates_output_<date>.xlsx`) with URLs and linked templates
 
-2. **Wikitext Retrieval**
-For each matching file, the script fetches the raw wikitext (template code, metadata, and fields).
+### Output:
+- File URL
+- Number of detected templates
+- Simplified creation or publication date
+- Template names and links to their Commons documentation pages
 
-
-3. **Template Extraction**
-The script identifies templates from two sources:
- * Top-level templates (directly used on the file page)
- * Templates embedded within the `|permission=` or `|date=` fields of wrapper templates like:
-     `{{Information}}`, `{{Book}}`, `{{Photograph}}`, or `{{Artwork}}`
- * Templates are filtered using several exclusion rules:
-   - Known irrelevant or decorative templates (see `EXCLUDED_TEMPLATES`)
-   - Templates with namespaced prefixes (e.g., `User:`, `Creator:`)
-   - Language-tagging templates like `{{en}}`, `{{nl}}`, etc.
-   - Utility templates like `{{DEFAULTSORT}}` or `{{ucfirst}}`
-
-
-4. **Date Extraction**
-Attempts to derive a simplified creation or publication date from template metadata:
-   - Recognizes formats like `{{circa|1930}}`, `{{other date|between|1920|1935}}`, or `1935-06-01`
-   - If no date is available, leaves field blank or as `"Unknown"`
-
-
-5. **Output**
-   * Console output: File URL, parsed date, detected template names with links
-   * Excel file: A table with rows per file and columns for:
-     - File URL
-     - Parsed date
-     - Number of templates
-     - Each template name and a link to its documentation page
-
-### Configuration & Customization:
-
-- To change which files are analyzed, modify:
-  * `include_term = "Media from Delpher"`
-  * `exclude_term = "Scans from the Internet Archive"`
-
-- Output is saved as:
-  * `Media_from_Delpher_commons_templates_output_<DATE>.xlsx`
-
-- You can limit the number of processed files for testing by modifying:
-  *  `limit=20` in the `search_files_from_category_excluding_term()` function call.
-
-### Requirements:
+### Dependencies:
 - Python 3.7+
-- `requests`
-- `pandas`
-- `openpyxl` (for Excel export)
+- `requests`, `re`, `pandas`, `openpyxl`
 
 ### See also
 * Same code as notebook on PAWS: https://hub-paws.wmcloud.org/user/OlafJanssen/lab/tree/MediaFromDelpher_ExtractCopyrightTemplates/extract_copyright_templates.ipynb

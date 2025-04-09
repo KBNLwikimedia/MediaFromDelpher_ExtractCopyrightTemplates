@@ -1,70 +1,49 @@
 """
-Extract PD-like templates from Wikimedia Commons files in 'Media from Delpher' category
-=======================================================================================
+Extracting public domain (PD)-like templates from Wikimedia Commons files
+========================================================================
 
-Overview:
----------
-This script identifies and extracts potentially Public Domain (PD) or PD-like licensing templates
-from files hosted on Wikimedia Commons, specifically those categorized under:
+Purpose:
+--------
+This script identifies potentially public domain (PD) or PD-like license templates
+in Wikimedia Commons files categorized under:
 
     - Category:Media from Delpher
-    - But excluding: Category:Scans from the Internet Archive
+    - Excluding: Category:Scans from the Internet Archive
 
-The goal is to help detect files with licensing metadata that suggest they are in the public domain,
-but which are not explicitly tagged using standard Internet Archive or PD templates.
+These templates are often indicative of public domain status, but not explicitly
+tagged as such. The script extracts them, alongside simplified creation/publication
+dates, for review and documentation purposes.
 
-How it works:
+Key Features:
 -------------
-1. **File Discovery**
-   Uses the MediaWiki API to query Commons for files in the target category (`Media from Delpher`)
-   while excluding those in a known-safe PD category (`Scans from the Internet Archive`).
+- Uses the MediaWiki API to search for Commons files in the desired category.
+- Fetches the raw wikitext of each file page.
+- Isolates wrapper templates like {{Information}}, {{Photograph}}, {{Artwork}}, and {{Book}}.
+- Extracts relevant templates from top-level usage or embedded fields like:
+  - |permission=
+  - |date=
+  - |publication date=
+- Handles multiline and nested template values reliably.
+- Extracts a simplified creation date from various formats:
+  - {{circa|1930}}, {{taken on|1918-12-21}}, {{other date|between|1890|1900}}, etc.
+- Supports date formats: YYYY, YYYY-MM, YYYY-MM-DD
+- Returns the most recent valid year if multiple are present.
+- Excludes known irrelevant templates via a robust filtering system.
+- Outputs results to:
+  - Console (one line per file with all extracted info)
+  - Excel file (`*_commons_templates_output_<date>.xlsx`) with URLs and linked templates
 
-2. **Wikitext Retrieval**
-   For each matching file, the script fetches the raw wikitext (template code, metadata, and fields).
+Output:
+-------
+- File URL
+- Number of detected templates
+- Simplified creation or publication date
+- Template names and links to their Commons documentation pages
 
-3. **Template Extraction**
-   The script identifies templates from two sources:
-   - Top-level templates (directly used on the file page)
-   - Templates embedded within the `|permission=` or `|date=` fields of wrapper templates like:
-     `{{Information}}`, `{{Book}}`, `{{Photograph}}`, or `{{Artwork}}`
-
-   Templates are filtered using several exclusion rules:
-   - Known irrelevant or decorative templates (see `EXCLUDED_TEMPLATES`)
-   - Templates with namespaced prefixes (e.g., `User:`, `Creator:`)
-   - Language-tagging templates like `{{en}}`, `{{nl}}`, etc.
-   - Utility templates like `{{DEFAULTSORT}}` or `{{ucfirst}}`
-
-4. **Date Extraction**
-   Attempts to derive a simplified creation or publication date from template metadata:
-   - Recognizes formats like `{{circa|1930}}`, `{{other date|between|1920|1935}}`, or `1935-06-01`
-   - If no date is available, leaves field blank or as `"Unknown"`
-
-5. **Output**
-   - Console output: File URL, parsed date, detected template names with links
-   - Excel file: A table with rows per file and columns for:
-     - File URL
-     - Parsed date
-     - Number of templates
-     - Each template name and a link to its documentation page
-
-Configuration & Customization:
-------------------------------
-- To change which files are analyzed, modify:
-    `include_term = "Media from Delpher"`
-    `exclude_term = "Scans from the Internet Archive"`
-
-- Output is saved as:
-    `Media_from_Delpher_commons_templates_output_<DATE>.xlsx`
-
-- You can limit the number of processed files for testing by modifying:
-    `limit=20` in the `search_files_from_category_excluding_term()` function call.
-
-Requirements:
+Dependencies:
 -------------
 - Python 3.7+
-- `requests`
-- `pandas`
-- `openpyxl` (for Excel export)
+- `requests`, `re`, `pandas`, `openpyxl`
 
 Author:
 -------
@@ -74,9 +53,8 @@ Author:
 
 License:
 --------
-This script is released into the public domain. You may freely use, adapt, and redistribute it.
+This script is released into the public domain (CC0-style). Free to reuse, adapt, and distribute.
 """
-
 
 import requests
 import re
@@ -127,6 +105,7 @@ EXCLUDED_TEMPLATES = {
     'hieronymus bosch, the complete paintings and drawings',
     'hieronymus bosch, visions of genius',
     'honderd jaar museum boymans, rotterdam, meesterwerken uit de verzameling d.g. van beuningen',
+    'i18n/as',
     'image extracted',
     'imagenote',
     'imagenoteend',
@@ -194,67 +173,85 @@ COLON_TEMPLATE_PATTERN = re.compile(r'^.*:.*$') #{{Creator:Hendrik Jan Bulthuis}
 
 def extract_year_from_date_string(date_str):
     """
-    Parses a date string from Commons wikitext and extracts a simplified year or century.
+    Extracts a simplified year or century from a Wikimedia Commons-style date string.
 
     Handles:
-    - {{circa|1939}}, {{taken on|1918-12-21}}, {{other date|between|...}}
-    - Numeric formats like "19350601", "1935-06", etc.
-    - Templates wrapped in {{ucfirst:...}} and similar
+    - Templates like {{circa|1939}}, {{taken on|YYYY-MM-DD}}, {{other date|...}}
+    - Flexible formats: YYYY, YYYY-MM, YYYY-MM-DD
+    - Nested templates (e.g. wrapped with {{ucfirst:...}})
+    - Returns the most recent valid 4-digit year found (1000 ≤ year ≤ 2100)
+    - Ignores metadata like:
+        - accessdate=2013, archivedate=2022
+        - {{Dead link|date=...}}, {{cite news|date=...}}, etc.
+
+    Args:
+        date_str (str): Raw wikitext string from a |date= or |publication date= field
 
     Returns:
-        str: A human-readable date (e.g., "1939", "20th century", "Unknown")
+        str: Parsed date (e.g., '1939', '20th century', or 'Unknown')
     """
     try:
         lower = date_str.lower()
 
-        # Strip nested ucfirst template
-        nested_match = re.search(r'\{\{[Uu][Cc]first:\s*(\{\{.*?\}\})\s*\}\}', date_str, re.IGNORECASE)
+        # --- Strip metadata noise that can corrupt fallback year parsing ---
+        # Remove citation templates entirely
+        date_str = re.sub(r'\{\{\s*cite\s+(news|web|book|journal)[^\}]*\}\}', '', date_str, flags=re.IGNORECASE)
+        # Remove known non-creation date fields
+        date_str = re.sub(r'\|\s*([Aa]ccessdate|[Aa]ccess-date|[Aa]rchivedate|[Aa]rchive-date)\s*=\s*[^\|\n]+', '', date_str, flags=re.IGNORECASE)
+        date_str = re.sub(r'\{\{[Dd]ead link\|date=\w+\s+\d{4}.*?\}\}', '', date_str, flags=re.IGNORECASE)
+
+        # --- Unwrap any ucfirst: {{...}} ---
+        nested_match = re.search(r'\{\{[Uu][Cc]first:\s*(\{\{.*?\}\})\s*\}\}', date_str)
         if nested_match:
             date_str = nested_match.group(1)
 
-        # Existing special templates
+        # --- {{complex date|century|20|adj1=early}} → Early 20th century ---
         if '{{complex date' in lower:
-            century_match = re.search(r'\|\s*century\s*\|\s*(\d{1,2})', date_str, re.IGNORECASE)
-            adj_match = re.search(r'\|\s*adj1\s*=\s*(\w+)', date_str, re.IGNORECASE)
+            century_match = re.search(r'\|\s*century\s*\|\s*(\d{1,2})', date_str)
+            adj_match = re.search(r'\|\s*adj1\s*=\s*(\w+)', date_str)
             if century_match:
                 century = int(century_match.group(1))
                 adjective = adj_match.group(1).capitalize() + ' ' if adj_match else ''
                 return f"{adjective}{century}th century"
 
-        circa_match = re.search(r'\{\{[Cc]irca\|(\d{4})\}\}', date_str, re.IGNORECASE)
+        # --- {{circa|1939}} → 1939 ---
+        circa_match = re.search(r'\{\{\s*[Cc]irca\s*\|\s*(\d{4})\s*\}\}', date_str)
         if circa_match:
             return circa_match.group(1)
 
-        century_match = re.search(r'\{\{\s*[Oo]ther date\s*\|\s*century\s*\|\s*(\d{1,2})', date_str, re.IGNORECASE)
+        # --- {{other date|century|16}} → 16th century ---
+        century_match = re.search(r'\{\{\s*[Oo]ther date\s*\|\s*century\s*\|\s*(\d{1,2})', date_str)
         if century_match:
             return f"{century_match.group(1)}th century"
 
-        if re.search(r'\{\{\s*[Oo]ther date\s*\|\s*\?\s*\}\}', date_str, re.IGNORECASE):
+        # --- {{other date|?|...}} → Unknown ---
+        if re.search(r'\{\{\s*[Oo]ther date\s*\|\s*\?\s*\}\}', date_str):
             return "Unknown"
 
-        taken_on_match = re.search(r'\{\{\s*[Tt]aken on\s*\|\s*(\d{4})-\d{2}-\d{2}', date_str, re.IGNORECASE)
+        # --- {{taken on|YYYY-MM-DD}} → YYYY ---
+        taken_on_match = re.search(r'\{\{\s*[Tt]aken on\s*\|\s*(\d{4})-\d{2}-\d{2}', date_str)
         if taken_on_match:
             return taken_on_match.group(1)
 
-        between_match = re.search(r'\{\{\s*[Oo]ther date\s*\|\s*between\s*\|\s*(\d{4})\s*\|\s*(\d{4})\s*\}\}', date_str, re.IGNORECASE)
-        if between_match:
-            return between_match.group(2)
+        # --- Catch all other {{other date|...}} variations and extract latest year ---
+        if '{{other date' in lower:
+            all_years = re.findall(r'\d{4}', date_str)
+            valid_years = [y for y in all_years if 1000 <= int(y) <= 2100]
+            if valid_years:
+                return max(valid_years)
 
-        # NEW: handle full or partial numeric formats
-        compact_date = re.match(r'(\d{4})[-/]?\d{0,4}', date_str)
-        if compact_date:
-            return compact_date.group(1)
-
-        # Fallback: any 4-digit year
-        year_match = re.search(r'(\d{4})', date_str)
-        if year_match:
-            return year_match.group(1)
+        # --- Final fallback: any 4-digit year ---
+        fallback_years = re.findall(r'\d{4}', date_str)
+        valid_years = [y for y in fallback_years if 1000 <= int(y) <= 2100]
+        if valid_years:
+            return max(valid_years)
 
         return date_str.strip()
 
     except Exception as e:
         print(f"Error extracting year from date: {e}")
         return date_str.strip()
+
 
 
 
@@ -367,14 +364,18 @@ def search_files_from_category_excluding_term(include_term, exclude_term, limit=
 
 def extract_balanced_template(wikitext, template_name):
     """
-    Extracts the full, balanced content of a template (e.g., {{Information}}), including nested templates and multiline fields.
+    Extracts the full content of a wrapper template block (e.g., {{Photograph}}, {{Information}})
+    from the given wikitext, including nested templates and multiline fields.
+
+    This function uses brace-depth tracking to ensure the entire balanced template
+    is returned even if it contains deeply nested or multi-line sub-templates.
 
     Args:
-        wikitext (str): The full wikitext of a Commons file.
+        wikitext (str): The full page wikitext.
         template_name (str): The name of the wrapper template to extract.
 
     Returns:
-        str: The full matched template block, or empty string if not found.
+        str: The full balanced block as a string, or an empty string if not found.
     """
     start = wikitext.lower().find(f'{{{{{template_name.lower()}')
     if start == -1:
@@ -396,19 +397,40 @@ def extract_balanced_template(wikitext, template_name):
     return ''
 
 
+def extract_template_field(block, fieldname):
+    """
+    Extracts a specific |field= value from a wikitext template block (multiline-safe).
+
+    Args:
+        block (str): Template content (e.g., full {{Photograph ...}} block)
+        fieldname (str): The name of the field (e.g., 'date')
+
+    Returns:
+        str: Extracted field value or empty string if not found
+    """
+    pattern = re.compile(rf'\|\s*{fieldname}\s*=\s*(.+?)(?=\n\||\n*$)', re.IGNORECASE | re.DOTALL)
+    match = pattern.search(block)
+    return match.group(1).strip() if match else ''
+
+
 def extract_templates_and_date(wikitext):
     """
-    Extracts all relevant templates and a simplified creation date from the given wikitext.
+    Extracts relevant license/source templates and a simplified creation date from a file's wikitext.
 
-    Supports:
-    - Wrapper templates like {{Information}}, {{Book}}, etc.
-    - Date fields like |date= and |publication date=
-    - Embedded permission-related templates
+    - Detects wrapper templates (e.g., {{Information}}, {{Photograph}}, {{Book}})
+    - Extracts |date= and |publication date= values, even if multiline
+    - Extracts embedded templates from |permission=, |date=, etc.
+    - Filters out known irrelevant or decorative templates
+    - Also finds top-level templates (not nested in wrappers)
+    - Date extraction prioritizes the most recent 4-digit year
+
+    Args:
+        wikitext (str): The raw wikitext from a Commons file
 
     Returns:
         tuple:
-            list[str]: A sorted list of relevant template names (e.g., ["{{PD-old}}", "{{Anonymous-EU}}"])
-            str: Parsed creation date (e.g., "1930", "Early 20th century", "Unknown")
+            list[str]: Sorted list of template names (e.g. ['{{PD-old}}', '{{Anonymous-EU}}'])
+            str: Simplified creation date (e.g. '1939', 'Unknown', '20th century')
     """
     try:
         all_templates = set()
@@ -417,46 +439,37 @@ def extract_templates_and_date(wikitext):
         for wrapper in WRAPPER_TEMPLATES:
             wrapper_block = extract_balanced_template(wikitext, wrapper)
             if wrapper_block:
-
-                # Extract |date= field (case-insensitive, allow spaces around =)
-                date_match = re.search(r'\|\s*[Dd]ate\s*=\s*(.+)', wrapper_block, re.IGNORECASE)
-                if date_match:
-                    raw_date = date_match.group(1).strip()
-                    date_for_parsing = raw_date.split('{{')[0].strip()
-                    creation_date = extract_year_from_date_string(date_for_parsing)
-
-                    # Also capture embedded templates in date
+                # --- DATE ---
+                raw_date = extract_template_field(wrapper_block, 'date')
+                if raw_date:
+                    creation_date = extract_year_from_date_string(raw_date)
                     embedded_templates = re.findall(r'\{\{([^\|\}\n]+)', raw_date)
                     for dt in embedded_templates:
                         clean = f"{{{{{dt.strip()}}}}}"
                         if not is_excluded_template(dt):
                             all_templates.add(clean)
 
-                # If no creation_date yet, look for |publication date=
+                # --- PUBLICATION DATE ---
                 if not creation_date:
-                    pubdate_match = re.search(r'\|\s*[Pp]ublication\s+date\s*=\s*(.+)', wrapper_block, re.IGNORECASE)
-                    if pubdate_match:
-                        raw_pubdate = pubdate_match.group(1).strip()
-                        pubdate_for_parsing = raw_pubdate.split('{{')[0].strip()
-                        creation_date = extract_year_from_date_string(pubdate_for_parsing)
-
-                        embedded_pub_templates = re.findall(r'\{\{([^\|\}\n]+)', raw_pubdate)
-                        for dt in embedded_pub_templates:
+                    raw_pubdate = extract_template_field(wrapper_block, 'publication date')
+                    if raw_pubdate:
+                        creation_date = extract_year_from_date_string(raw_pubdate)
+                        embedded_templates = re.findall(r'\{\{([^\|\}\n]+)', raw_pubdate)
+                        for dt in embedded_templates:
                             clean = f"{{{{{dt.strip()}}}}}"
                             if not is_excluded_template(dt):
                                 all_templates.add(clean)
 
-                # Extract templates from |permission= field
-                permission_match = re.search(r'\|\s*[Pp]ermission\s*=\s*(.+?)(?=\n\||\n*$)', wrapper_block, re.IGNORECASE | re.DOTALL)
-                if permission_match:
-                    permission_content = permission_match.group(1).strip()
-                    embedded_templates = re.findall(r'\{\{([^\|\}\n]+)', permission_content)
+                # --- PERMISSION ---
+                raw_permission = extract_template_field(wrapper_block, 'permission')
+                if raw_permission:
+                    embedded_templates = re.findall(r'\{\{([^\|\}\n]+)', raw_permission)
                     for t in embedded_templates:
                         clean = f"{{{{{t.strip()}}}}}"
                         if not is_excluded_template(t):
                             all_templates.add(clean)
 
-        # Top-level templates (outside of wrappers)
+        # --- TOP-LEVEL templates ---
         top_level_matches = re.findall(r'^\s*\{\{([^\|\}\n]+)', wikitext, re.MULTILINE)
         for t in top_level_matches:
             clean = t.strip()
