@@ -88,4 +88,4 @@ def main():
         update_and_publish_chart(dw, chart_id=chart_id, csv_path=CSV_EXPORT, title=CHART_TITLE)
 
 if __name__ == "__main__":
-    main()
+    main() 
