@@ -41,7 +41,7 @@
       "dy": 80,
       "bold": false,
       "size": 14,
-      "text": "Example: The copyright template <a href='https://commons.wikimedia.org/wiki/Template:PD-old-70' target='_blank' rel='nofollow noopener'>{{PD-old-70}}</a> is used 734 times across {total_unique_files:,} files. It indicates that a work is in the public domain in its country of origin and other countries and areas where the copyright term is the author's life plus 70 years or fewer.",
+      "text": "Example: The copyright template <a href='https://commons.wikimedia.org/wiki/Template:PD-old-70' target='_blank' rel='nofollow noopener'>{{{{PD-old-70}}}}</a> is used 734 times across {total_unique_files:,} files. It indicates that a work is in the public domain in its country of origin and other countries and areas where the copyright term is the author's life plus 70 years or fewer.",
       "align": "tl",
       "color": false,
       "width": 60,
