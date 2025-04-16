@@ -3,54 +3,91 @@ from datawrapper import Datawrapper #https://datawrapper.readthedocs.io/en/lates
 from dotenv import load_dotenv
 import pandas as pd
 import json
+from pathlib import Path
+
+# Root folder is one level up from this script
+ROOT_DIR = Path(__file__).resolve().parent.parent
+# Define folders
+DATA_DIR = ROOT_DIR / "data"
+SCRIPT_DIR = Path(__file__).resolve().parent # the dir this file is in
 
 def count_template_usages(
-        excel_path: str,
-        sheet_name: str,
-        output_csv: str
+    excel_path: str,
+    sheet_name: str,
+    output_csv: str
 ) -> tuple[pd.DataFrame, dict]:
     """
     Count how many times each template appears in the dataset and format as HTML for Datawrapper.
-
-    Also calculates key figures about usage frequency and file-template relationships.
+    Also calculates key figures and appends 'NoCopyrightReason' to the output.
 
     Parameters:
         excel_path (str): Path to the Excel file.
-        sheet_name (str): Sheet name containing the data.
-        output_csv (str): Path to output the CSV summary.
+        sheet_name (str): Sheet name containing the main data.
+        output_csv (str): Path to save the summary CSV.
 
     Returns:
         tuple: (summary DataFrame, dictionary of key figures)
     """
     try:
+        # Load main data
         df = pd.read_excel(excel_path, sheet_name=sheet_name)
         df["Template"] = df["Template"].astype(str).str.strip()
         df["TemplateURL"] = df["TemplateURL"].astype(str).str.strip()
 
-        # Count template usage
+        # Count usage
         summary = df["Template"].value_counts().reset_index()
         summary.columns = ["Template", "Number of Uses"]
 
-        # Merge with URLs
+        # Merge TemplateURL
         url_map = df.drop_duplicates(subset=["Template"])[["Template", "TemplateURL"]]
         summary = summary.merge(url_map, on="Template", how="left")
 
-        # Format templates as HTML links
+        # Add NoCopyrightReason from the templates_dedup sheet
+        try:
+            reasons_df = pd.read_excel(excel_path, sheet_name="templates_dedup", usecols=["Template", "NoCopyrightReason"])
+            reasons_df["Template"] = reasons_df["Template"].astype(str).str.strip()
+            summary = summary.merge(reasons_df, on="Template", how="left")
+        except Exception as e:
+            print(f"⚠️ Could not load NoCopyrightReason data: {e}")
+            summary["NoCopyrightReason"] = None
+
+        # Format HTML labels
         summary["Template"] = summary.apply(
             lambda row: (
-                f'<a href="{row["TemplateURL"]}" target="_blank" rel="nofollow noopener">{row["Template"].strip("{").strip("}")}</a>'
+                f'<a href="{row["TemplateURL"]}" style="color:#b1bfc3;", target="_blank" rel="nofollow noopener">{row["Template"].strip("{").strip("}")}</a>'
                 if pd.notnull(row["TemplateURL"]) else row["Template"]
             ),
             axis=1
         )
-        summary = summary[["Template", "Number of Uses"]]
-        summary["Number of Uses"] = pd.to_numeric(summary["Number of Uses"], errors="coerce")
 
-        # Save CSV
+        # Final columns and export
+        summary = summary[["Template", "Number of Uses", "NoCopyrightReason"]]
+        summary["Number of Uses"] = pd.to_numeric(summary["Number of Uses"], errors="coerce")
         summary.to_csv(output_csv, index=False, encoding="utf-8", sep=";")
         print(f"✅ Template usage summary saved to: {output_csv}")
 
-        # === KEY FIGURES ===
+        # Generate stats
+        stats = generate_template_stats(df, summary)
+        return summary, stats
+
+    except Exception as e:
+        print(f"❌ Error in count_template_usages(): {e}")
+        return pd.DataFrame(), {}
+
+
+
+def generate_template_stats(df: pd.DataFrame, summary: pd.DataFrame) -> dict:
+    """
+    Generate key figures from the template usage data and print them.
+
+    Parameters:
+        df (pd.DataFrame): Original full dataframe from Excel.
+        summary (pd.DataFrame): Processed summary of template counts.
+
+    Returns:
+        dict: A dictionary of key usage statistics.
+    """
+    try:
         total_template_usages = len(df)
         unique_templates_used = df["Template"].nunique()
         total_files_with_templates = df["FileURL"].nunique() if "FileURL" in df.columns else None
@@ -65,24 +102,23 @@ def count_template_usages(
             "most_used_template": most_used_template
         }
 
-        # Pretty print stats
+        # Pretty print
         print("\n📊 Key Figures:")
         print(f"• Total template usages (incl. duplicates): {total_template_usages:,}")
         print(f"• Unique templates used: {unique_templates_used}")
         if total_files_with_templates is not None:
-            print(f"• Unique filess with templates (based on FileURL): {total_files_with_templates:,}")
+            print(f"• Unique files with templates (based on FileURL): {total_files_with_templates:,}")
         if total_unique_files is not None:
-            print(f"•  Unique files with templates (based on FileMid): {total_unique_files:,}")
+            print(f"• Unique files with templates (based on FileMid): {total_unique_files:,}")
         print(f"• Most used template (HTML label): {most_used_template}")
 
-        return summary, stats
+        return stats
 
     except Exception as e:
-        print(f"❌ Error: {e}")
-        return pd.DataFrame(), {}
+        print(f"❌ Failed to generate key stats: {e}")
+        return {}
 
-
-def get_or_create_chart(dw: Datawrapper, chart_id_file: str, title: str, chart_type: str = "d3-bars") -> str:
+def get_or_create_chart(dw: Datawrapper, chart_id_file: str, title: str, chart_type: str = "split-bars") -> str:
     """
     Reuse existing chart ID or create a new one using Datawrapper.
     """
@@ -198,11 +234,11 @@ def main():
             raise ValueError("DW_API_TOKEN not found in .env file!")
 
         # Define file paths
-        EXCEL_PATH = "Media_from_Delpher-Extracted_copyright_templates-09042025-cleaned-processed.xlsx"
+        EXCEL_PATH = DATA_DIR / "Media_from_Delpher-Extracted_copyright_templates-09042025-cleaned-processed.xlsx"
         EXCEL_SHEET = "files-templates"
-        CSV_EXPORT = "template_usage_summary.csv"
-        CHART_ID_FILE = "chart_id.txt"
-        CONFIG_PATH = "template_usage_summary-chart-config.json"
+        CSV_EXPORT = DATA_DIR / "template_usage_summary.csv"
+        CHART_ID_FILE = SCRIPT_DIR / "chart_id.txt"
+        CONFIG_PATH = SCRIPT_DIR / "template_usage_summary-chart-config.json"
 
         # Load chart config from JSON
         try:
@@ -223,12 +259,13 @@ def main():
 
         print("📊 Key stats:", stats)
 
-        # Format variables into description fields
-        if "description" in config:
-            config["description"] = {
-                k: v.format(**stats) if isinstance(v, str) else v
-                for k, v in config["description"].items()
-            }
+        # Format variables into both description and annotate fields
+        for section in ["description", "annotate"]:
+            if section in config:
+                config[section] = {
+                    k: (v.format(**stats) if isinstance(v, str) else v)
+                    for k, v in config[section].items()
+                }
 
         # Update and publish chart
         if summary_df is not None and not summary_df.empty:

@@ -62,6 +62,7 @@ import urllib.parse
 import pandas as pd
 import datetime
 import openpyxl
+from pathlib import Path
 
 # List of templates to exclude (case-insensitive, supports wildcards for regex filtering)
 EXCLUDED_TEMPLATES = {
@@ -540,8 +541,18 @@ def process_templates_for_category(include_term, exclude_term):
         safe_category = include_term.replace(" ", "_")  # "Media_from_Delpher"
         timestamp = datetime.datetime.now().strftime("%d%m%Y")
         filename = f"{safe_category}-Extracted_copyright_templates-{timestamp}.xlsx"
-        df.to_excel(filename, index=False)
-        print(f"Results written to {filename}")
+
+        # Define the data folder path (relative to the script location)
+        data_folder = Path(__file__).resolve().parent.parent / "data"
+        # Ensure the folder exists
+        data_folder.mkdir(parents=True, exist_ok=True)
+        # Full output path
+        output_path = data_folder / filename
+
+        # Write Excel file
+        df.to_excel(output_path, index=False)
+        print(f"✅ Results written to: {output_path}")
+
 
     except Exception as e:
         print(f"Error processing category: {e}")
