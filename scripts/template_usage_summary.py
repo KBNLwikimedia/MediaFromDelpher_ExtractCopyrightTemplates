@@ -74,8 +74,6 @@ def count_template_usages(
         print(f"❌ Error in count_template_usages(): {e}")
         return pd.DataFrame(), {}
 
-
-
 def generate_template_stats(df: pd.DataFrame, summary: pd.DataFrame) -> dict:
     """
     Generate key figures from the template usage data and print them.
@@ -259,13 +257,24 @@ def main():
 
         print("📊 Key stats:", stats)
 
-        # Format variables into both description and annotate fields
+        # Format variables into description, annotate, and visualize sections
         for section in ["description", "annotate"]:
             if section in config:
                 config[section] = {
                     k: (v.format(**stats) if isinstance(v, str) else v)
                     for k, v in config[section].items()
                 }
+
+        # Special handling for text-annotations (inside visualize)
+        if "visualize" in config and "text-annotations" in config["visualize"]:
+            formatted_annotations = []
+            for annotation in config["visualize"]["text-annotations"]:
+                formatted_annotation = {
+                    k: (v.format(**stats) if isinstance(v, str) else v)
+                    for k, v in annotation.items()
+                }
+                formatted_annotations.append(formatted_annotation)
+            config["visualize"]["text-annotations"] = formatted_annotations
 
         # Update and publish chart
         if summary_df is not None and not summary_df.empty:

@@ -18,18 +18,18 @@
   "background": true,
   "color-category": {
     "map": {
-      "Public domain because of age": "#387b94",
+      "Copyrights expired because of age": "#387b94",
       "Copyrights waived or made free": "#de2d26",
       "Government work not subject to copyright": "#31a354",
-      "Lack of sufficient originality": "#f2f27e",
-      "Other": "#ff7f0e"
+      "Not eligible for copyrights due to lack of sufficient originality": "#f2f27e",
+      "Other reasons": "#ff7f0e"
     },
     "categoryOrder": [
-      "Public domain because of age",
+      "Copyrights expired because of age",
       "Copyrights waived or made free",
       "Government work not subject to copyright",
-      "Lack of sufficient originality",
-      "Other"
+      "Not eligible for copyrights due to lack of sufficient originality",
+      "Other reasons"
     ]
   },
   "color-by-column": true,
@@ -41,7 +41,7 @@
       "dy": 80,
       "bold": false,
       "size": 14,
-      "text": "Example: The copyright template <a href='https://commons.wikimedia.org/wiki/Template:PD-old-70' target='_blank' rel='nofollow noopener'>{{PD-old-70}}</a> is used 734 times across 6,249 files. It indicates that a work is in the public domain in its country of origin and other countries and areas where the copyright term is the author's life plus 70 years or fewer.",
+      "text": "Example: The copyright template <a href='https://commons.wikimedia.org/wiki/Template:PD-old-70' target='_blank' rel='nofollow noopener'>{{PD-old-70}}</a> is used 734 times across {total_unique_files:,} files. It indicates that a work is in the public domain in its country of origin and other countries and areas where the copyright term is the author's life plus 70 years or fewer.",
       "align": "tl",
       "color": false,
       "width": 60,
