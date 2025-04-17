@@ -1,9 +1,9 @@
-## Extract and analyse usage of PD-like templates for Wikimedia Commons files
+# Extract and analyse usage of PD-like templates for Wikimedia Commons files
 
 This repo....
 
 
-### Purpose of this repo
+## Purpose of this repo
 This script identifies potentially public domain (PD) or PD-like license templates
 in Wikimedia Commons files:
 
@@ -11,21 +11,21 @@ These templates are often indicative of public domain status, but not explicitly
 tagged as such. The script extracts them, alongside simplified creation/publication
 dates, for review and documentation purposes.
 
-### Background, why did we make this repo?
+## Background, why did we make this repo?
 
-### Who canm benefit?
+## Who canm benefit?
 
-### Application 1: Media from Delpher
+## Application 1: Media from Delpher
 [For Category:Media from Delpher, Story in progress](https://kbnlwikimedia.github.io/wikimedia-commons_copyright-templates/stories/Story%20title,%20May%202025.html)
 
 * Category:Media from Delpher
 * Excluding: Category:Scans from the Internet Archive
 
 
-### Technical notes
+## Technical notes
 For all technical background info reg Pythion sctiopts, data and visialisations, see [technical notes](technical-notes.html)
 
-### License:
+## License:
 * The data in the data foldr are script is CC0, so released into the public domain. You may freely use, adapt, and redistribute it.
 * The stories and visualuiations are CC-BY
 

@@ -1,4 +1,4 @@
-## Technical notes (under construction)
+# Technical notes (under construction)
 
 *Latest update*: xx May 2025
 
@@ -9,10 +9,10 @@ This page gives more info about
 3. The datavisualisation from datawrapper, created via the datawrapper API
 4. ...xxx 
 
-### Key Features of script 'template_usage_summary.py':
+## Key Features of script 'template_usage_summary.py':
 TO ADD
 
-### Key Features of script 'extract_copyright_templates.py':
+## Key Features of script 'extract_copyright_templates.py':
 
 - Uses the MediaWiki API to search for Commons files in the desired category.
 - Fetches the raw wikitext of each file page.

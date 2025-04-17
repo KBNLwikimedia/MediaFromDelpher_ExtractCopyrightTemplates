@@ -1,4 +1,4 @@
-# Story title, May 2025 
+# Assessment of copyright templates Wikimedia Commons Media from Delpher, May 2025 
 <sup>Olaf Janssen, xx May 2025</sup>
 
 This article is also [available as PDF](ongithub.pdf).
@@ -22,9 +22,9 @@ The most important key figures and findings of this story are:
 
 ## Section 1 
 
-#### What this story aims to do
+### What this story aims to do
 
-#### What this story does NOT aim to do
+### What this story does NOT aim to do
 
 ### Section 1.1 
 
@@ -57,7 +57,7 @@ Attribution: *KB, national library of the Netherlands / Olaf Janssen, CC-BY 4.0*
 
 Raw data: CC0, so released into the public domain. You may freely use, adapt, and redistribute it.
 
-### Identifiers and URLs of this article
+## Identifiers and URLs of this article
 Persistent:
 * DOI (Zenodo): [https://doi.org/10.5281/zenodo.xxx](https://doi.org/10.5281/zenodo.xxxxx)
 * Wikimedia Commons: [https://commons.wikimedia.org/entity/xxxx](https://commons.wikimedia.org/entity/xxxx)
