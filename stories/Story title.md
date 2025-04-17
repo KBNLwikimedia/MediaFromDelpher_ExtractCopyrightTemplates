@@ -1,4 +1,4 @@
-## Extract and analyse usage of PD-like templates for Wikimedia Commons files in 'Media from Delpher' category
+## Extract and analyse PD-like templates from Wikimedia Commons files in 'Media from Delpher' category
 
 ### Purpose:
 This script identifies potentially public domain (PD) or PD-like license templates
@@ -10,6 +10,12 @@ in Wikimedia Commons files categorized under:
 These templates are often indicative of public domain status, but not explicitly
 tagged as such. The script extracts them, alongside simplified creation/publication
 dates, for review and documentation purposes.
+
+### Background:
+
+### What this story aims to do
+
+### What this story does NOT aim to do
 
 ### Key Features:
 

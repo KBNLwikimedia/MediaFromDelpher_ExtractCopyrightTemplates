@@ -1,9 +1,52 @@
+"""
+📊 Delpher Copyright Template Visualization Script
+
+This script processes an Excel dataset containing Wikimedia Commons file metadata,
+counts the usage of copyright license templates, enriches the data with reasons for
+public domain status, and visualizes the results using the Datawrapper API.
+
+It performs the following steps:
+- Reads Excel data from a /data/ directory relative to the script
+- Counts how often each copyright template appears
+- Merges additional information like TemplateURL and NoCopyrightReason
+- Formats the output as HTML for linking in charts
+- Generates usage statistics (e.g., total templates, unique files, top template)
+- Outputs a summary CSV for use in visualization
+- Loads chart config from a JSON file in /scripts/
+- Updates or creates a Datawrapper chart and publishes it
+- Outputs a responsive embed code for easy integration
+
+Modules used:
+- `pathlib` for cross-platform path handling
+- `pandas` for data manipulation
+- `dotenv` for API token management
+- `datawrapper` (official library) for publishing charts
+
+Expected directory structure:
+project-root/
+├── data/
+│   └── input Excel + output CSV
+├── scripts/
+│   └── this script + chart config JSON + chart ID file
+
+Run this script from the CLI to regenerate and publish the chart.
+
+Author:
+- Olaf Janssen, Wikimedia coordinator @KB national library of the Netherlands (assisted by ChatGPT)
+- Last updated: 17 April 2025
+- User-Agent: OlafJanssenBot/1.0
+
+License:
+ - This script is released into the public domain (CC0-style). Free to reuse, adapt, and distribute.
+"""
+
 import os
 from datawrapper import Datawrapper #https://datawrapper.readthedocs.io/en/latest/user-guide/api.html
 from dotenv import load_dotenv
 import pandas as pd
 import json
 from pathlib import Path
+from typing import Tuple
 
 # Root folder is one level up from this script
 ROOT_DIR = Path(__file__).resolve().parent.parent
@@ -15,7 +58,7 @@ def count_template_usages(
     excel_path: str,
     sheet_name: str,
     output_csv: str
-) -> tuple[pd.DataFrame, dict]:
+) -> Tuple[pd.DataFrame, dict]:
     """
     Count how many times each template appears in the dataset and format as HTML for Datawrapper.
     Also calculates key figures and appends 'NoCopyrightReason' to the output.
@@ -31,6 +74,13 @@ def count_template_usages(
     try:
         # Load main data
         df = pd.read_excel(excel_path, sheet_name=sheet_name)
+        # Check for required columns for this function
+        required_cols = {"Template", "TemplateURL"}
+        missing = required_cols - set(df.columns)
+        if missing:
+            raise ValueError(f"Missing required columns: {missing}")
+
+        # Clean up columns
         df["Template"] = df["Template"].astype(str).str.strip()
         df["TemplateURL"] = df["TemplateURL"].astype(str).str.strip()
 
@@ -86,6 +136,12 @@ def generate_template_stats(df: pd.DataFrame, summary: pd.DataFrame) -> dict:
         dict: A dictionary of key usage statistics.
     """
     try:
+        # Check for required columns for this function
+        required_cols = {"Template", "FileMid", "FileURL"}
+        missing = required_cols - set(df.columns)
+        if missing:
+            raise ValueError(f"Missing required columns: {missing}")
+
         total_template_usages = len(df)
         unique_templates_used = df["Template"].nunique()
         total_files_with_templates = df["FileURL"].nunique() if "FileURL" in df.columns else None
