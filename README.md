@@ -13,10 +13,10 @@ dates, for review and documentation purposes.
 
 ### Background, why did we make this repo?
 
-### Who canm benefix
+### Who canm benefit?
 
 ### Application 1: Media from Delpher
-For Category:Media from Delpher, Story in progress: https://kbnlwikimedia.github.io/wikimedia-commons_copyright-templates/stories/Story%20title,%20May%202025.html
+[For Category:Media from Delpher, Story in progress](https://kbnlwikimedia.github.io/wikimedia-commons_copyright-templates/stories/Story%20title,%20May%202025.html)
 
 * Category:Media from Delpher
 * Excluding: Category:Scans from the Internet Archive
