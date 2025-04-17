@@ -32,9 +32,10 @@ The most important key figures and findings of this story are:
 
 ### Section 2.1 
 
-<div style="min-height:713px" id="datawrapper-vis-UewJt"><script type="text/javascript" defer src="https://datawrapper.dwcdn.net/UewJt/embed.js" charset="utf-8" data-target="#datawrapper-vis-UewJt"></script><noscript><img src="https://datawrapper.dwcdn.net/UewJt/full.png" alt="xxxx"/></noscript></div>
+<div style="min-height:1665px" id="datawrapper-vis-UewJt"><script type="text/javascript" defer src="https://datawrapper.dwcdn.net/UewJt/embed.js" charset="utf-8" data-target="#datawrapper-vis-UewJt"></script><noscript><img src="https://datawrapper.dwcdn.net/UewJt/full.png" alt="This chart shows how often which copyright templates are used in Wikimedia Commons media files that were sourced from Delpher. The bars are grouped by the main reason why the files are in the public domain. The template usage is taken \&quot;as observed\&quot;. The 3 key figures are: 1) Total number of distinct media files: 6,248. 2) Total number of template usages: 6,329 (one file can contain multiple copyright templates). 3) Total number of distinct templates used: 39. Data as of 9 April 2025." /></noscript></div>
 
-<a href="../media/media-from-delpher-in-wikimedia-commons-usage-of-copyright-templates-grouped-by-reason.png" target="_blank"><img src="../media/media-from-delpher-in-wikimedia-commons-usage-of-copyright-templates-grouped-by-reason.png" border="1" align="left" width="90%" hspace="30" alt="xxxxx."/></a>
+
+<a href="../media/media-from-delpher-in-wikimedia-commons-usage-of-copyright-templates-grouped-by-reason.png" target="_blank"><img src="../media/media-from-delpher-in-wikimedia-commons-usage-of-copyright-templates-grouped-by-reason.png" border="1" align="left" width="90%" hspace="30" alt="This chart shows how often which copyright templates are used in Wikimedia Commons media files that were sourced from Delpher. The bars are grouped by the main reason why the files are in the public domain. The template usage is taken \&quot;as observed\&quot;. The 3 key figures are: 1) Total number of distinct media files: 6,248. 2) Total number of template usages: 6,329 (one file can contain multiple copyright templates). 3) Total number of distinct templates used: 39. Data as of 9 April 2025."/></a>
 <br clear="all"/>
 
 

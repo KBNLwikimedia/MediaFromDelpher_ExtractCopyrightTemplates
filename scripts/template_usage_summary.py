@@ -253,12 +253,12 @@ def get_responsive_embed_code(dw, chart_id: str) -> str | None:
     try:
         chart_info = dw.get_chart(chart_id)
         embed_codes = chart_info.get("metadata", {}).get("publish", {}).get("embed-codes", {})
-        responsive_embed = embed_codes.get("embed-method-responsive", None)
+        script_embed = embed_codes.get("embed-method-web-component", None)
 
-        if responsive_embed:
-            return responsive_embed
+        if script_embed:
+            return script_embed
         else:
-            print("❌ Responsive embed code not found. Make sure the chart is published.")
+            print("❌ Script embed code not found. Make sure the chart is published.")
             return None
 
     except Exception as e:
