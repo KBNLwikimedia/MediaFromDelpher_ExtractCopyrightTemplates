@@ -1,54 +1,38 @@
-## Extract and analyse usage of PD-like templates for Wikimedia Commons files in 'Media from Delpher' category
+## Extract and analyse usage of PD-like templates for Wikimedia Commons files
 
-### Purpose:
+This repo....
+
+
+### Purpose of this repo
 This script identifies potentially public domain (PD) or PD-like license templates
-in Wikimedia Commons files categorized under:
-
-* Category:Media from Delpher
-* Excluding: Category:Scans from the Internet Archive
+in Wikimedia Commons files:
 
 These templates are often indicative of public domain status, but not explicitly
 tagged as such. The script extracts them, alongside simplified creation/publication
 dates, for review and documentation purposes.
 
-### Key Features:
+### Background, why did we make this repo?
 
-- Uses the MediaWiki API to search for Commons files in the desired category.
-- Fetches the raw wikitext of each file page.
-- Isolates wrapper templates like {{Information}}, {{Photograph}}, {{Artwork}}, and {{Book}}.
-- Extracts relevant templates from top-level usage or embedded fields like:
-  - |permission=
-  - |date=
-  - |publication date=
-- Handles multiline and nested template values reliably.
-- Extracts a simplified creation date from various formats:
-  - {{circa|1930}}, {{taken on|1918-12-21}}, {{other date|between|1890|1900}}, etc.
-- Supports date formats: YYYY, YYYY-MM, YYYY-MM-DD
-- Returns the most recent valid year if multiple are present.
-- Excludes known irrelevant templates via a robust filtering system.
-- Outputs results to:
-  - Console (one line per file with all extracted info)
-  - Excel file (`*_commons_templates_output_<date>.xlsx`) with URLs and linked templates
-     - Excel file (`*_commons_templates_output_<date>-cleaned.xlsx`) is a munually
-       cleaned version of the first file, where any non-copyright templates, incorrect dates and other 'noise' that we did not manage to get filtered out by the Python script have been manually removed as a post-processing step.
+### Who canm benefix
 
-### Output:
-- File URL
-- Number of detected templates
-- Simplified creation or publication date
-- Template names and links to their Commons documentation pages
+### Application 1: Media from Delpher
+For Category:Media from Delpher, Story in progress: https://kbnlwikimedia.github.io/wikimedia-commons_copyright-templates/stories/Story%20title,%20May%202025.html
 
-### Dependencies:
-- Python 3.7+
-- `requests`, `re`, `pandas`, `openpyxl`
+* Category:Media from Delpher
+* Excluding: Category:Scans from the Internet Archive
 
-### See also
-* Same code as notebook on PAWS: https://hub-paws.wmcloud.org/user/OlafJanssen/lab/tree/MediaFromDelpher_ExtractCopyrightTemplates/extract_copyright_templates.ipynb
 
-### Author:
-- Olaf Janssen, Wikimedia coordinator @KB national library of the Netherlands (via ChatGPT)
-- Last updated: 9 April 2025
-- User-Agent: OlafJanssenBot/1.0
+### Technical notes
+For all technical background info reg Pythion sctiopts, data and visialisations, see [technical notes](technical-notes.html)
 
 ### License:
-This script is CC0, so released into the public domain. You may freely use, adapt, and redistribute it.
+* The data in the data foldr are script is CC0, so released into the public domain. You may freely use, adapt, and redistribute it.
+* The stories and visualuiations are CC-BY
+
+## Contact
+<img align="left" src="media/389px-Olaf_Janssen_at_GLAM_WIKI_Tel_Aviv_Conference_2018.JPG" width="50" hspace="5" alt="Portrait of Olaf Janssen in 2018."/>
+
+<img src="media/kblogo.png" align="right" hspace="20" width="150" alt="Logo of the KB, the national library of the Netherlands"/>
+
+Olaf Janssen is the [Wikimedia coördinator](https://www.kb.nl/over-ons/experts/olaf-janssen) of the KB, the national library of the Netherlands. He contributes to [Wikipedia](https://nl.wikipedia.org/wiki/Wikipedia:GLAM/Koninklijke_Bibliotheek_en_Nationaal_Archief), [Wikimedia Commons](https://commons.wikimedia.org/wiki/Commons:Koninklijke_Bibliotheek) and [Wikidata](https://www.wikidata.org/wiki/Wikidata:GLAM/Koninklijke_Bibliotheek_Nederland) as [User:OlafJanssen](https://commons.wikimedia.org/wiki/User:OlafJanssen). ORCID: [0000-0002-9058-9941](https://orcid.org/0000-0002-9058-9941).
+

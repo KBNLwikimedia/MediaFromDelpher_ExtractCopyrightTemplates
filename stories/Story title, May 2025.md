@@ -22,6 +22,10 @@ The most important key figures and findings of this story are:
 
 ## Section 1 
 
+#### What this story aims to do
+
+#### What this story does NOT aim to do
+
 ### Section 1.1 
 
 ## Section 2 
@@ -51,6 +55,8 @@ The text and data visualisations of this article have been released under [Creat
 *Citation*: Janssen, O.D. (2025). ‘xxxxxx. [https://doi.org/10.5281/zenodo.xxxx](https://doi.org/10.5281/zenodo.xxxx).<br/> 
 
 Attribution: *KB, national library of the Netherlands / Olaf Janssen, CC-BY 4.0*
+
+Raw data: CC0, so released into the public domain. You may freely use, adapt, and redistribute it.
 
 ### Identifiers and URLs of this article
 Persistent:
