@@ -1,0 +1,46 @@
+{
+  "title": "Copyright Status of Delpher Media Files",
+  "visualize": {
+    "type": "doughnut",
+    "theme": "datawrapper-theme-pageflow",
+    "dark-mode": "auto",
+    "donut-inner-label": "Number of Files",
+    "color-category": {
+      "map": {
+      "Copyrights expired because of age": "#1093e6",
+      "Copyrights waived or made free": "#d73445",
+      "Government work not subject to copyright": "#00b148",
+      "Not eligible for copyrights due to lack of sufficient originality": "#f2f27e",
+      "Other reasons": "#ff7f0e"
+      },
+      "categoryOrder": [
+        "Copyrights expired because of age",
+        "Copyrights waived or made free",
+        "Government work, not subject to copyright",
+        "Not eligible for copyrights due to lack of sufficient originality",
+        "Other reasons"
+      ]
+    }
+  },
+  "description": {
+    "intro": "This donut chart shows the distribution of Delpher media files across different copyright statuses ('NoCopyrightReason').",
+    "byline": "Olaf Janssen, Wikimedia-coördinator @KB",
+    "source-name": "KB, national library of the Netherlands",
+    "source-url": "https://github.com/KBNLwikimedia/xxxxxx"
+  },
+  "publish": {
+    "embed-options": {
+      "footer": {
+        "show": true,
+        "buttons": ["download-image"]
+      },
+      "download-image": {
+        "enabled": true,
+        "formats": ["png"]
+      },
+      "get-data": {
+        "enabled": false
+      }
+    }
+  }
+}

@@ -48,6 +48,9 @@ Expln how the sxcrit you made helped in trackuing doan all templated that are us
 
 ## Section 3 
 
+<div style="min-height:813px" id="datawrapper-vis-gZqMt"><script type="text/javascript" defer src="https://datawrapper.dwcdn.net/gZqMt/embed.js" charset="utf-8" data-target="#datawrapper-vis-gZqMt"></script><noscript><img src="https://datawrapper.dwcdn.net/gZqMt/full.png" alt="" /></noscript></div>
+
+
 Explan which templates have been found
 
 <div style="min-height:766px" id="datawrapper-vis-PJ96v"><script type="text/javascript" defer src="https://datawrapper.dwcdn.net/PJ96v/embed.js" charset="utf-8" data-target="#datawrapper-vis-PJ96v"></script><noscript><img src="https://datawrapper.dwcdn.net/PJ96v/full.png" alt="This table explains the 39 distinct copyright templates that are used in Wikimedia Commons media files that were sourced from Delpher.The templates are sorted and color-coded by the main reason why they categorize files into the public domain. The template usage is taken &quot;as observed&quot; Data as of 9 April 2025." /></noscript></div>
