@@ -1,0 +1,198 @@
+import os
+import pandas as pd
+from datawrapper import Datawrapper
+from dotenv import load_dotenv
+from pathlib import Path
+import json
+
+def load_and_process_data(excel_path: str, sheet_name: str) -> pd.DataFrame:
+    try:
+        # Load Excel sheet
+        df = pd.read_excel(excel_path, sheet_name=sheet_name)
+
+        # Required columns
+        required_columns = [
+            'Template',
+            'TemplateURL',
+            'Description',
+            'Number of files using this template'
+        ]
+        missing_cols = [col for col in required_columns if col not in df.columns]
+        if missing_cols:
+            raise ValueError(f"Missing required column(s): {', '.join(missing_cols)}")
+
+        # Clean columns
+        df['Template'] = df['Template'].astype(str).str.strip()
+        df['TemplateURL'] = df['TemplateURL'].astype(str).str.strip()
+        df['Description'] = df['Description'].astype(str).str.strip()
+
+        # Drop duplicates to create a summary
+        summary_df = df[[
+            'Template',
+            'TemplateURL',
+            'Description',
+            'Number of files using this template'
+        ]].drop_duplicates(subset='Template')
+
+        # Merge NoCopyrightReason if available
+        if 'NoCopyrightReason' in df.columns:
+            reasons = df[['Template', 'NoCopyrightReason']].drop_duplicates()
+            summary_df = pd.merge(summary_df, reasons, on='Template', how='left')
+        else:
+            summary_df['NoCopyrightReason'] = None
+
+        # Format Template as HTML link
+        summary_df['Template'] = summary_df.apply(
+            lambda row: (
+                f'<a href="{row["TemplateURL"]}" style="color:#b1bfc3;" target="_blank" rel="nofollow noopener">{row["Template"].strip("{}")}</a>'
+                if pd.notnull(row["TemplateURL"]) else row["Template"]
+            ),
+            axis=1
+        )
+
+        # Sort by NoCopyrightReason (A-Z) and Number of files (descending)
+        summary_df = summary_df.sort_values(
+            by=['NoCopyrightReason', 'Number of files using this template'],
+            ascending=[True, False]
+        )
+
+        # Drop column before upload
+        summary_df = summary_df.drop(columns=['Number of files using this template'])
+
+        # Final column order
+        return summary_df[[
+            'Template',
+            'NoCopyrightReason',
+            'Description',
+        ]]
+
+    except Exception as e:
+        print(f"❌ Error in load_and_process_data(): {e}")
+        return pd.DataFrame()
+
+
+def update_datawrapper_chart(dw: Datawrapper, chart_id: str, data: pd.DataFrame, config: dict):
+    dw.add_data(chart_id=chart_id, data=data)
+
+    dw.update_chart(
+        chart_id=chart_id,
+        title=config.get("title", "Datawrapper Table"),
+        metadata={
+            "visualize": config.get("visualize", {}),
+            "annotate": config.get("annotate", {}),
+            "publish": config.get("publish", {})
+        }
+    )
+
+    desc = config.get("description", {})
+    dw.update_description(
+        chart_id=chart_id,
+        intro=desc.get("intro", ""),
+        byline=desc.get("byline", ""),
+        source_name=desc.get("source-name", ""),
+        source_url=desc.get("source-url", ""),
+        aria_description=desc.get("aria-description", "")
+    )
+
+    dw.publish_chart(chart_id=chart_id)
+    print(f"✅ Chart '{config.get('title', 'Datawrapper Table')}' updated and published successfully.")
+
+
+def get_responsive_embed_code(dw, chart_id: str) -> str | None:
+    """
+    Fetch the responsive iframe embed code for a published Datawrapper chart.
+
+    Parameters:
+        dw (Datawrapper): An instance of the Datawrapper API client.
+        chart_id (str): The public or internal ID of the Datawrapper chart.
+
+    Returns:
+        str | None: The responsive embed code if available, or None if not found or an error occurred.
+    """
+    try:
+        chart_info = dw.get_chart(chart_id)
+        embed_codes = chart_info.get("metadata", {}).get("publish", {}).get("embed-codes", {})
+        script_embed = embed_codes.get("embed-method-web-component", None)
+
+        if script_embed:
+            return script_embed
+        else:
+            print("❌ Script embed code not found. Make sure the chart is published.")
+            return None
+
+    except Exception as e:
+        print(f"❌ Error retrieving embed code: {e}")
+        return None
+
+
+def main():
+    try:
+        load_dotenv()
+        DW_API_TOKEN = os.getenv("DW_API_TOKEN")
+        if not DW_API_TOKEN:
+            raise ValueError("DW_API_TOKEN not found in environment variables.")
+
+        # Define paths
+        ROOT_DIR = Path(__file__).resolve().parent.parent
+        DATA_DIR = ROOT_DIR / "data"
+        SCRIPT_DIR = Path(__file__).resolve().parent
+        CONFIG_PATH = SCRIPT_DIR / "template_explanation-table-config.json"
+        EXCEL_PATH = DATA_DIR / "Media_from_Delpher-Extracted_copyright_templates-09042025-cleaned-processed.xlsx"
+        SHEET_NAME = "templates_dedup"
+        CHART_ID = "PJ96v" # Make sure you have already created a chart with this ID in Datawrapper, chart of type "Table"
+
+        # Load config JSON
+        try:
+            with open(CONFIG_PATH, "r", encoding="utf-8") as f:
+                config = json.load(f)
+        except Exception as e:
+            raise RuntimeError(f"Failed to load config from {CONFIG_PATH}: {e}")
+
+        # Load and process data
+        try:
+            df = load_and_process_data(EXCEL_PATH, sheet_name=SHEET_NAME)
+            if df.empty:
+                raise ValueError("Processed DataFrame is empty. Check the source Excel data.")
+        except Exception as e:
+            raise RuntimeError(f"Error loading or processing Excel data: {e}")
+
+        # Initialize Datawrapper client
+        try:
+            dw = Datawrapper(access_token=DW_API_TOKEN)
+        except Exception as e:
+            raise RuntimeError(f"Failed to authenticate with Datawrapper API: {e}")
+
+        try:
+            #Request full chart metadata
+            # Fetch full chart metadata
+            chart_metadata = dw.get_chart(chart_id=CHART_ID)
+            # Extract only the 'visualize' part
+            #visualize_config = chart_metadata.get("metadata", {}).get("visualize", {})
+            #print(json.dumps(visualize_config, indent=2))
+
+        except Exception as e:
+            raise RuntimeError(f"Chart data could not be requested from Datawrapper API: {e}")
+
+        # Update and publish chart
+        try:
+            #print("aaaaaaaaaaaaaaaaaaaaaaaaaaaaa")
+            update_datawrapper_chart(dw, chart_id=CHART_ID, data=df, config=config)
+        except Exception as e:
+            raise RuntimeError(f"Failed to update or publish Datawrapper chart '{CHART_ID}': {e}")
+
+        # Fetch and print embed code
+        try:
+            embed_html = get_responsive_embed_code(dw, CHART_ID)
+            if embed_html:
+                print(f"\n📎 Responsive Embed Code:\n{embed_html}")
+            else:
+                print("⚠️ Embed code not available (chart may not be published yet).")
+        except Exception as e:
+            print(f"❌ Could not retrieve embed code: {e}")
+
+    except Exception as e:
+        print(f"\n🚨 Unhandled error in main(): {e}")
+
+
+if __name__ == "__main__":
+    main()

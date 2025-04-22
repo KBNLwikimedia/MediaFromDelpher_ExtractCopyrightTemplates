@@ -1,44 +1,57 @@
 """
-📊 Delpher Copyright Template Visualization Script
+📊 Delpher Copyright Template Visualization Script (Datawrapper Integration)
 
-This script processes an Excel dataset containing Wikimedia Commons file metadata,
-counts the usage of copyright license templates, enriches the data with reasons for
-public domain status, and visualizes the results using the Datawrapper API.
+This Python module processes an Excel dataset of Wikimedia Commons media files sourced from Delpher,
+analyzes the usage of copyright templates, and visualizes the results using the Datawrapper API.
 
-It performs the following steps:
-- Reads Excel data from a /data/ directory relative to the script
+Core Features:
+--------------
+- Reads metadata from an Excel file in the /data directory
 - Counts how often each copyright template appears
-- Merges additional information like TemplateURL and NoCopyrightReason
-- Formats the output as HTML for linking in charts
-- Generates usage statistics (e.g., total templates, unique files, top template)
-- Outputs a summary CSV for use in visualization
-- Loads chart config from a JSON file in /scripts/
-- Updates or creates a Datawrapper chart and publishes it
-- Outputs a responsive embed code for easy integration
+- Merges template metadata (TemplateURL, NoCopyrightReason)
+- Outputs a formatted summary DataFrame, optionally saved to CSV
+- Computes key usage statistics (e.g., most used template, unique file counts)
+- Loads chart configuration from a JSON file in /scripts/
+- Replaces placeholder variables in the config with live stats (e.g., {total_template_usages})
+- Uploads the summary to Datawrapper (no need to save a CSV)
+- Updates and publishes a chart, returning the responsive embed code
 
-Modules used:
-- `pathlib` for cross-platform path handling
-- `pandas` for data manipulation
-- `dotenv` for API token management
-- `datawrapper` (official library) for publishing charts
-
-Expected directory structure:
+Directory Structure:
+--------------------
 project-root/
 ├── data/
-│   └── input Excel + output CSV
+│   └── Excel input file + optional output CSV
 ├── scripts/
-│   └── this script + chart config JSON + chart ID file
+│   ├── this script
+│   ├── template_usage_summary-config.json  (chart settings)
+│   └── .env                                (contains DW_API_TOKEN)
 
-Run this script from the CLI to regenerate and publish the chart.
+Modules Used:
+-------------
+- `pandas` for data manipulation
+- `pathlib` for cross-platform path handling
+- `dotenv` to load secure API keys
+- `datawrapper` for API interaction with https://app.datawrapper.de
+- `json` for configuration injection
+
+Chart Output:
+-------------
+✅ Chart is updated and published on Datawrapper.
+📎 Responsive embed code is printed to console for easy reuse.
+
+Example Chart:
+--------------
+https://www.datawrapper.de/_/UewJt/
 
 Author:
-- Olaf Janssen, Wikimedia coordinator @KB national library of the Netherlands (assisted by ChatGPT)
-- Last updated: 17 April 2025
-- User-Agent: OlafJanssenBot/1.0
-
-License:
- - This script is released into the public domain (CC0-style). Free to reuse, adapt, and distribute.
+-------
+Olaf Janssen, Wikimedia-coördinator @KB, National Library of the Netherlands
+📅 Last updated: 23 April 2025
+🤖 With assistance from ChatGPT (OpenAI)
+📜 License: CC0 / Public domain — reuse freely
+🔗 User-Agent: OlafJanssenBot/1.0
 """
+
 
 import os
 from datawrapper import Datawrapper #https://datawrapper.readthedocs.io/en/latest/user-guide/api.html
@@ -48,123 +61,181 @@ import json
 from pathlib import Path
 from typing import Tuple
 
-# Root folder is one level up from this script
-ROOT_DIR = Path(__file__).resolve().parent.parent
-# Define folders
-DATA_DIR = ROOT_DIR / "data"
-SCRIPT_DIR = Path(__file__).resolve().parent # the dir this file is in
 
 def count_template_usages(
     excel_path: str,
     sheet_name: str,
-    output_csv: str
+    output_csv: str = None
 ) -> Tuple[pd.DataFrame, dict]:
     """
-    Count how many times each template appears in the dataset and format as HTML for Datawrapper.
-    Also calculates key figures and appends 'NoCopyrightReason' to the output.
+    Summarize the usage of copyright templates from an Excel dataset.
+
+    This function analyzes how often each copyright template is applied across
+    Wikimedia Commons media files, based on data extracted from an Excel sheet.
+
+    It performs the following tasks:
+    - Counts how many files use each unique copyright template.
+    - Builds a summary table with:
+        - Template name (HTML-formatted as a clickable link),
+        - Number of files using the template,
+        - Corresponding Template URL,
+        - Reason for no copyright (NoCopyrightReason).
+    - Sorts the output first by NoCopyrightReason (A–Z), then by template usage (highest first).
+    - Optionally saves the summary table as a CSV file for use in Datawrapper charts.
+    - Computes key usage statistics (e.g., total templates used, number of unique files).
 
     Parameters:
-        excel_path (str): Path to the Excel file.
-        sheet_name (str): Sheet name containing the main data.
-        output_csv (str): Path to save the summary CSV.
+        excel_path (str): Path to the Excel file containing the data.
+        sheet_name (str): Name of the sheet within the Excel file that contains the template usage data.
+        output_csv (str, optional): File path for saving the summary CSV. If None, no file is saved.
 
     Returns:
-        tuple: (summary DataFrame, dictionary of key figures)
-    """
-    try:
-        # Load main data
-        df = pd.read_excel(excel_path, sheet_name=sheet_name)
-        # Check for required columns for this function
-        required_cols = {"Template", "TemplateURL"}
-        missing = required_cols - set(df.columns)
-        if missing:
-            raise ValueError(f"Missing required columns: {missing}")
+        Tuple[pd.DataFrame, dict]:
+            - summary_df (pd.DataFrame): A table summarizing template usage,
+              including template name (HTML link), usage count, URL, and reason.
+            - stats (dict): Dictionary of key usage figures, such as:
+                - total_template_usages (int)
+                - unique_templates_used (int)
+                - total_files_with_templates (int)
+                - total_unique_files (int)
+                - most_used_template (str)
 
-        # Clean up columns
+    Raises:
+        ValueError: If required columns are missing from the input Excel file.
+        Other exceptions are caught internally and will print an error message.
+
+    """
+
+    try:
+        # Load the data
+        df = pd.read_excel(excel_path, sheet_name=sheet_name)
+
+        # Check required columns
+        required_cols = {"Template", "TemplateURL", "NoCopyrightReason", "FileMid", "FileURL"}
+        missing_cols = required_cols - set(df.columns)
+        if missing_cols:
+            raise ValueError(f"Missing required column(s): {', '.join(missing_cols)}")
+
+        # Clean string-type columns
         df["Template"] = df["Template"].astype(str).str.strip()
         df["TemplateURL"] = df["TemplateURL"].astype(str).str.strip()
+        df["NoCopyrightReason"] = df["NoCopyrightReason"].astype(str).str.strip()
 
-        # Count usage
-        summary = df["Template"].value_counts().reset_index()
-        summary.columns = ["Template", "Number of Uses"]
+        # Calculate the number of files using each template
+        usage_counts = df["Template"].value_counts().reset_index()
+        usage_counts.columns = ["Template", "Number of files using this template"]
 
-        # Merge TemplateURL
-        url_map = df.drop_duplicates(subset=["Template"])[["Template", "TemplateURL"]]
-        summary = summary.merge(url_map, on="Template", how="left")
+        # Merge counts with TemplateURL and NoCopyrightReason (remove duplicates first)
+        summary = usage_counts.merge(
+            df[["Template", "TemplateURL", "NoCopyrightReason"]].drop_duplicates(subset=["Template"]),
+            on="Template",
+            how="left"
+        )
 
-        # Add NoCopyrightReason from the templates_dedup sheet
-        try:
-            reasons_df = pd.read_excel(excel_path, sheet_name="templates_dedup", usecols=["Template", "NoCopyrightReason"])
-            reasons_df["Template"] = reasons_df["Template"].astype(str).str.strip()
-            summary = summary.merge(reasons_df, on="Template", how="left")
-        except Exception as e:
-            print(f"⚠️ Could not load NoCopyrightReason data: {e}")
-            summary["NoCopyrightReason"] = None
-
-        # Format HTML labels
+        # Format Template as an HTML link for Datawrapper
         summary["Template"] = summary.apply(
             lambda row: (
-                f'<a href="{row["TemplateURL"]}" style="color:#b1bfc3;", target="_blank" rel="nofollow noopener">{row["Template"].strip("{").strip("}")}</a>'
-                if pd.notnull(row["TemplateURL"]) else row["Template"]
+                f'<a href="{row["TemplateURL"]}" style="color:#b1bfc3;" target="_blank" rel="nofollow noopener">{row["Template"].strip("{}")}</a>'
+                if pd.notnull(row["TemplateURL"]) and row["TemplateURL"] != "" else row["Template"]
             ),
             axis=1
         )
 
-        # Final columns and export
-        summary = summary[["Template", "Number of Uses", "NoCopyrightReason"]]
-        summary["Number of Uses"] = pd.to_numeric(summary["Number of Uses"], errors="coerce")
-        summary.to_csv(output_csv, index=False, encoding="utf-8", sep=";")
-        print(f"✅ Template usage summary saved to: {output_csv}")
+        # Sort summary: first by NoCopyrightReason (A–Z), then by Number of files (desc)
+        summary = summary.sort_values(
+            by=["NoCopyrightReason", "Number of files using this template"],
+            ascending=[True, False]
+        )
 
-        # Generate stats
+        # Export CSV if requested
+        if output_csv:
+            try:
+                summary.to_csv(output_csv, index=False, encoding="utf-8", sep=";")
+                print(f"✅ Template usage summary saved to: {output_csv}")
+            except Exception as e:
+                print(f"⚠️ Failed to save CSV: {e}")
+
+        # Generate key statistics
         stats = generate_template_stats(df, summary)
+
         return summary, stats
 
     except Exception as e:
         print(f"❌ Error in count_template_usages(): {e}")
         return pd.DataFrame(), {}
 
+
 def generate_template_stats(df: pd.DataFrame, summary: pd.DataFrame) -> dict:
     """
-    Generate key figures from the template usage data and print them.
+    Generate key usage statistics from the copyright template dataset.
+
+    This function calculates important summary statistics based on:
+    - The number of times each template is used across files,
+    - The number of unique templates,
+    - The number of unique media files (using either FileURL or FileMid),
+    - The most frequently used template and its count.
+
+    The function expects:
+    - The full input dataset (`df`) containing detailed template usage per file,
+    - The summary table (`summary`) containing pre-calculated template usage counts
+      under the column 'Number of files using this template'.
+
+    The results are printed in a human-readable format and returned as a dictionary
+    for further use (e.g., formatting chart descriptions or annotations).
 
     Parameters:
-        df (pd.DataFrame): Original full dataframe from Excel.
-        summary (pd.DataFrame): Processed summary of template counts.
+        df (pd.DataFrame): The original full dataframe from Excel.
+            Required columns: 'Template', 'FileMid', 'FileURL'.
+        summary (pd.DataFrame): The summary table with template usage counts.
+            Required column: 'Number of files using this template'.
 
     Returns:
-        dict: A dictionary of key usage statistics.
-    """
-    try:
-        # Check for required columns for this function
-        required_cols = {"Template", "FileMid", "FileURL"}
-        missing = required_cols - set(df.columns)
-        if missing:
-            raise ValueError(f"Missing required columns: {missing}")
+        dict: A dictionary containing the following usage statistics:
+            - total_template_usages (int): Total count of template usages (sum across all templates).
+            - unique_templates_used (int): Number of unique templates used.
+            - total_files_with_templates (int): Number of unique FileURL values (media files with at least one template).
+            - total_unique_files (int): Number of unique FileMid values.
+            - most_used_template (str): The template with the highest number of file usages (HTML-formatted label).
+            - most_used_template_count (int): The usage count for the most-used template.
 
-        total_template_usages = len(df)
+    Raises:
+        ValueError: If required columns are missing from either the full data or the summary table.
+    """
+
+    try:
+        # Check for required columns
+        required_cols_df = {"Template", "FileMid", "FileURL"}
+        missing_cols_df = required_cols_df - set(df.columns)
+        if missing_cols_df:
+            raise ValueError(f"Missing required column(s) in the main data: {', '.join(missing_cols_df)}")
+
+        if "Number of files using this template" not in summary.columns:
+            raise ValueError("Summary data is missing 'Number of files using this template' column.")
+
+        # Use the provided summary table for the counts
+        total_template_usages = summary["Number of files using this template"].sum()
         unique_templates_used = df["Template"].nunique()
-        total_files_with_templates = df["FileURL"].nunique() if "FileURL" in df.columns else None
-        total_unique_files = df["FileMid"].nunique() if "FileMid" in df.columns else None
-        most_used_template = summary.sort_values("Number of Uses", ascending=False).iloc[0]["Template"]
+        total_files_with_templates = df["FileURL"].nunique()
+        total_unique_files = df["FileMid"].nunique()
+        most_used_template = summary.iloc[0]["Template"]
+        most_used_template_count = summary.iloc[0]["Number of files using this template"]
 
         stats = {
             "total_template_usages": total_template_usages,
             "unique_templates_used": unique_templates_used,
             "total_files_with_templates": total_files_with_templates,
             "total_unique_files": total_unique_files,
-            "most_used_template": most_used_template
+            "most_used_template": most_used_template,
+            "most_used_template_count": most_used_template_count
         }
 
-        # Pretty print
+        # Pretty print for logging
         print("\n📊 Key Figures:")
-        print(f"• Total template usages (incl. duplicates): {total_template_usages:,}")
+        print(f"• Total template usages (sum of template counts): {total_template_usages:,}")
         print(f"• Unique templates used: {unique_templates_used}")
-        if total_files_with_templates is not None:
-            print(f"• Unique files with templates (based on FileURL): {total_files_with_templates:,}")
-        if total_unique_files is not None:
-            print(f"• Unique files with templates (based on FileMid): {total_unique_files:,}")
-        print(f"• Most used template (HTML label): {most_used_template}")
+        print(f"• Unique files with templates (based on FileURL): {total_files_with_templates:,}")
+        print(f"• Unique files with templates (based on FileMid): {total_unique_files:,}")
+        print(f"• Most used template: {most_used_template} ({most_used_template_count:,} uses)")
 
         return stats
 
@@ -172,39 +243,31 @@ def generate_template_stats(df: pd.DataFrame, summary: pd.DataFrame) -> dict:
         print(f"❌ Failed to generate key stats: {e}")
         return {}
 
-def get_or_create_chart(dw: Datawrapper, chart_id_file: str, title: str, chart_type: str = "split-bars") -> str:
-    """
-    Reuse existing chart ID or create a new one using Datawrapper.
-    """
-    if os.path.exists(chart_id_file):
-        with open(chart_id_file, "r") as f:
-            chart_id = f.read().strip()
-        print(f"📄 Reusing existing chart ID: {chart_id}")
-        return chart_id
 
-    chart = dw.create_chart(title=title, chart_type=chart_type)
-    chart_id = chart['id']
-    with open(chart_id_file, "w") as f:
-        f.write(chart_id)
-    print(f"✅ Created and saved new chart ID: {chart_id}")
-    return chart_id
-
-
-def update_and_publish_chart(dw: Datawrapper, chart_id: str, csv_path: str, config: dict):
+def update_and_publish_chart(
+    dw: Datawrapper,
+    chart_id: str,
+    data: pd.DataFrame,
+    config: dict
+) -> None:
     """
     Uploads data, updates metadata and description, and publishes the chart.
-    Accepts all visual and textual chart configuration as a dictionary.
+
+    This function no longer depends on reading a CSV from disk.
+    Instead, it expects a pandas DataFrame directly as input.
 
     Parameters:
-        dw (Datawrapper): Datawrapper API instance
-        chart_id (str): ID of the chart to update
-        csv_path (str): Path to the CSV file with chart data
-        config (dict): Chart configuration loaded from a JSON file
+        dw (Datawrapper): Datawrapper API instance.
+        chart_id (str): ID of the chart to update.
+        data (pd.DataFrame): DataFrame containing the chart data.
+        config (dict): Chart configuration loaded from a JSON file.
+
+    Raises:
+        Exception: Any errors that occur during the update or publishing process.
     """
     try:
-        # Upload data
-        dw_df = pd.read_csv(csv_path, sep=";")
-        dw.add_data(chart_id=chart_id, data=dw_df)
+        # Upload data directly from DataFrame
+        dw.add_data(chart_id=chart_id, data=data)
 
         # Extract chart title
         title = config.get("title", "Untitled Datawrapper Chart")
@@ -220,7 +283,7 @@ def update_and_publish_chart(dw: Datawrapper, chart_id: str, csv_path: str, conf
             }
         )
 
-        # Apply description
+        # Apply textual description (description block)
         desc = config.get("description", {})
         dw.update_description(
             chart_id=chart_id,
@@ -267,53 +330,85 @@ def get_responsive_embed_code(dw, chart_id: str) -> str | None:
 
 def main():
     """
-    Main execution pipeline for generating a Datawrapper chart.
+    Main execution pipeline for generating and publishing a Datawrapper chart
+    from copyright template usage data.
 
-    This function:
-    - Loads API credentials from .env
-    - Loads chart configuration from JSON
-    - Generates a CSV summary of template usage from an Excel file
-    - Updates the Datawrapper chart metadata and data
-    - Publishes the chart and prints the responsive embed code
+    This function orchestrates the full workflow by:
+    - Loading API credentials securely from a `.env` file.
+    - Reading chart configuration settings from a JSON config file.
+    - Processing an Excel dataset to count how often each copyright template is used.
+    - Generating a usage summary CSV, formatted for Datawrapper.
+    - Dynamically injecting key usage statistics (e.g., total templates, top template)
+      into the chart configuration (title, description, annotations).
+    - Updating an existing Datawrapper chart with the new data and metadata.
+    - Publishing the chart and retrieving the responsive embed code for integration.
+
+    Expected folder structure:
+    project-root/
+    ├── data/             # Contains the Excel source file and output CSV
+    ├── scripts/          # Contains this script, the config JSON, and other helpers
+
+    Environment:
+    - Requires a `.env` file with the `DW_API_TOKEN` set.
+
+    Parameters:
+        None (hardcoded file paths and chart ID within the script).
 
     Raises:
-        ValueError: If the API token is not found
-        RuntimeError: If the config file or any major step fails
+        ValueError: If the Datawrapper API token is missing from the `.env` file.
+        RuntimeError: If loading the config, processing the data, or updating the chart fails.
+        Other exceptions are caught and logged internally.
+
+    Outputs:
+        - Saves the template usage summary as a CSV file.
+        - Updates the specified Datawrapper chart with the summary data.
+        - Prints the responsive embed code for the published chart.
     """
+
     try:
-        # Load environment and fetch API token
+        # Load environment and API token
         load_dotenv()
         DW_API_TOKEN = os.getenv("DW_API_TOKEN")
         if not DW_API_TOKEN:
             raise ValueError("DW_API_TOKEN not found in .env file!")
 
-        # Define file paths
+        # Define paths
+        ROOT_DIR = Path(__file__).resolve().parent.parent
+        DATA_DIR = ROOT_DIR / "data"
+        SCRIPT_DIR = Path(__file__).resolve().parent
+
         EXCEL_PATH = DATA_DIR / "Media_from_Delpher-Extracted_copyright_templates-09042025-cleaned-processed.xlsx"
         EXCEL_SHEET = "files-templates"
-        CSV_EXPORT = DATA_DIR / "template_usage_summary.csv"
-        CHART_ID_FILE = SCRIPT_DIR / "chart_id.txt"
-        CONFIG_PATH = SCRIPT_DIR / "template_usage_summary-chart-config.json"
+        #CSV_EXPORT = DATA_DIR / "template_usage_summary.csv"
+        CONFIG_PATH = SCRIPT_DIR / "template_usage_summary-config.json"
+        CHART_ID = "UewJt"  # Chart ID must exist in Datawrapper
 
-        # Load chart config from JSON
+        # Load chart config
         try:
             with open(CONFIG_PATH, "r", encoding="utf-8") as f:
                 config = json.load(f)
         except Exception as e:
-            raise RuntimeError(f"Failed to load chart config: {e}")
+            raise RuntimeError(f"Failed to load chart config from {CONFIG_PATH}: {e}")
 
         chart_title = config.get("title", "Untitled Datawrapper Chart")
         dw = Datawrapper(access_token=DW_API_TOKEN)
 
         # Generate summary and stats
-        summary_df, stats = count_template_usages(
-            excel_path=EXCEL_PATH,
-            sheet_name=EXCEL_SHEET,
-            output_csv=CSV_EXPORT
-        )
+        try:
+            summary_df, stats = count_template_usages(
+                excel_path=EXCEL_PATH,
+                sheet_name=EXCEL_SHEET
+                #output_csv=CSV_EXPORT
+            )
+        except Exception as e:
+            raise RuntimeError(f"Failed to generate template usage summary: {e}")
 
-        print("📊 Key stats:", stats)
+        if summary_df is None or summary_df.empty:
+            raise RuntimeError("Summary DataFrame is empty. Chart will not be updated.")
 
-        # Format variables into description, annotate, and visualize sections
+        print("\n📊 Key stats:", stats)
+
+        # Inject stats into config placeholders
         for section in ["description", "annotate"]:
             if section in config:
                 config[section] = {
@@ -321,29 +416,31 @@ def main():
                     for k, v in config[section].items()
                 }
 
-        # Special handling for text-annotations (inside visualize)
+        # Handle text annotations (if present)
         if "visualize" in config and "text-annotations" in config["visualize"]:
-            formatted_annotations = []
-            for annotation in config["visualize"]["text-annotations"]:
-                formatted_annotation = {
-                    k: (v.format(**stats) if isinstance(v, str) else v)
-                    for k, v in annotation.items()
-                }
-                formatted_annotations.append(formatted_annotation)
-            config["visualize"]["text-annotations"] = formatted_annotations
+            config["visualize"]["text-annotations"] = [
+                {k: (v.format(**stats) if isinstance(v, str) else v) for k, v in annotation.items()}
+                for annotation in config["visualize"]["text-annotations"]
+            ]
 
         # Update and publish chart
-        if summary_df is not None and not summary_df.empty:
-            chart_id = get_or_create_chart(dw, chart_id_file=CHART_ID_FILE, title=chart_title)
-            update_and_publish_chart(dw, chart_id=chart_id, csv_path=CSV_EXPORT, config=config)
-            embed_html = get_responsive_embed_code(dw, chart_id)
-            print(f"\n📎 Responsive Embed Code:\n{embed_html}")
-        else:
-            print("⚠️ No summary data found — chart was not updated.")
+        try:
+            update_and_publish_chart(
+                dw,
+                chart_id=CHART_ID,
+                data=summary_df,
+                config=config
+            )
+            embed_html = get_responsive_embed_code(dw, CHART_ID)
+            if embed_html:
+                print(f"\n📎 Responsive Embed Code:\n{embed_html}")
+            else:
+                print("⚠️ Chart published, but no embed code was returned.")
+        except Exception as e:
+            raise RuntimeError(f"Failed to update and publish chart: {e}")
 
     except Exception as e:
         print(f"❌ An error occurred during main(): {e}")
-
 
 if __name__ == "__main__":
     main()

@@ -4,7 +4,7 @@ This repo....
 
 
 ## Purpose of this repo
-This script identifies potentially public domain (PD) or PD-like license templates
+This repo can help you to  identify potentially public domain (PD) or PD-like license templates
 in Wikimedia Commons files:
 
 These templates are often indicative of public domain status, but not explicitly
