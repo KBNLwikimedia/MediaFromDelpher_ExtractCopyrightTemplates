@@ -238,7 +238,7 @@
   "donut_center_label": {
     "type": "custom",
     "enabled": true,
-    "custom_text": "6,329 templates are used in<br/>6,248 distinct files",
+    "custom_text": "6,329 claims are used in<br/>6,248 distinct files",
     "single_selected_row": 0
   },
   "gridColumnMinWidth": 200,
