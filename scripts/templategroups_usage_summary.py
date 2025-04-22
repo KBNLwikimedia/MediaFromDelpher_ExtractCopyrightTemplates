@@ -1,3 +1,54 @@
+"""
+📊 Donut Chart Generator: Copyright Template Group Usage (Delpher Media)
+
+This script processes metadata from an Excel dataset about Wikimedia Commons
+media files sourced from Delpher. It summarizes how many media files fall into
+various 'NoCopyrightReason' categories (such as 'Expired copyright',
+'Government work', or 'No originality').
+
+The results are visualized as a grouped usage summary using the Datawrapper API
+in the form of a donut chart. The script directly uploads the summarized data
+to a pre-created Datawrapper chart, updates its metadata, and publishes it.
+
+🚀 Key Features:
+- Reads copyright metadata from an Excel file (processed data).
+- Groups and counts the number of files by 'NoCopyrightReason'.
+- Automatically updates a specific donut chart in Datawrapper via API.
+- Loads configuration (metadata, title, description, color mapping) from a JSON config file.
+- Publishes the chart and prints the responsive embed code.
+
+⚙️ Dependencies:
+- `pandas`: For data processing and aggregation.
+- `pathlib`: For reliable file path handling.
+- `dotenv`: For managing API tokens securely via a `.env` file.
+- `datawrapper`: Official Python client for interacting with Datawrapper charts.
+
+📂 Expected Project Structure:
+project-root/
+├── data/
+│   └── Media_from_Delpher-Extracted_copyright_templates-*.xlsx
+├── scripts/
+│   └── this_script.py
+│   └── templategroups_usage_summary-config.json
+├── .env                   # Contains DW_API_TOKEN
+
+📎 Required Environment Variable:
+- DW_API_TOKEN: Your Datawrapper API access token (stored in .env).
+
+💡 Output:
+- Publishes the updated donut chart directly to your Datawrapper account.
+- Outputs the responsive embed code to paste into your website or wiki.
+
+👤 Author:
+- Olaf Janssen, Wikimedia Coordinator @ KB (National Library of the Netherlands)
+- Assisted by ChatGPT
+- Last updated: 22 April 2025
+
+🆓 License:
+- Released into the public domain (CC0-style). Free to reuse, adapt, and distribute.
+"""
+
+
 from datawrapper import Datawrapper #https://datawrapper.readthedocs.io/en/latest/user-guide/api.html
 from dotenv import load_dotenv
 import os
