@@ -86,9 +86,6 @@ Next., lets';s zoom in on the copyright templates that are used for files that a
  In total theis comprises 24 templates 6191 used in xx distinct files
 
 
-<div style="min-height:766px" id="datawrapper-vis-xxx"><script type="text/javascript" defer src="https://datawrapper.dwcdn.net/PJ96v/embed.js" charset="utf-8" data-target="#datawrapper-vis-xxxxx"></script><noscript><img src="https://datawrapper.dwcdn.net/xxxx/full.png" alt="" /></noscript></div>
-
-
 ## Section 3 
 
 ## Raw data
