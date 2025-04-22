@@ -328,45 +328,65 @@ def get_responsive_embed_code(dw, chart_id: str) -> str | None:
         print(f"❌ Error retrieving embed code: {e}")
         return None
 
-def main():
+
+def load_config(path: Path) -> dict:
+    """Load and return the chart configuration from a JSON file."""
+    try:
+        with open(path, "r", encoding="utf-8") as f:
+            return json.load(f)
+    except Exception as e:
+        raise RuntimeError(f"Failed to load chart config from {path}: {e}")
+
+
+def apply_stats_to_config(config: dict, stats: dict) -> None:
+    """Format and insert statistics into chart config placeholders."""
+    for section in ["description", "annotate"]:
+        if section in config:
+            config[section] = {
+                k: (v.format(**stats) if isinstance(v, str) else v)
+                for k, v in config[section].items()
+            }
+
+    # Handle embedded text annotations
+    if "visualize" in config and "text-annotations" in config["visualize"]:
+        config["visualize"]["text-annotations"] = [
+            {k: (v.format(**stats) if isinstance(v, str) else v) for k, v in annotation.items()}
+            for annotation in config["visualize"]["text-annotations"]
+        ]
+
+def get_chart_visualize_config(dw: Datawrapper, chart_id: str) -> dict:
     """
-    Main execution pipeline for generating and publishing a Datawrapper chart
-    from copyright template usage data.
-
-    This function orchestrates the full workflow by:
-    - Loading API credentials securely from a `.env` file.
-    - Reading chart configuration settings from a JSON config file.
-    - Processing an Excel dataset to count how often each copyright template is used.
-    - Generating a usage summary CSV, formatted for Datawrapper.
-    - Dynamically injecting key usage statistics (e.g., total templates, top template)
-      into the chart configuration (title, description, annotations).
-    - Updating an existing Datawrapper chart with the new data and metadata.
-    - Publishing the chart and retrieving the responsive embed code for integration.
-
-    Expected folder structure:
-    project-root/
-    ├── data/             # Contains the Excel source file and output CSV
-    ├── scripts/          # Contains this script, the config JSON, and other helpers
-
-    Environment:
-    - Requires a `.env` file with the `DW_API_TOKEN` set.
+    Fetch the 'visualize' metadata configuration section of a Datawrapper chart.
 
     Parameters:
-        None (hardcoded file paths and chart ID within the script).
+        dw (Datawrapper): An instance of the Datawrapper API client.
+        chart_id (str): The ID of the chart whose configuration you want to fetch.
+
+    Returns:
+        dict: The 'visualize' configuration section of the chart metadata.
 
     Raises:
-        ValueError: If the Datawrapper API token is missing from the `.env` file.
-        RuntimeError: If loading the config, processing the data, or updating the chart fails.
-        Other exceptions are caught and logged internally.
-
-    Outputs:
-        - Saves the template usage summary as a CSV file.
-        - Updates the specified Datawrapper chart with the summary data.
-        - Prints the responsive embed code for the published chart.
+        RuntimeError: If the chart metadata could not be retrieved or if 'visualize' section is missing.
     """
-
     try:
-        # Load environment and API token
+        chart_metadata = dw.get_chart(chart_id=chart_id)
+        visualize_config = chart_metadata.get("metadata", {}).get("visualize", {})
+
+        if not visualize_config:
+            raise RuntimeError(f"'visualize' section not found in chart metadata for chart ID '{chart_id}'.")
+
+        return visualize_config
+
+    except Exception as e:
+        raise RuntimeError(f"Failed to retrieve 'visualize' config for chart '{chart_id}': {e}")
+
+def main():
+    """
+    Main pipeline to process Excel data, generate summary stats,
+    update a Datawrapper chart, and print the responsive embed code.
+    """
+    try:
+        # Load environment variables
         load_dotenv()
         DW_API_TOKEN = os.getenv("DW_API_TOKEN")
         if not DW_API_TOKEN:
@@ -379,68 +399,54 @@ def main():
 
         EXCEL_PATH = DATA_DIR / "Media_from_Delpher-Extracted_copyright_templates-09042025-cleaned-processed.xlsx"
         EXCEL_SHEET = "files-templates"
-        #CSV_EXPORT = DATA_DIR / "template_usage_summary.csv"
         CONFIG_PATH = SCRIPT_DIR / "template_usage_summary-config.json"
-        CHART_ID = "UewJt"  # Chart ID must exist in Datawrapper
+        CHART_ID = "UewJt"
 
         # Load chart config
-        try:
-            with open(CONFIG_PATH, "r", encoding="utf-8") as f:
-                config = json.load(f)
-        except Exception as e:
-            raise RuntimeError(f"Failed to load chart config from {CONFIG_PATH}: {e}")
+        config = load_config(CONFIG_PATH)
 
-        chart_title = config.get("title", "Untitled Datawrapper Chart")
+        # Authenticate Datawrapper client
         dw = Datawrapper(access_token=DW_API_TOKEN)
 
-        # Generate summary and stats
+        # === Print existing chart metadata, visualize part ===
         try:
-            summary_df, stats = count_template_usages(
-                excel_path=EXCEL_PATH,
-                sheet_name=EXCEL_SHEET
-                #output_csv=CSV_EXPORT
-            )
+            visualize_config = get_chart_visualize_config(dw, CHART_ID)
+            print(json.dumps(visualize_config, indent=2))
         except Exception as e:
-            raise RuntimeError(f"Failed to generate template usage summary: {e}")
+            print(e)
 
-        if summary_df is None or summary_df.empty:
+        # Generate summary and stats
+        summary_df, stats = count_template_usages(
+            excel_path=EXCEL_PATH,
+            sheet_name=EXCEL_SHEET
+        )
+
+        if summary_df.empty:
             raise RuntimeError("Summary DataFrame is empty. Chart will not be updated.")
 
         print("\n📊 Key stats:", stats)
 
-        # Inject stats into config placeholders
-        for section in ["description", "annotate"]:
-            if section in config:
-                config[section] = {
-                    k: (v.format(**stats) if isinstance(v, str) else v)
-                    for k, v in config[section].items()
-                }
-
-        # Handle text annotations (if present)
-        if "visualize" in config and "text-annotations" in config["visualize"]:
-            config["visualize"]["text-annotations"] = [
-                {k: (v.format(**stats) if isinstance(v, str) else v) for k, v in annotation.items()}
-                for annotation in config["visualize"]["text-annotations"]
-            ]
+        # Inject stats into config (description, annotate, and text-annotations)
+        apply_stats_to_config(config, stats)
 
         # Update and publish chart
-        try:
-            update_and_publish_chart(
-                dw,
-                chart_id=CHART_ID,
-                data=summary_df,
-                config=config
-            )
-            embed_html = get_responsive_embed_code(dw, CHART_ID)
-            if embed_html:
-                print(f"\n📎 Responsive Embed Code:\n{embed_html}")
-            else:
-                print("⚠️ Chart published, but no embed code was returned.")
-        except Exception as e:
-            raise RuntimeError(f"Failed to update and publish chart: {e}")
+        update_and_publish_chart(
+            dw=dw,
+            chart_id=CHART_ID,
+            data=summary_df,
+            config=config
+        )
+
+        # Print responsive embed code
+        embed_html = get_responsive_embed_code(dw, CHART_ID)
+        if embed_html:
+            print(f"\n📎 Responsive Embed Code:\n{embed_html}")
+        else:
+            print("⚠️ Chart published, but no embed code was returned.")
 
     except Exception as e:
         print(f"❌ An error occurred during main(): {e}")
+
 
 if __name__ == "__main__":
     main()

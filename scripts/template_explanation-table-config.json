@@ -425,7 +425,7 @@
   "range-annotations": [],
   "firstColumnIsSticky": false
 },
-  "annotate": {
+"annotate": {
     "notes": "(*) Media files in <u><a href='https://commons.wikimedia.org/wiki/Category:Media_from_Delpher' style='color:#b1bfc3'; target='_blank' rel='nofollow noopener'>Category:Media from Delpher</a></u> <br/>(**) This table and its underlying data <u>exclude</u> any files that are also in the <u><a href='https://commons.wikimedia.org/wiki/Category:Scans_from_the_Internet_Archive' style='color:#b1bfc3'; target='_blank' rel='nofollow noopener'>Category:Scans from the Internet Archive</a></u>. See for instance the excluded file <u><a href='https://commons.wikimedia.org/entity/M109025843' style='color:#b1bfc3'; target='_blank' rel='nofollow noopener'>https://commons.wikimedia.org/entity/M109025843</a></u> that falls in both categories. <br/>(***) The template usage is taken 'as observed', ie. without further assessment, judgement or corrections. This means that the usage of these templates in Wikimedia Commons files has not been checked for correctness or completeness, nor have any files been adapted in case public domain claims were false or inconsistent."
   },
   "publish": {

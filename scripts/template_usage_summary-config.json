@@ -7,53 +7,252 @@
     "source-url": "https://github.com/KBNLwikimedia/xxxxxx",
     "aria-description": "This chart shows how often which copyright templates are used in Wikimedia Commons media files that were sourced from Delpher. The bars are grouped by the main reason why the files are in the public domain. The template usage is taken \"as observed\". The 3 key figures are: 1) Total number of distinct media files: {total_unique_files:,}. 2) Total number of template usages: {total_template_usages:,} (one file can contain multiple copyright templates). 3) Total number of distinct templates used: {unique_templates_used}. Data as of 9 April 2025."
     },
-  "visualize": {
-  "theme": "datawrapper-theme-pageflow",
-  "dark-mode": "auto",
+"visualize": {
+  "dark-mode-invert": true,
+  "highlighted-series": [],
+  "highlighted-values": [],
+  "sharing": {
+    "enabled": false,
+    "url": "https://www.datawrapper.de/_/UewJt",
+    "auto": false
+  },
   "grid": "x",
-  "value-position": "inside-end",
-  "show-group-labels": true,
-  "show-category-labels": true,
+  "rows": {},
+  "sort": {
+    "by": "end",
+    "enabled": false,
+    "reverse": false
+  },
+  "group": {
+    "num_slices": 5
+  },
+  "rules": false,
+  "theme": "datawrapper-theme-pageflow",
+  "thick": false,
+  "header": {
+    "style": {
+      "bold": true,
+      "color": false,
+      "italic": false,
+      "fontSize": 1.1,
+      "background": false
+    },
+    "borderTop": "none",
+    "borderBottom": "2px",
+    "borderTopColor": "#333333",
+    "borderBottomColor": "#333333"
+  },
+  "legend": {
+    "size": 170,
+    "title": "",
+    "labels": "ranges",
+    "enabled": false,
+    "reverse": false,
+    "labelMax": "high",
+    "labelMin": "low",
+    "position": "above",
+    "hideItems": [],
+    "interactive": false,
+    "labelCenter": "medium",
+    "customLabels": []
+  },
+  "panels": {},
+  "x-grid": "off",
+  "y-grid": "on",
+  "columns": {},
+  "heatmap": {
+    "map": {},
+    "mode": "continuous",
+    "stops": "equidistant",
+    "colors": [],
+    "palette": 0,
+    "rangeMax": "",
+    "rangeMin": "",
+    "stopCount": 5,
+    "hideValues": false,
+    "customStops": [],
+    "rangeCenter": "",
+    "categoryOrder": [],
+    "interpolation": "equidistant",
+    "categoryLabels": {}
+  },
+  "perPage": 20,
+  "sort-by": "first",
+  "striped": false,
+  "category": "direct",
+  "markdown": false,
+  "overlays": [],
+  "pie_size": {
+    "inside_labels": 75,
+    "outside_labels": 50
+  },
+  "showRank": false,
+  "color-key": true,
+  "color_key": {
+    "stack": false,
+    "enabled": true,
+    "position": "top",
+    "label_values": false
+  },
+  "dark-mode": "auto",
+  "normalize": false,
+  "sort-bars": false,
+  "sortTable": false,
   "background": true,
+  "base-color": "#b1bfc3",
+  "force-grid": true,
+  "grid-lines": "show",
+  "gridLayout": "fixedCount",
+  "highlights": [],
+  "pagination": {
+    "enabled": true,
+    "position": "top"
+  },
+  "searchable": false,
+  "showHeader": true,
+  "bar-padding": 60,
+  "label-space": 30,
+  "mirror-bars": false,
+  "slice_order": "descending",
+  "sort-values": false,
+  "swap-labels": false,
+  "valueLabels": {
+    "show": "hover",
+    "format": "0,0.[00]",
+    "enabled": false,
+    "placement": "outside",
+    "preventOverlap": true
+  },
+  "yAxisLabels": {
+    "enabled": true,
+    "alignment": "left",
+    "placement": "outside"
+  },
+  "block-labels": false,
+  "connect-bars": false,
+  "custom-range": [
+    "0",
+    "200"
+  ],
+  "custom-ticks": "",
+  "grid-lines-x": {
+    "type": "ticks",
+    "enabled": false
+  },
+  "range-extent": "nice",
+  "show_percent": false,
+  "thick-arrows": false,
+  "totalsLabels": false,
+  "inside_labels": {
+    "enabled": true
+  },
+  "negativeColor": {
+    "value": "#E31A1C",
+    "enabled": false
+  },
+  "replace-flags": {
+    "style": "1x1",
+    "enabled": false
+  },
+  "reverse-order": false,
+  "rotate-labels": "auto",
+  "show-tooltips": true,
+  "sortDirection": "desc",
+  "tick-position": "top",
+  "totals-labels": false,
+  "x-grid-format": "auto",
+  "x-grid-labels": "on",
+  "y-grid-format": "auto",
+  "y-grid-labels": "inside",
+  "absolute-scale": false,
+  "categoryLabels": {
+    "enabled": true,
+    "position": "direct"
+  },
+  "chart-type-set": true,
   "color-category": {
     "map": {
-      "Copyrights expired because of age": "#1093e6",
+      "Other reasons": "#ff7f0e",
       "Copyrights waived or made free": "#d73445",
-      "Government work not subject to copyright": "#00b148",
-      "Not eligible for copyrights due to lack of sufficient originality": "#f2f27e",
-      "Other reasons": "#ff7f0e"
+      "Lack of sufficient originality": "#f2f27e",
+      "Copyrights expired because of age": "#1093e6",
+      "Government work, not subject to copyright": "#008f00",
+      "Not eligible for copyrights due to lack of sufficient originality": "#f2f27e"
     },
-    "categoryOrder": [
+    "palette": [],
+    "categoryOrder": [],
+    "categoryLabels": {},
+    "excludeFromKey": [
       "Copyrights expired because of age",
-      "Copyrights waived or made free",
-      "Government work not subject to copyright",
       "Not eligible for copyrights due to lack of sufficient originality",
       "Other reasons"
     ]
   },
+  "custom-range-x": [
+    "",
+    ""
+  ],
+  "custom-range-y": [
+    "",
+    ""
+  ],
+  "custom-ticks-x": "",
+  "custom-ticks-y": "",
+  "mobileFallback": false,
+  "outside_labels": {
+    "edge": false,
+    "color": false,
+    "enabled": false
+  },
+  "plotHeightMode": "fixed",
+  "rotation_angle": 0,
+  "series-padding": 60,
+  "show-color-key": true,
+  "value-position": "inside-end",
+  "xGridAlignment": "baseline",
   "color-by-column": true,
+  "donut_hole_size": 50,
+  "gridColumnCount": 4,
   "group-by-column": "NoCopyrightReason",
+  "label-alignment": "left",
+  "mergeEmptyCells": false,
+  "plotHeightFixed": 319,
+  "plotHeightRatio": 0.5,
+  "small_multiples": {
+    "group_value_label": {
+      "type": "total",
+      "enabled": false,
+      "single_selected_row": 0
+    },
+    "min_col_grid_width": 120
+  },
+  "value-alignment": "right",
+  "colorPanelTitles": false,
+  "firstRowIsHeader": false,
+  "panelSortIndexes": {},
   "text-annotations": [
     {
       "bg": false,
       "dx": -29,
       "dy": 80,
+      "id": "tmf0h76g1l",
       "bold": false,
       "size": 14,
-      "text": "Example: The copyright template <a href='https://commons.wikimedia.org/wiki/Template:PD-old-70' style='color:#b1bfc3'; target='_blank' rel='nofollow noopener'>{{{{PD-old-70}}}}</a> is used 734 times across {total_unique_files:,} files. It indicates that a work is in the public domain in its country of origin and other countries and areas where the copyright term is the author's life plus 70 years or fewer.",
+      "text": "Example: The copyright template <a href='https://commons.wikimedia.org/wiki/Template:PD-old-70' style='color:#b1bfc3'; target='_blank' rel='nofollow noopener'>{{{{PD-old-70}}}}</a> is used 734 times across 6,248 files. It indicates that a work is in the public domain in its country of origin and other countries and areas where the copyright term is the author's life plus 70 years or fewer.",
       "align": "tl",
       "color": false,
       "width": 60,
       "italic": false,
-      "text-shadow": false,
       "position": {
         "x": "690",
+        "group": "Copyrights expired because of age",
         "rowIndex": 3,
         "rowOffset": 7
       },
       "underline": false,
       "showMobile": true,
       "showDesktop": true,
+      "text-shadow": false,
       "connectorLine": {
         "type": "straight",
         "circle": false,
@@ -67,10 +266,48 @@
       },
       "mobileFallback": true
     }
-  ]
-}
-,
-  "annotate": {
+  ],
+  "value-label-mode": "left",
+  "axis-label-format": "",
+  "custom-area-fills": [],
+  "custom-grid-lines": "",
+  "date-label-format": "YYYY",
+  "gridRowHeightMode": "fixed",
+  "label_text_slices": true,
+  "range-annotations": [],
+  "show-group-labels": true,
+  "show-value-labels": true,
+  "stack-percentages": false,
+  "donut_center_label": {
+    "type": "total",
+    "enabled": false,
+    "custom_text": "",
+    "single_selected_row": 0
+  },
+  "gridColumnMinWidth": 200,
+  "gridRowHeightFixed": 140,
+  "gridRowHeightRatio": 1,
+  "independent-scales": true,
+  "independentYScales": false,
+  "space-between-cols": 21,
+  "stack-color-legend": false,
+  "value-label-format": "0,0.[00]",
+  "y-grid-label-align": "left",
+  "firstColumnIsSticky": false,
+  "label_values_slices": true,
+  "compact-group-labels": false,
+  "reverse-color-legend": false,
+  "show-category-labels": true,
+  "syncMultipleTooltips": true,
+  "xGridLabelAllColumns": false,
+  "yGridLabelAllColumns": false,
+  "gridColumnCountMobile": 2,
+  "value-label-alignment": "right",
+  "totals-labels-position": "before",
+  "value-label-visibility": "always",
+  "independentYScalesRounded": true
+},
+"annotate": {
     "notes": "(*) Media files in <u><a href='https://commons.wikimedia.org/wiki/Category:Media_from_Delpher' style='color:#b1bfc3'; target='_blank' rel='nofollow noopener'>Category:Media from Delpher</a></u>. <br/>(**) The template usage is taken 'as observed', ie. without further assessment, judgement or corrections. This means that the usage of these templates in the {total_unique_files:,} Wikimedia Commons files has not been checked for correctness or completeness, nor have any files been adapted in case public domain claims were false or inconsistent.<br/>(***) This chart and its underlying data <u>exclude</u> any files that are also in the <u><a href='https://commons.wikimedia.org/wiki/Category:Scans_from_the_Internet_Archive' style='color:#b1bfc3'; target='_blank' rel='nofollow noopener'>Category:Scans from the Internet Archive</a></u>. See for instance the excluded file <u><a href='https://commons.wikimedia.org/entity/M109025843' style='color:#b1bfc3'; target='_blank' rel='nofollow noopener'>https://commons.wikimedia.org/entity/M109025843</a></u> that falls in both categories."
   },
   "publish": {

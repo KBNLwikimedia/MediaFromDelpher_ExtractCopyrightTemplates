@@ -1,13 +1,9 @@
-
-
-
-import os
 from datawrapper import Datawrapper #https://datawrapper.readthedocs.io/en/latest/user-guide/api.html
 from dotenv import load_dotenv
-import pandas as pd
+import os
 import json
 from pathlib import Path
-from typing import Tuple
+import pandas as pd
 
 def count_nocopyrightreason_usage(
     excel_path: str,
@@ -126,62 +122,104 @@ def get_responsive_embed_code(dw, chart_id: str) -> str | None:
         print(f"❌ Error retrieving embed code: {e}")
         return None
 
-def main():
 
+def load_api_token() -> str:
+    """Load the API token securely from the .env file."""
+    load_dotenv()
+    token = os.getenv("DW_API_TOKEN")
+    if not token:
+        raise ValueError("DW_API_TOKEN not found in .env file!")
+    return token
+
+def load_chart_config(config_path: Path) -> dict:
+    """Load the chart configuration from the given JSON file."""
+    with open(config_path, "r", encoding="utf-8") as f:
+        return json.load(f)
+
+def authenticate_datawrapper(api_token: str) -> Datawrapper:
+    """Initialize the Datawrapper client."""
+    return Datawrapper(access_token=api_token)
+
+def check_chart_exists(dw: Datawrapper, chart_id: str) -> None:
+    """Check if the given chart ID exists in Datawrapper."""
+    dw.get_chart(chart_id=chart_id)  # Will raise if chart does not exist
+
+def get_chart_visualize_config(dw: Datawrapper, chart_id: str) -> dict:
+    """
+    Fetch the 'visualize' configuration section of a Datawrapper chart.
+
+    Parameters:
+        dw (Datawrapper): An instance of the Datawrapper API client.
+        chart_id (str): The ID of the chart whose configuration you want to fetch.
+
+    Returns:
+        dict: The 'visualize' configuration section of the chart metadata.
+
+    Raises:
+        RuntimeError: If the chart metadata could not be retrieved or if 'visualize' section is missing.
+    """
     try:
-        # Load environment and API token
-        load_dotenv()
-        DW_API_TOKEN = os.getenv("DW_API_TOKEN")
-        if not DW_API_TOKEN:
-            raise ValueError("DW_API_TOKEN not found in .env file!")
+        chart_metadata = dw.get_chart(chart_id=chart_id)
+        visualize_config = chart_metadata.get("metadata", {}).get("visualize", {})
 
-        # Define paths
+        if not visualize_config:
+            raise RuntimeError(f"'visualize' section not found in chart metadata for chart ID '{chart_id}'.")
+
+        return visualize_config
+
+    except Exception as e:
+        raise RuntimeError(f"Failed to retrieve 'visualize' config for chart '{chart_id}': {e}")
+
+
+def main():
+    """
+    Main execution for generating and publishing the donut chart (template groups summary).
+    """
+    try:
+        # === Setup paths ===
         ROOT_DIR = Path(__file__).resolve().parent.parent
         DATA_DIR = ROOT_DIR / "data"
         SCRIPT_DIR = Path(__file__).resolve().parent
-
         EXCEL_PATH = DATA_DIR / "Media_from_Delpher-Extracted_copyright_templates-09042025-cleaned-processed.xlsx"
-        EXCEL_SHEET = "files-templates"
-        #CSV_EXPORT = DATA_DIR / "template_usage_summary.csv"
         CONFIG_PATH = SCRIPT_DIR / "templategroups_usage_summary-config.json"
-        CHART_ID = "gZqMt"  # Chart ID must exist in Datawrapper, create it via the GIU first
+        EXCEL_SHEET = "files-templates"
+        CHART_ID = "gZqMt"
 
-        # Load chart config
-        try:
-            with open(CONFIG_PATH, "r", encoding="utf-8") as f:
-                config = json.load(f)
-        except Exception as e:
-            raise RuntimeError(f"Failed to load chart config from {CONFIG_PATH}: {e}")
-
+        # === Load environment and config ===
+        api_token = load_api_token()
+        config = load_chart_config(CONFIG_PATH)
         chart_title = config.get("title", "Untitled Datawrapper Chart")
-        dw = Datawrapper(access_token=DW_API_TOKEN)
 
-        # Generate summary and stats
+        # === Init Datawrapper and validate chart ===
+        dw = authenticate_datawrapper(api_token)
+        check_chart_exists(dw, chart_id=CHART_ID)
+
+        # === Print chart metadata, visualize part ===
         try:
-            reason_summary_df = count_nocopyrightreason_usage(EXCEL_PATH, EXCEL_SHEET)
+            visualize_config = get_chart_visualize_config(dw, CHART_ID)
+            print(json.dumps(visualize_config, indent=2))
         except Exception as e:
-            raise RuntimeError(f"Failed to generate template usage summary: {e}")
+            print(e)
 
+        # === Prepare data ===
+        reason_summary_df = count_nocopyrightreason_usage(EXCEL_PATH, EXCEL_SHEET)
         if reason_summary_df is None or reason_summary_df.empty:
             raise RuntimeError("Summary DataFrame is empty. Chart will not be updated.")
 
+        # === Update and publish chart ===
+        update_and_publish_chart(
+            dw=dw,
+            chart_id=CHART_ID,
+            data=reason_summary_df,
+            config=config
+        )
 
-        # Update and publish chart
-        try:
-            if not reason_summary_df.empty:
-                update_and_publish_chart(
-                    dw=dw,
-                    chart_id=CHART_ID,
-                    data=reason_summary_df,
-                    config=config # Should be your donut-specific config dict
-                )
-            embed_html = get_responsive_embed_code(dw, CHART_ID)
-            if embed_html:
-                print(f"\n📎 Responsive Embed Code:\n{embed_html}")
-            else:
-                print("⚠️ Chart published, but no embed code was returned.")
-        except Exception as e:
-            raise RuntimeError(f"Failed to update and publish chart: {e}")
+        # === Retrieve embed code ===
+        embed_html = get_responsive_embed_code(dw, CHART_ID)
+        if embed_html:
+            print(f"\n📎 Responsive Embed Code:\n{embed_html}")
+        else:
+            print("⚠️ Chart published, but no embed code was returned.")
 
     except Exception as e:
         print(f"❌ An error occurred during main(): {e}")

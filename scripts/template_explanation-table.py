@@ -125,73 +125,96 @@ def get_responsive_embed_code(dw, chart_id: str) -> str | None:
         return None
 
 
-def main():
-    try:
-        load_dotenv()
-        DW_API_TOKEN = os.getenv("DW_API_TOKEN")
-        if not DW_API_TOKEN:
-            raise ValueError("DW_API_TOKEN not found in environment variables.")
+def load_api_token() -> str:
+    """Load the Datawrapper API token from .env."""
+    load_dotenv()
+    token = os.getenv("DW_API_TOKEN")
+    if not token:
+        raise ValueError("DW_API_TOKEN not found in environment variables.")
+    return token
 
-        # Define paths
+def load_config(config_path: Path) -> dict:
+    """Load chart configuration from JSON file."""
+    with open(config_path, "r", encoding="utf-8") as f:
+        return json.load(f)
+
+def init_datawrapper(api_token: str) -> Datawrapper:
+    """Initialize the Datawrapper API client."""
+    return Datawrapper(access_token=api_token)
+
+def get_chart_visualize_config(dw: Datawrapper, chart_id: str) -> dict:
+    """
+    Fetch the 'visualize' configuration section of a Datawrapper chart.
+
+    Parameters:
+        dw (Datawrapper): An instance of the Datawrapper API client.
+        chart_id (str): The ID of the chart whose configuration you want to fetch.
+
+    Returns:
+        dict: The 'visualize' configuration section of the chart metadata.
+
+    Raises:
+        RuntimeError: If the chart metadata could not be retrieved or if 'visualize' section is missing.
+    """
+    try:
+        chart_metadata = dw.get_chart(chart_id=chart_id)
+        visualize_config = chart_metadata.get("metadata", {}).get("visualize", {})
+
+        if not visualize_config:
+            raise RuntimeError(f"'visualize' section not found in chart metadata for chart ID '{chart_id}'.")
+
+        return visualize_config
+
+    except Exception as e:
+        raise RuntimeError(f"Failed to retrieve 'visualize' config for chart '{chart_id}': {e}")
+
+def main():
+    """
+    Main execution pipeline for generating and publishing a Datawrapper chart.
+    Streamlined error handling using helper functions.
+    """
+    try:
+        # === Setup paths ===
         ROOT_DIR = Path(__file__).resolve().parent.parent
         DATA_DIR = ROOT_DIR / "data"
         SCRIPT_DIR = Path(__file__).resolve().parent
         CONFIG_PATH = SCRIPT_DIR / "template_explanation-table-config.json"
         EXCEL_PATH = DATA_DIR / "Media_from_Delpher-Extracted_copyright_templates-09042025-cleaned-processed.xlsx"
         SHEET_NAME = "templates_dedup"
-        CHART_ID = "PJ96v" # Make sure you have already created a chart with this ID in Datawrapper, chart of type "Table"
+        CHART_ID = "PJ96v"
 
-        # Load config JSON
+        # === Load config and initialize ===
+        api_token = load_api_token()
+        config = load_config(CONFIG_PATH)
+        dw = init_datawrapper(api_token)
+
+        # === Load and process data ===
+        df = load_and_process_data(EXCEL_PATH, sheet_name=SHEET_NAME)
+        if df.empty:
+            raise ValueError("Processed DataFrame is empty. Check the source Excel data.")
+
+        # === Optional: Check chart exists ===
+        chart_metadata = dw.get_chart(chart_id=CHART_ID)
+
+        # === Print chart metadata, visualize part ===
         try:
-            with open(CONFIG_PATH, "r", encoding="utf-8") as f:
-                config = json.load(f)
+            visualize_config = get_chart_visualize_config(dw, CHART_ID)
+            print(json.dumps(visualize_config, indent=2))
         except Exception as e:
-            raise RuntimeError(f"Failed to load config from {CONFIG_PATH}: {e}")
+            print(e)
 
-        # Load and process data
-        try:
-            df = load_and_process_data(EXCEL_PATH, sheet_name=SHEET_NAME)
-            if df.empty:
-                raise ValueError("Processed DataFrame is empty. Check the source Excel data.")
-        except Exception as e:
-            raise RuntimeError(f"Error loading or processing Excel data: {e}")
+        # === Update chart ===
+        update_datawrapper_chart(dw, chart_id=CHART_ID, data=df, config=config)
 
-        # Initialize Datawrapper client
-        try:
-            dw = Datawrapper(access_token=DW_API_TOKEN)
-        except Exception as e:
-            raise RuntimeError(f"Failed to authenticate with Datawrapper API: {e}")
-
-        try:
-            #Request full chart metadata
-            # Fetch full chart metadata
-            chart_metadata = dw.get_chart(chart_id=CHART_ID)
-            # Extract only the 'visualize' part
-            #visualize_config = chart_metadata.get("metadata", {}).get("visualize", {})
-            #print(json.dumps(visualize_config, indent=2))
-
-        except Exception as e:
-            raise RuntimeError(f"Chart data could not be requested from Datawrapper API: {e}")
-
-        # Update and publish chart
-        try:
-            #print("aaaaaaaaaaaaaaaaaaaaaaaaaaaaa")
-            update_datawrapper_chart(dw, chart_id=CHART_ID, data=df, config=config)
-        except Exception as e:
-            raise RuntimeError(f"Failed to update or publish Datawrapper chart '{CHART_ID}': {e}")
-
-        # Fetch and print embed code
-        try:
-            embed_html = get_responsive_embed_code(dw, CHART_ID)
-            if embed_html:
-                print(f"\n📎 Responsive Embed Code:\n{embed_html}")
-            else:
-                print("⚠️ Embed code not available (chart may not be published yet).")
-        except Exception as e:
-            print(f"❌ Could not retrieve embed code: {e}")
+        # === Embed code ===
+        embed_html = get_responsive_embed_code(dw, CHART_ID)
+        if embed_html:
+            print(f"\n📎 Responsive Embed Code:\n{embed_html}")
+        else:
+            print("⚠️ Embed code not available (chart may not be published yet).")
 
     except Exception as e:
-        print(f"\n🚨 Unhandled error in main(): {e}")
+        print(f"❌ An error occurred in main(): {e}")
 
 
 if __name__ == "__main__":
