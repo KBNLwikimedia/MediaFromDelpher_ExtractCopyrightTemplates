@@ -23,7 +23,7 @@ The most important key figures and findings of this story are:
 * 
 
 ### What this article aims to do
-1. Provide a **practical case study** of how public domain claims are applied in a real-world environment — specifically, how Wikimedia Commons contributors handle copyright claims for f[files sourced from Delpher](https://commons.wikimedia.org/wiki/Category:Media_from_Delpher).
+1. Provide a **practical case study** of how public domain claims are applied in a real-world environment — specifically, how Wikimedia Commons contributors handle copyright claims for [files sourced from Delpher](https://commons.wikimedia.org/wiki/Category:Media_from_Delpher).
 2. Offer insight into the **complexity and messiness** of public domain claims on Wikimedia Commons — even for the relatively simple case where a single source of digitized materials (Delpher) comes from a single country (the Netherlands).
 3. Explore **how accurately the Wikimedia community applies public domain claims**, and assess to what extent potential copyright violations may occur — including whether serious violations are present.
 4. Share a **practical data story** of how to machine-analyze and visualize copyright claims for files in (subsets of) Wikimedia Commons using data analysis and visualization techniques.  
@@ -35,17 +35,55 @@ The most important key figures and findings of this story are:
 4. Offer **recommendations or proposals on how to simplify public domain claims** on Wikimedia Commons. This article takes the current public domain landscape "as is," observing how it functions in practice without suggesting reform.
 
 
-## Section 1 
+## Copyright and public domain in Wikimedia Commons
 
-### Section on copyrightin WMC
-Beasuise of tyhe open natutre (and reusagiolity) of Content in WMC, fioes muist be must be out-opf copyrighy (PD of age, or CC0 as active act) or freely licensesd (CC-BY, CC-BY-SA, etc.).
-Copyright claims are standardized by the use of templatrs
-But cp templates come in a nawewfull lot (100s) of shpaes and sizes, it looks far from standardiozed
-If we inly look at tempalgtes that convey PD, the situation become a bit sompler, but stil messy. 
-Besides th national/local copyrighhr temples, Files must always have a US tag as well, beacuase server are in the US ad the juriosction of commns is the US
-Explanier about the zillion of PD templates in Wikimedia Commons,
+Wikimedia Commons is one of the largest open-access media repositories in the world, used daily by Wikipedia and countless other projects. To protect its open and reusable nature, strict rules apply regarding the copyright status of any file uploaded. Contributors must clearly indicate under which legal conditions a file can be shared, reused, or modified. This is done through the use of standardized copyright and licensing templates, which help to ensure clarity and legal compliance across different types of media.
 
-Copyright and public domain claims are imlometned via templates, this ensure uniformilty and standardization. However, the number of different templates is overwhelming / a jungle for outsiders.
+At the core of this system are two key principles that determine whether a file is eligible for inclusion on Wikimedia Commons:
+
+1) Due to the **open nature and reusability** of content on Wikimedia Commons, all uploaded files must either be:  
+   **a)** **Out of copyright** — meaning they are in the public domain, either because of age ("passively" in the public domain), or because the rights holder has explicitly released the work into the public domain (e.g., using a **CC0 license**).  
+   **b)** **Freely licensed** — under licenses that allow reuse and modification, such as **CC-BY**, **CC-BY-SA**, or similar.
+
+2) **Copyright claims on Wikimedia Commons are expressed through standardized templates.**  
+   These templates are meant to ensure **clarity, uniformity, and standardization** when declaring the copyright status of a file.  
+   _Example templates include:_  
+   - `{{PD-old-70}}` — Public domain because the author died more than 70 years ago.  
+   - `{{CC-BY-SA-4.0}}` — Creative Commons Attribution-ShareAlike 4.0 license.  
+   - `{{PD-US}}` — Public domain in the United States.
+
+---
+
+### But here’s the problem:  
+The number of different copyright and public domain templates is **huge** — easily hundreds. For outsiders, this can feel like navigating a **jungle** of overlapping options and varying terminology, undermining the intended simplicity and standardization.
+
+This complexity is not surprising. Wikimedia Commons accepts media from **any country, any historical period**, and must be able to handle the copyright rules and exceptions of **dozens of legal systems worldwide**.
+
+---
+
+### Focus on Public Domain templates  
+Even if we narrow the scope and look **only at public domain templates**, things remain complicated. Many templates are country-specific (reflecting local copyright law), but there’s an important extra layer:
+
+> **Every file on Wikimedia Commons must include a U.S. public domain justification**  
+> — because the Commons servers are located in the United States, and U.S. copyright law applies.
+
+This means that for many files, **multiple templates** are required:  
+- One (or more) template(s) describing the copyright situation in the **country of origin**;  
+- And an additional template confirming the **public domain status in the United States**.
+
+---
+
+### What does this jungle of templates look like?  
+Wikimedia Commons uses **hundreds of different public domain templates**, ranging from very general ones like `{{PD-old}}`, to highly specific ones like:  
+- `{{PD-EU-anonymous}}` — for anonymous works in the EU.  
+- `{{PD-Italy}}` — for works in Italy where copyright has expired.  
+- `{{PD-US-expired}}` — for works published in the U.S. before 1929.
+
+_A full overview of these templates is available on the [Commons license template pages](https://commons.wikimedia.org/wiki/Commons:Copyright_tags)._
+
+
+<img src="../media/wmc-pd-templates-sample.png" align="left" width="100%" vspace="10" alt="A non-exhaustive collage of screenshots of public domain template description pages used in Wikimedia Commons."/>
+<caption>A collage of screenshots of public domain template description pages, as used for Wikimedia Commons files that have been sourced from Delpher.</caption>
 
 
 ## Section 2: Tracking the copyright templates in Wikimedia Commons, for Media from Delpher Delpher
