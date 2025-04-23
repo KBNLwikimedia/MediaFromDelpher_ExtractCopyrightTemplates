@@ -16,7 +16,7 @@ dates, for review and documentation purposes.
 ## Who canm benefit?
 
 ## Application 1: Media from Delpher
-[For Category:Media from Delpher, Story in progress](https://kbnlwikimedia.github.io/wikimedia-commons_copyright-templates/stories/Story%20title,%20May%202025.html)
+For Category:Media from Delpher[Free to use? Exploring public domain claims in Wikimedia Commons files sourced from Delpher (May 2025)](https://kbnlwikimedia.github.io/wikimedia-commons_copyright-templates/stories/Free%20to%20use%20-%20Exploring%20public%20domain%20claims%20in%20Wikimedia%20Commons%20files%20sourced%20from%20Delpher%20(May%202025).html)
 
 * Category:Media from Delpher
 * Excluding: Category:Scans from the Internet Archive

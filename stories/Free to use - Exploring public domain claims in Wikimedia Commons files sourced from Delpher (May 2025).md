@@ -29,9 +29,9 @@ The most important key figures and findings of this story are:
 4) Share a **practical data story** of how to machine-analyze and visualize copyright claims for files in (subsets of) Wikimedia Commons using data analysis and visualization techniques.  
 
 ### What this article does <u>not</u> aim to do
-1) Provide a **comprehensive overview of all public domain claims** on Wikimedia Commons. This article focuses specifically on [files sourced from Delpher]((https://commons.wikimedia.org/wiki/Category:Media_from_Delpher)), which is a manageable subset of the total number of files in Wikimedia Commons.
+1) Provide a **comprehensive overview of all public domain claims** on Wikimedia Commons. This article focuses specifically on [files sourced from Delpher]((https://commons.wikimedia.org/wiki/Category:Media_from_Delpher)), which is a manageable subset of the total number of files in Commons.
 2) Provide a **formal and/or detailed legal analysis** of every public domain claim for these files — such an approach would be far too extensive for the scope of this data story.
-3) **Identify and flag every potential copyright infringement** — aside from highlighting a few obvious and illustrative cases mentioned later in this story. XXXXXXXXXXXX (besides the 5 obvious cases mention below)
+3) XXXXXXXXX **Identify and flag every potential copyright infringement** — aside from highlighting a few obvious and illustrative cases mentioned later in this story. XXXXXXXXXXXX (besides the 5 obvious cases mention below)
 4) Offer **recommendations or proposals on how to simplify public domain claims** on Wikimedia Commons. This article takes the current public domain landscape "as is," observing how it functions in practice without suggesting reform.
 
 
