@@ -37,58 +37,57 @@ The most important key figures and findings of this story are:
 
 https://guides.library.cornell.edu/copyright/publicdomain/
 
-## Copyright and public domain in Wikimedia Commons
+## Copyrights templates in Wikimedia Commons
 
 Wikimedia Commons is one of the largest open-access media repositories in the world, used daily by Wikipedia and countless other businesses and projects. To protect the open and reusable nature of its content, strict legal rules must be followed for files that are uploaded to Commons:  
 
 1) All uploaded files must either be:  
-   - Out of copyright — meaning they are in the public domain, either passively [because copyrights have expired](https://gowlingwlg.com/en/insights-resources/articles/2024/public-domain-what-happens-when-copyright-expires), or because the rights holder has waived any copyrights to the files, actively releasing them into the public domain, e.g., by using a [CC0 license](https://creativecommons.org/public-domain/cc0/).  
+   - Out of copyright — meaning they are in the public domain, either passively [because copyrights have expired](https://gowlingwlg.com/en/insights-resources/articles/2024/public-domain-what-happens-when-copyright-expires), or because the rights holder has waived any copyrights on the files, actively releasing them into the public domain, for instance by using a [CC0 license](https://creativecommons.org/public-domain/cc0/).  
    - Freely licensed — under licenses that allow reuse and modification, most commonly [CC-BY](https://creativecommons.org/licenses/by/4.0/), [CC-BY-SA](https://creativecommons.org/licenses/by-sa/4.0/), or equivalent.
 
 2) These copyright claims must be explicitly and unambiguously added to the file description page.
 See for instance the [public domain claim](https://commons.wikimedia.org/w/index.php?title=File:1923_Jos._Schrijnen_%E2%80%94_MMKB02_000118508_00004_image_(cropped).jpg&action=edit&section=2) stated in [this portrait](https://commons.wikimedia.org/wiki/File:1923_Jos._Schrijnen_%E2%80%94_MMKB02_000118508_00004_image_(cropped).jpg) made by the Dutch photograhper [Toni Arens-Tepe](https://nl.wikipedia.org/wiki/Toni_Arens-Tepe) (1883–1947).
  
-3) These claims are typically expressed through standardized copyright templates. These templates are meant to ensure clarity, uniformity and standardization when declaring the copyright status of a file. Templates on Commons can be recognized by the double curly brackets they are called by, for instance 
+3) These claims are typically expressed through standardized copyright templates (also known as *license tags*). These templates are meant to ensure clarity, uniformity and standardization when declaring copyright status of files. Templates on Commons can be recognized by the double curly brackets they are called by, for instance 
    - [\{\{PD-old-70\}\}](https://commons.wikimedia.org/wiki/Template:PD-old-70) — The file is in the public domain because the creator of the underlying work died more than 70 years ago.  
    - [\{\{CC-BY-SA-4.0\}\}](https://commons.wikimedia.org/wiki/Template:Cc-by-sa-4.0) — Creative Commons Attribution-ShareAlike 4.0 license.  
-   - [{{PD-ineligible}}](https://commons.wikimedia.org/wiki/Template:PD-ineligible) — The file is in the public domain because it (and/or its underlying work) lacks sufficient originality to be eligible for copyright protection. 
+   - [\{\{PD-ineligible\}\}](https://commons.wikimedia.org/wiki/Template:PD-ineligible) — The file is in the public domain because it (and/or its underlying work) lacks sufficient originality to be eligible for copyright protection. 
 
----
+### The copyright template jungle   
 
-### But here’s the problem:  
-Altrhough the goal of these templates is to provide a **clear and standardized way** to declare copyright status, the reality is that the system is still very complex**.
-The number of different copyright and public domain templates is **huge** — easily hundreds. For outsiders, this can feel like navigating a **jungle** of overlapping options and varying terminology, undermining the intended simplicity and standardization.
+But here’s the problem:  although the purpose of these templates is to provide a clear and standardized way to declare copyright status, the practical reality is that the license tagging system—built over the years by the international Wikimedia community—has become very complex. The number of different copyright templates in use on Commons is enormous.
 
-Even if we narrow the scope and look **only at public domain templates**, things remain complicated. Many templates are country-specific (reflecting local copyright law), but there’s an important extra layer:
+To get a sense of this complexity, take a look at [this summary of the most common template types](https://commons.wikimedia.org/wiki/Commons:Copyright_tags) or explore this nested [overview of several thousand (!) copyright templates](https://commons.wikimedia.org/wiki/Category:License_tags) being used on Commons.
 
-> **Every file on Wikimedia Commons must include a U.S. public domain justification**  
-> — because the Commons servers are located in the United States, and U.S. copyright law applies.
+For most people finding their ways in this system can feel like working through a jungle of overlapping licensing options and confusing terminology, undermining the intended simplicity and standardization.
 
-This complexity is not surprising. Wikimedia Commons accepts media from **any country, any historical period**, and must be able to handle the copyright rules and exceptions of **dozens of legal systems worldwide**. to add to tghe clomexitu, beaciase serrver are in the US, all fies stored theee must also compy to US copyright and public domain regulastion, which [can be very compkicatred](https://guides.library.cornell.edu/copyright/publicdomain/) and  different from the jursdixctins in the country of origin.
+However, this complexity is not entirely surprising. Wikimedia Commons accepts media from any country and any historical period, and must therefore be able to handle the copyright rules and exceptions from dozens of legal systems worldwide. This elaborate system is necessary because Wikimedia Commons is a global, evolving platform. New templates are regularly added as contributors find new sources for uploaded or as local copyright regulations change.
 
-In practice This means that for many Commons files, **multiple templates** are required:  
-- One (or more) template(s) describing the copyright situation in the **country of origin**;  
-- And an additional template confirming the **public domain status in the United States**.
+=============================
 
-Add links to comons pages where a lot op copyright and pd tempated are beinf summarized, sich as: 
+## Public domain templates in Wikimedia Commons
+Even if we narrow the scope and look only at public domain templates, things remain pretty complicated. And even if we only cionsider public domain templates, the variety and numbers are still pretty large.
 
+https://commons.wikimedia.org/wiki/Commons:Copyright_tags/General_public_domain - give a ioverview of over 70  General public domain templates
 
+The comlexity becomwes 
+https://commons.wikimedia.org/wiki/Category:PD_license_tags and its subcategpries, whetrw amny [country specigfic pd templas](https://commons.wikimedia.org/wiki/Commons:Copyright_tags/Country-specific_tags) (reflecting local copyright law) are listed. 
 
----
+In addition to all these couintry specigid, an extra layer of complexity is added:
+Every file on Wikimedia Commons must include a U.S. public domain justification**  
+ because the Commons servers are located in the United States, and U.S. copyright law applies.
+To add to the complexity, becausee Wikimedia servers are in the US, all fies stored there must also compy to US copyright and public domain regulations, which [can be very complicatred](https://guides.library.cornell.edu/copyright/publicdomain/) and different from the jursdixctins in the country of origin.
 
-### What does this jungle of templates look like?  
-Wikimedia Commons uses **hundreds of different public domain templates**, ranging from very general ones like `{{PD-old}}`, to highly specific ones like:  
-- `{{PD-EU-anonymous}}` — for anonymous works in the EU.  
-- `{{PD-Italy}}` — for works in Italy where copyright has expired.  
-- `{{PD-US-expired}}` — for works published in the U.S. before 1929.
-
-_A full overview of these templates is available on the [Commons license template pages](https://commons.wikimedia.org/wiki/Commons:Copyright_tags)._
-
+In practice This means that for many Commons files, multiple templates are required:  
+- One (or more) template(s) describing the copyright situation in the country of origin;  
+- And an additional template confirming the public domain status in the United States.
 
 <a href="../media/wmc-pd-templates-sample.png"><img src="../media/wmc-pd-templates-sample.png" align="left" width="100%" vspace="5" alt="A non-exhaustive collage of screenshots of public domain template description pages used in Wikimedia Commons files that have been sourced from Delpher."/></a>
 <br clear="all"/><sub>*A collage of screenshots of public domain template description pages, as used in Wikimedia Commons [files that have been sourced from Delpher](https://commons.wikimedia.org/wiki/Category:Media_from_Delpher) (Click to enlarge).<br/>Image license: <a href="https://creativecommons.org/licenses/by-sa/4.0/deed.nl" target="_blank">CC-BY-SA 4.0</a> / Olaf Janssen, KB national library of the Netherlands.*</sub>
 
+===============================================
 
+## Zoom in on templates used fro Delpher
 
 ## Section 2: Tracking the copyright templates in Wikimedia Commons, for Media from Delpher Delpher
 Zoom in on Categortry: Media from Delpher Delpher
