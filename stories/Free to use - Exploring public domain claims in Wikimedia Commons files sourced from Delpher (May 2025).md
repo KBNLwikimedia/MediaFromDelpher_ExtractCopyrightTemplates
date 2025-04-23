@@ -35,22 +35,23 @@ The most important key figures and findings of this story are:
 4. Offer **recommendations or proposals on how to simplify public domain claims** on Wikimedia Commons. This article takes the current public domain landscape "as is," observing how it functions in practice without suggesting reform.
 
 
+https://guides.library.cornell.edu/copyright/publicdomain/
+
 ## Copyright and public domain in Wikimedia Commons
 
-Wikimedia Commons is one of the largest open-access media repositories in the world, used daily by Wikipedia and countless other projects. To protect its open and reusable nature, strict rules apply regarding the copyright status of any file uploaded. Contributors must clearly indicate under which legal conditions a file can be shared, reused, or modified. This is done through the use of standardized copyright and licensing templates, which help to ensure clarity and legal compliance across different types of media.
+Wikimedia Commons is one of the largest open-access media repositories in the world, used daily by Wikipedia and countless other businesses and projects. To protect the open and reusable nature of its content, strict legal rules must be followed for files that are uploaded to Commons:  
 
-At the core of this system are two key principles that determine whether a file is eligible for inclusion on Wikimedia Commons:
+1) All uploaded files must either be:  
+  a) Out of copyright — meaning they are in the public domain, either passively [because copyrights have expired](https://gowlingwlg.com/en/insights-resources/articles/2024/public-domain-what-happens-when-copyright-expires), or because the rights holder has waived any copyrights to the files, actively releasing them into the public domain, e.g., by using a [CC0 license](https://creativecommons.org/public-domain/cc0/).  
+  b) Freely licensed — under licenses that allow reuse and modification, most commonly [CC-BY](https://creativecommons.org/licenses/by/4.0/), [CC-BY-SA](https://creativecommons.org/licenses/by-sa/4.0/), or equivalent.
 
-1) Due to the **open nature and reusability** of content on Wikimedia Commons, all uploaded files must either be:  
-   **a)** **Out of copyright** — meaning they are in the public domain, either because of age ("passively" in the public domain), or because the rights holder has explicitly released the work into the public domain (e.g., using a **CC0 license**).  
-   **b)** **Freely licensed** — under licenses that allow reuse and modification, such as **CC-BY**, **CC-BY-SA**, or similar.
-
-2) **Copyright claims on Wikimedia Commons are expressed through standardized templates.**  
-   These templates are meant to ensure **clarity, uniformity, and standardization** when declaring the copyright status of a file.  
-   _Example templates include:_  
-   - `{{PD-old-70}}` — Public domain because the author died more than 70 years ago.  
-   - `{{CC-BY-SA-4.0}}` — Creative Commons Attribution-ShareAlike 4.0 license.  
-   - `{{PD-US}}` — Public domain in the United States.
+2) These copyright claims must be explicitly and unambiguously added to the file description page.
+See for instance the [public domain claim](https://commons.wikimedia.org/w/index.php?title=File:1923_Jos._Schrijnen_%E2%80%94_MMKB02_000118508_00004_image_(cropped).jpg&action=edit&section=2) stated in [this portrait](https://commons.wikimedia.org/wiki/File:1923_Jos._Schrijnen_%E2%80%94_MMKB02_000118508_00004_image_(cropped).jpg) made by the Dutch photograhper [Toni Arens-Tepe](https://nl.wikipedia.org/wiki/Toni_Arens-Tepe) (1883–1947).
+ 
+3) These claims are typically are expressed through standardized copyright templates. These templates are meant to ensure clarity, uniformity and standardization when declaring the copyright status of a file. Templates on Commons can be recognized by the double curly brackets they are called by, for instance 
+   - [{{PD-old-70}}](https://commons.wikimedia.org/wiki/Template:PD-old-70) — The file is in the public domain because the creator of the underlying work died more than 70 years ago.  
+   - [{{CC-BY-SA-4.0}}](https://commons.wikimedia.org/wiki/Template:Cc-by-sa-4.0) — Creative Commons Attribution-ShareAlike 4.0 license.  
+   - [{{PD-ineligible}}](https://commons.wikimedia.org/wiki/Template:PD-ineligible) — The file is in the public domain because it (and/or the underlying work) lacks sufficient originality to be eligible for copyright protection. 
 
 ---
 
