@@ -1,4 +1,4 @@
-# Assessment of copyright templates in Wikimedia Commons files sourced from Delpher, May 2025 
+# Free to use? Exploring public domain claims in Wikimedia Commons files sourced from Delpher (May 2025)
 <sup>Olaf Janssen, xx May 2025</sup>
 
 This article is also [available as PDF](ongithub.pdf).
@@ -7,11 +7,13 @@ This article is also [available as PDF](ongithub.pdf).
 
 <img src="../media/delpher_logo_new.png" align="right" width="170" hspace="20" alt="Logo Delpher"/>
 
-_**[Delpher](https://www.delpher.nl)** provides access to millions of digitized pages from Dutch historical newspapers, books and magazines. It is a frequently used source for Wikimedia Commons.
+_**[Delpher](https://www.delpher.nl)** offers access to millions of digitized pages from Dutch historical newspapers, books, and magazines — a valuable resource frequently used on Wikimedia Commons. In the first part of this data story, we examine how the Wikimedia community has assigned public domain status to Commons files that have been [sourced from Delpher](https://commons.wikimedia.org/wiki/Category:Media_from_Delpher). In the second part, we explore the validity of these claims and assess whether they align with the actual copyright status of these works._
 
-This datastory looks at how  copyright templates in Wikimedia Commons in the category [Media from Delpher](https://commons.wikimedia.org/wiki/Category:Media_from_Delpher).... en in hoevere de Wikimedia gemenschap omgaat met de rechrenm_
+----------------
 
-Veel van de historische cintent van delpher valt wegens ouderdom in het pd en kan dus zonder zorgen naar Wiki commons geulad worden. Tegelijkertijd heeft de KB en contractuele verpciting tov auteurs en uitgevers om auteurstechtnschendingen van Delpher te monitioren en zoveel mogelijk te voorkomen, ook op Wiki Commons. Daarom wil de KB een goeeld beeld klrijgen van welke krantenartikelen, boeken, tijdscrfitenem, en andere materiaal van Delpher etc er van Delpher op Wikiiemdia commons wordne geplaatst . we wille nbelsist niet als poitiagent optreden!!  
+Much of the historical content from Delpher falls into the public domain due to its age and can therefore be uploaded to Wikimedia Commons without concern. At the same time, the KB — being the operator of Delpher — has a contractual obligation towards authors and publishers to monitor potential copyright infringements and to prevent them as much as possible, including Delpher content that has been uploaded to Wikimedia Commons.
+
+For this reason, the KB wants to gain a better understanding of which newspaper articles, books, magazines and other materials from Delpher have been uploaded to Wikimedia Commons, and how public domain claims to those files have been assigned by the Wikimedia community. In doing so, it is important to emphasize that the KB has absolutely **no** intention to act as a copyright police force. The goal is to work together with the Wikimedia community to handle copyright matters responsibly, with respect for both creators and users.
 
 ## Key figures and findings
 The most important key figures and findings of this story are:
@@ -20,18 +22,20 @@ The most important key figures and findings of this story are:
 * kf 3
 * 
 
+### What this article aims to do
+1) Provide a **practical case study** of how public domain claims are applied in a real-world environment — specifically, how Wikimedia Commons contributors handle copyright claims for files sourced from Delpher.
+2) Offer insight into the **complexity and messiness** of public domain claims on Wikimedia Commons — even for the relatively simple case where the source of the digitized materials (Delpher) comes from a single country (the Netherlands).
+3) Explore **how accurately the Wikimedia community applies public domain claims**, and assess to what extent potential copyright violations may occur — including whether serious violations are present.
+4) Share a **practical data story** of how to machine-analyze and visualize copyright claims for files in (subsets of) Wikimedia Commons using data analysis and visualization techniques.  
+
+### What this article does <u>not</u> aim to do
+1) Provide a **comprehensive overview of all public domain claims** on Wikimedia Commons. This article focuses specifically on [files sourced from Delpher]((https://commons.wikimedia.org/wiki/Category:Media_from_Delpher)), which is a manageable subset of the total number of files in Wikimedia Commons.
+2) Provide a **formal and/or detailed legal analysis** of every public domain claim for these files — such an approach would be far too extensive for the scope of this data story.
+3) **Identify and flag every potential copyright infringement** — aside from highlighting a few obvious and illustrative cases mentioned later in this story. XXXXXXXXXXXX (besides the 5 obvious cases mention below)
+4) Offer **recommendations or proposals on how to simplify public domain claims** on Wikimedia Commons. This article takes the current public domain landscape "as is," observing how it functions in practice without suggesting reform.
+
+
 ## Section 1 
-
-### What this story aims to do
-1) Provide a * practiocal real life case study*  of how copyrioght and PD is used in a real world enveronment, in this case Wikimedia Commons for files sources fronm Delpher, as done by Wikimedia-contributors
-2) * Top provide insght intop the complexity/mess of CPR- eand PD-templates in WMComons, even when the source of the digital materials (Delpher) is from a single country (ie the Netherlands) 
-3)  Provide insightys into hoe accuratye the copyright templat have been aplleid by the WP community,  to see to what extent (serius) copvio is done
-
-### What this story does NOT aim to do
-* Giove a full formal, detailed analysis of every nook and cranny of the copyright/PD templates in Wikimedia Commons - for thescope of thisarticle that would be too big an excrsise
-* to trace donw andf flag all posioble copyvios (besides the 5 obvious cases mention below)
-* Proveide comments anf/or sugestuion on how the appllication of pd temaltres in WMV could be simplified - the PD=-templ;ate situation is taken "as observed" 
-
 
 ### Section on copyrightin WMC
 Beasuise of tyhe open natutre (and reusagiolity) of Content in WMC, fioes muist be must be out-opf copyrighy (PD of age, or CC0 as active act) or freely licensesd (CC-BY, CC-BY-SA, etc.).
@@ -40,6 +44,8 @@ But cp templates come in a nawewfull lot (100s) of shpaes and sizes, it looks fa
 If we inly look at tempalgtes that convey PD, the situation become a bit sompler, but stil messy. 
 Besides th national/local copyrighhr temples, Files must always have a US tag as well, beacuase server are in the US ad the juriosction of commns is the US
 Explanier about the zillion of PD templates in Wikimedia Commons,
+
+Copyright and public domain claims are imlometned via templates, this ensure uniformilty and standardization. However, the number of different templates is overwhelming / a jungle for outsiders.
 
 
 ## Section 2: Tracking the copyright templates in Wikimedia Commons, for Media from Delpher Delpher
