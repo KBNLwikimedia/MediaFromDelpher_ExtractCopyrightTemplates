@@ -82,8 +82,9 @@ Wikimedia Commons uses **hundreds of different public domain templates**, rangin
 _A full overview of these templates is available on the [Commons license template pages](https://commons.wikimedia.org/wiki/Commons:Copyright_tags)._
 
 
-<img src="../media/wmc-pd-templates-sample.png" align="left" width="100%" vspace="10" alt="A non-exhaustive collage of screenshots of public domain template description pages used in Wikimedia Commons."/>
-<caption>A collage of screenshots of public domain template description pages, as used for Wikimedia Commons files that have been sourced from Delpher.</caption>
+<a href="../media/wmc-pd-templates-sample.png"><img src="../media/wmc-pd-templates-sample.png" align="left" width="100%" vspace="5" alt="A non-exhaustive collage of screenshots of public domain template description pages used in Wikimedia Commons files that have been sourced from Delpher."/></a>
+<br clear="all"/><sub>*A collage of screenshots of public domain template description pages, as used in Wikimedia Commons [files that have been sourced from Delpher](https://commons.wikimedia.org/wiki/Category:Media_from_Delpher) (Click to enlarge).<br/>Image license: <a href="https://creativecommons.org/licenses/by-sa/4.0/deed.nl" target="_blank">CC-BY-SA 4.0</a> / Olaf Janssen, KB national library of the Netherlands.*</sub>
+
 
 
 ## Section 2: Tracking the copyright templates in Wikimedia Commons, for Media from Delpher Delpher
