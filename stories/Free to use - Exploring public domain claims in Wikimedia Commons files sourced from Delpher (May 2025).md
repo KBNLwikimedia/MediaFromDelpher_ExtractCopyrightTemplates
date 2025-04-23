@@ -23,13 +23,13 @@ The most important key figures and findings of this story are:
 * 
 
 ### What this article aims to do
-1. Provide a **practical case study** of how public domain claims are applied in a real-world environment — specifically, how Wikimedia Commons contributors handle copyright claims for files sourced from Delpher.
-2. Offer insight into the **complexity and messiness** of public domain claims on Wikimedia Commons — even for the relatively simple case where the source of the digitized materials (Delpher) comes from a single country (the Netherlands).
+1. Provide a **practical case study** of how public domain claims are applied in a real-world environment — specifically, how Wikimedia Commons contributors handle copyright claims for f[files sourced from Delpher](https://commons.wikimedia.org/wiki/Category:Media_from_Delpher).
+2. Offer insight into the **complexity and messiness** of public domain claims on Wikimedia Commons — even for the relatively simple case where a single source of digitized materials (Delpher) comes from a single country (the Netherlands).
 3. Explore **how accurately the Wikimedia community applies public domain claims**, and assess to what extent potential copyright violations may occur — including whether serious violations are present.
 4. Share a **practical data story** of how to machine-analyze and visualize copyright claims for files in (subsets of) Wikimedia Commons using data analysis and visualization techniques.  
 
 ### What this article does <u>not</u> aim to do
-1. Provide a **comprehensive overview of all public domain claims** on Wikimedia Commons. This article focuses specifically on [files sourced from Delpher]((https://commons.wikimedia.org/wiki/Category:Media_from_Delpher)), which is a manageable subset of the total number of files in Commons.
+1. Provide a **comprehensive overview of all public domain claims** on Wikimedia Commons. This article focuses specifically on files sourced from Delpher, which is a manageable subset of the total number of files in Commons.
 2. Provide a **formal and/or detailed legal analysis** of every public domain claim for these files — such an approach would be far too extensive for the scope of this data story.
 3. XXXXXXXXX **Identify and flag every potential copyright infringement** — aside from highlighting a few obvious and illustrative cases mentioned later in this story. XXXXXXXXXXXX (besides the 5 obvious cases mention below)
 4. Offer **recommendations or proposals on how to simplify public domain claims** on Wikimedia Commons. This article takes the current public domain landscape "as is," observing how it functions in practice without suggesting reform.
