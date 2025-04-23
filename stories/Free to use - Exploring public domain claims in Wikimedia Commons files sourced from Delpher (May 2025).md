@@ -34,9 +34,6 @@ The most important key figures and findings of this story are:
 3. XXXXXXXXX **Identify and flag every potential copyright infringement** — aside from highlighting a few obvious and illustrative cases mentioned later in this story. XXXXXXXXXXXX (besides the 5 obvious cases mention below)
 4. Offer **recommendations or proposals on how to simplify public domain claims** on Wikimedia Commons. This article takes the current public domain landscape "as is," observing how it functions in practice without suggesting reform.
 
-
-https://guides.library.cornell.edu/copyright/publicdomain/
-
 ## Copyrights templates in Wikimedia Commons
 
 Wikimedia Commons is one of the largest open-access media repositories in the world, used daily by Wikipedia and countless other businesses and projects. To protect the open and reusable nature of its content, strict legal rules must be followed for files that are uploaded to Commons:  
@@ -55,17 +52,17 @@ See for instance the [public domain claim](https://commons.wikimedia.org/w/index
 
 ### The copyright template jungle   
 
-But here’s the problem:  although the purpose of these templates is to provide a clear and standardized way to declare copyright status, the practical reality is that the license tagging system—built over the years by the international Wikimedia community—has become very complex. The number of different copyright templates in use on Commons is enormous.
+But here’s the problem: although the purpose of these templates is to provide a clear and standardized way to declare copyright status, the practical reality is that the license tagging system — built over the years by the international Wikimedia community — has become very complex. The number of different copyright templates in use on Commons is enormous.
 
-To get a sense of this complexity, take a look at [this summary of the most common template types](https://commons.wikimedia.org/wiki/Commons:Copyright_tags) or explore this nested [overview of several thousand (!) copyright templates](https://commons.wikimedia.org/wiki/Category:License_tags) being used on Commons.
+To get a sense of this complexity, take a look at [this summary of the most common template types](https://commons.wikimedia.org/wiki/Commons:Copyright_tags) or explore this nested [overview of several thousands(!) of copyright templates](https://commons.wikimedia.org/wiki/Category:License_tags) being used on Commons.
 
-For most people finding their ways in this system can feel like working through a jungle of overlapping licensing options and confusing terminology, undermining the intended simplicity and standardization.
+Both insiders and outsiders will struggle to find their ways in this system, it can feel like working through a jungle of overlapping licensing options and confusing terminology, undermining the intended simplicity and standardization.
 
-However, this complexity is not entirely surprising. Wikimedia Commons accepts media from any country and any historical period, and must therefore be able to handle the copyright rules and exceptions from dozens of legal systems worldwide. This elaborate system is necessary because Wikimedia Commons is a global, evolving platform. New templates are regularly added as contributors find new sources for uploaded or as local copyright regulations change.
+However, this complexity is not entirely surprising. Wikimedia Commons accepts media from any country and any historical period, and must therefore be able to handle the copyright rules and exceptions from dozens of legal systems worldwide. This elaborate system is necessary because Wikimedia Commons is a global, evolving platform. Templates are regularly added or updated as contributors find new sources for uploads or as local copyright regulations change.
 
 =============================
 
-## Public domain templates in Wikimedia Commons
+## Zooming in: public domain templates in Wikimedia Commons
 Even if we narrow the scope and look only at public domain templates, things remain pretty complicated. And even if we only cionsider public domain templates, the variety and numbers are still pretty large.
 
 https://commons.wikimedia.org/wiki/Commons:Copyright_tags/General_public_domain - give a ioverview of over 70  General public domain templates
@@ -87,11 +84,31 @@ In practice This means that for many Commons files, multiple templates are requi
 
 ===============================================
 
-## Zoom in on templates used fro Delpher
+##  Zooming in further: licensing templates used in Delpher fioles
+
+1 Expla nthat all files have been brohju together in the Caterogy Mdioa from depher
+
+2 xpln how the sxcrit you made helped in trackuing doan all templated that are used in the 62oo files in Cat:media fronm Depher
+
+date: 9 april 2025
+
+Expln that I wot a Franenstein Puthin script that extracted the copyright templaat and dataOfCreation from the files in that categorty. see the technical notes for more detaiols 
+
+3 Expan tha files from the IA are excluided fronm the sanayses - https://commons.wikimedia.org/wiki/File:%27s_Gravenhaagsche_courant_02-09-1822_(IA_ddd_010124645_mpeg21).pdf . 
+https://commons.wikimedia.org/wiki/Category:Scans_from_the_Internet_Archive
+- all the files have the {{PD-old-70-expired}} template
+
+Fromn the total of 6496 files in this cat dd 9-4-2025 https://petscan.wmcloud.org/?templates_any=&language=commons&combination=subset&search_max_results=500&langs_labels_yes=&cb_labels_no_l=1&negcats=Scans+from+the+Internet+Archive&format=html&project=wikimedia&cb_labels_yes_l=1&pagepile=&before=20250409&active_tab=tab_pageprops&links_to_all=&min_sitelink_count=&interface_language=en&min_redlink_count=1&only_new=on&ns%5B6%5D=1&sitelinks_any=&categories=Media+from+Delpher&cb_labels_any_l=1&wikidata_source_sites=&rxp_filter=&langs_labels_any=&manual_list_wiki=&doit=
+ecluding the IA scans**
+
+we were able to tretrioeve 6,248 distinct filies, that had both template information as well as a date of creation 
+
+Dd 09 May 2025 thi category 
+
 
 ## Section 2: Tracking the copyright templates in Wikimedia Commons, for Media from Delpher Delpher
 Zoom in on Categortry: Media from Delpher Delpher
-Expln how the sxcrit you made helped in trackuing doan all templated that are used in the 62oo files in Cat:media fronm Depher
+
 
 ## Section 3 
 
