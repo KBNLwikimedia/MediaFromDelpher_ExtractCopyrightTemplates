@@ -399,7 +399,7 @@ def main():
 
         EXCEL_PATH = DATA_DIR / "Media_from_Delpher-Extracted_copyright_templates-09042025-cleaned-processed.xlsx"
         EXCEL_SHEET = "files-templates"
-        CONFIG_PATH = SCRIPT_DIR / "template_usage_summary-config.json"
+        CONFIG_PATH = SCRIPT_DIR / "template-usage-summary-config.json"
         CHART_ID = "UewJt"
 
         # Load chart config

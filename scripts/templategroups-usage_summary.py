@@ -232,7 +232,7 @@ def main():
         DATA_DIR = ROOT_DIR / "data"
         SCRIPT_DIR = Path(__file__).resolve().parent
         EXCEL_PATH = DATA_DIR / "Media_from_Delpher-Extracted_copyright_templates-09042025-cleaned-processed.xlsx"
-        CONFIG_PATH = SCRIPT_DIR / "templategroups_usage_summary-config.json"
+        CONFIG_PATH = SCRIPT_DIR / "templategroups-usage-summary-config.json"
         EXCEL_SHEET = "files-templates"
         CHART_ID = "gZqMt"
 

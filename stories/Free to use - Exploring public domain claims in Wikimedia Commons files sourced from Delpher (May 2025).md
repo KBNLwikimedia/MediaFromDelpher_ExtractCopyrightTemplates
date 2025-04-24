@@ -24,7 +24,7 @@ The most important key figures and findings of this story are:
 
 ### What this article aims to do
 1. Provide a **practical case study** of how public domain claims are applied in a real-world environment — specifically, how Wikimedia Commons contributors handle copyright claims for [files sourced from Delpher](https://commons.wikimedia.org/wiki/Category:Media_from_Delpher).
-2. Offer insight into the **complexity and messiness** of public domain claims on Wikimedia Commons — even for the relatively simple case where a single source of digitized materials (Delpher) comes from a single country (the Netherlands).
+2. Offer insight into the **complexity of public domain claims** on Wikimedia Commons — even for the relatively simple case where files originate from a single source (Delpher) from a single country (the Netherlands).
 3. Explore **how accurately the Wikimedia community applies public domain claims**, and assess to what extent potential copyright violations may occur — including whether serious violations are present.
 4. Share a **practical data story** of how to machine-analyze and visualize copyright claims for files in (subsets of) Wikimedia Commons using data analysis and visualization techniques.  
 
@@ -80,7 +80,7 @@ In practice This means that for many Commons files, multiple templates are requi
 - And an additional template confirming the public domain status in the United States.
 
 <a href="../media/wmc-pd-templates-sample.png"><img src="../media/wmc-pd-templates-sample.png" align="left" width="100%" vspace="5" alt="A non-exhaustive collage of screenshots of public domain template description pages used in Wikimedia Commons files that have been sourced from Delpher."/></a>
-<br clear="all"/><sub>*A collage of screenshots of public domain template description pages, as used in Wikimedia Commons [files that have been sourced from Delpher](https://commons.wikimedia.org/wiki/Category:Media_from_Delpher) (Click to enlarge).<br/>Image license: <a href="https://creativecommons.org/licenses/by-sa/4.0/deed.nl" target="_blank">CC-BY-SA 4.0</a> / Olaf Janssen, KB national library of the Netherlands.*</sub>
+<br clear="all"/><sub>*A (non-exhaustive) collage of screenshots of public domain template description pages, as used in Wikimedia Commons [files that have been sourced from Delpher](https://commons.wikimedia.org/wiki/Category:Media_from_Delpher) (Click to enlarge).<br/>Image license: <a href="https://creativecommons.org/licenses/by-sa/4.0/deed.nl" target="_blank">CC-BY-SA 4.0</a> / Olaf Janssen, KB national library of the Netherlands.*</sub>
 
 ===============================================
 
@@ -138,6 +138,8 @@ Explan which templates have been found
 <div style="min-height:766px" id="datawrapper-vis-PJ96v"><script type="text/javascript" defer src="https://datawrapper.dwcdn.net/PJ96v/embed.js" charset="utf-8" data-target="#datawrapper-vis-PJ96v"></script><noscript><img src="https://datawrapper.dwcdn.net/PJ96v/full.png" alt="This table explains the 39 distinct copyright templates that are used in Wikimedia Commons media files that were sourced from Delpher.The templates are sorted and color-coded by the main reason why they categorize files into the public domain. The template usage is taken &quot;as observed&quot; Data as of 9 April 2025." /></noscript></div>
 
 
+xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+
 
 <div style="min-height:1665px" id="datawrapper-vis-UewJt"><script type="text/javascript" defer src="https://datawrapper.dwcdn.net/UewJt/embed.js" charset="utf-8" data-target="#datawrapper-vis-UewJt"></script><noscript><img src="https://datawrapper.dwcdn.net/UewJt/full.png" alt="This chart shows how often which copyright templates are used in Wikimedia Commons media files that were sourced from Delpher. The bars are grouped by the main reason why the files are in the public domain. The template usage is taken \&quot;as observed\&quot;. The 3 key figures are: 1) Total number of distinct media files: 6,248. 2) Total number of template usages: 6,329 (one file can contain multiple copyright templates). 3) Total number of distinct templates used: 39. Data as of 9 April 2025." /></noscript></div>
 
@@ -149,6 +151,10 @@ Explan which templates have been found
 
 Next., lets';s zoom in on the copyright templates that are used for files that are in the public domain because of age. The blue colors.
  In total theis comprises 24 templates 6191 used in xx distinct files
+
+
+<div style="min-height:1167px" id="datawrapper-vis-2NsXE"><script type="text/javascript" defer src="https://datawrapper.dwcdn.net/2NsXE/embed.js" charset="utf-8" data-target="#datawrapper-vis-2NsXE"></script><noscript><img src="https://datawrapper.dwcdn.net/2NsXE/full.png" alt="xx" /></noscript></div>
+
 
 
 ## Section 3 

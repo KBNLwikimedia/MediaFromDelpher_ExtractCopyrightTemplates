@@ -178,7 +178,7 @@ def main():
         ROOT_DIR = Path(__file__).resolve().parent.parent
         DATA_DIR = ROOT_DIR / "data"
         SCRIPT_DIR = Path(__file__).resolve().parent
-        CONFIG_PATH = SCRIPT_DIR / "template_explanation-table-config.json"
+        CONFIG_PATH = SCRIPT_DIR / "template-explanation-table-config.json"
         EXCEL_PATH = DATA_DIR / "Media_from_Delpher-Extracted_copyright_templates-09042025-cleaned-processed.xlsx"
         SHEET_NAME = "templates_dedup"
         CHART_ID = "PJ96v"
