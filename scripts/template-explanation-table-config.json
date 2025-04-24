@@ -389,7 +389,7 @@
   "markdown": false,
   "noHeader": false,
   "overlays": [],
-  "showRank": false,
+  "showRank": true,
   "sortTable": true,
   "pagination": {
     "enabled": true,

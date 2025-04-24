@@ -21,7 +21,7 @@ def load_and_process_data(excel_path: str, sheet_name: str) -> pd.DataFrame:
             'TemplateURL',
             'Number of files using this template',
             'Category',
-            'Years after death of author/creator',
+            'Years after death of author',
             'Years after first publication',
             'Years after creation',
             'NoCopyrightReason'
@@ -47,7 +47,7 @@ def load_and_process_data(excel_path: str, sheet_name: str) -> pd.DataFrame:
             'Template',
             'Number of files using this template',
             'Category',
-            'Years after death of author/creator',
+            'Years after death of author',
             'Years after first publication',
             'Years after creation'
         ]]

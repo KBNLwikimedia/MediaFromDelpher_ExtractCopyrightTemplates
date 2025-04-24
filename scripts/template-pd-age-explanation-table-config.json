@@ -7,7 +7,7 @@
     "source-url": "https://github.com/KBNLwikimedia/xxxxxx",
     "aria-description": "xx"
   },
-"visualize": {
+"visualize":{
   "dark-mode-invert": true,
   "highlighted-series": [],
   "highlighted-values": [],
@@ -112,7 +112,7 @@
         "underline": false,
         "background": false
       },
-      "width": 0.16,
+      "width": 0.24,
       "append": "",
       "format": "0,0",
       "heatmap": {
@@ -170,7 +170,7 @@
         "underline": false,
         "background": false
       },
-      "width": 0.14,
+      "width": 0.16,
       "append": "",
       "format": "0,0",
       "heatmap": {
@@ -181,7 +181,7 @@
       "barStyle": "normal",
       "minWidth": 30,
       "sortable": true,
-      "alignment": "left",
+      "alignment": "auto",
       "flagStyle": "1x1",
       "showAsBar": false,
       "sparkline": {
@@ -213,15 +213,11 @@
       "showOnDesktop": true,
       "customBarColor": false,
       "barNoBackground": false,
-      "borderLeftColor": "#BECCD0",
+      "borderLeftColor": "#333333",
       "customColorText": {},
       "barColorNegative": false,
       "alignmentVertical": "middle",
-      "customColorBackground": {
-        "PD-1996": "#1093e6",
-        "Author anonymous or pseudonymous": "#d73445",
-        "Copyrights expired because of age": "#1093e6"
-      },
+      "customColorBackground": {},
       "customColorBarBackground": {}
     },
     "Description": {
@@ -417,7 +413,7 @@
         "underline": false,
         "background": false
       },
-      "width": 0.11,
+      "width": 0.09,
       "append": "",
       "format": "0,0",
       "heatmap": {
@@ -475,7 +471,7 @@
         "underline": false,
         "background": false
       },
-      "width": 0.13,
+      "width": 0.12,
       "append": "",
       "format": "0,0",
       "heatmap": {
@@ -514,6 +510,7 @@
       "customColor": false,
       "replaceFlags": false,
       "showOnMobile": true,
+      "customColorBy": "Years after first publication",
       "showOnDesktop": true,
       "customBarColor": false,
       "barNoBackground": false,
@@ -578,7 +575,7 @@
       "barNoBackground": false,
       "borderLeftColor": "#333333",
       "customColorText": {},
-      "barColorNegative": false,
+      "barColorNegative": "#1093e6",
       "alignmentVertical": "middle",
       "customColorBackground": {},
       "customColorBarBackground": {}
@@ -592,7 +589,7 @@
         "underline": false,
         "background": false
       },
-      "width": 0.13,
+      "width": 0.16,
       "append": "",
       "format": "0,0",
       "heatmap": {
@@ -631,6 +628,7 @@
       "customColor": false,
       "replaceFlags": false,
       "showOnMobile": true,
+      "customColorBy": "Years after death of author/creator",
       "showOnDesktop": true,
       "customBarColor": false,
       "barNoBackground": false,
@@ -702,7 +700,7 @@
   "markdown": false,
   "noHeader": false,
   "overlays": [],
-  "showRank": false,
+  "showRank": true,
   "sortTable": true,
   "pagination": {
     "enabled": true,
