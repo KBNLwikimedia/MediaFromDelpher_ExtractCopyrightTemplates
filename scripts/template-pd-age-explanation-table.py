@@ -20,11 +20,11 @@ def load_and_process_data(excel_path: str, sheet_name: str) -> pd.DataFrame:
             'Template',
             'TemplateURL',
             'Number of files using this template',
-            'Category',
+            'NoCopyrightReason',
             'Years after death of author',
             'Years after first publication',
             'Years after creation',
-            'NoCopyrightReason'
+            'Remarks'
         ]
         missing_cols = [col for col in required_columns if col not in df.columns]
         if missing_cols:
@@ -46,10 +46,10 @@ def load_and_process_data(excel_path: str, sheet_name: str) -> pd.DataFrame:
         final_df = filtered_df[[
             'Template',
             'Number of files using this template',
-            'Category',
             'Years after death of author',
             'Years after first publication',
-            'Years after creation'
+            'Years after creation',
+            'Remarks'
         ]]
 
         return final_df

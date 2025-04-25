@@ -1,11 +1,11 @@
 {
-  "title": "Clustering xxx of files for which copyrights expired because of age",
+  "title": "Expiration periodes specified in Wikimedia Commons copyright templates, as used in files sourced from Delpher",
   "description": {
-    "intro": "This table explains XXXXXXXXXXXXXXXXXXXX copyright templates expired because of age that are used in Wikimedia Commons media files that were sourced from Delpher.<em>(*, **)</em>.  The template usage is taken \"as observed\" (***). <br><br>Data as of 9 April 2025.<br><br>",
-    "byline": "Olaf Janssen, Wikimedia-coördinator @KB - 24 April 2025 - CC-BY-SA 4.0 ",
+    "intro": "This table summarizes the expiration periodes specified in Wikimedia Commons copyright templates for Delpher-sourced media files <em>(*, **)</em>. These files are now in the public domain because of age (<em>NoCopyrightReason = Copyrights expired because of age</em>). Copyright on a work can expire when enough time has passed since the author’s death, the work’s first publication, or its creation. The template usage is taken \"as observed\" (***). <br><br>Data as of 9 April 2025.",
+    "byline": "Olaf Janssen, Wikimedia-coördinator @KB - 25 April 2025 - CC-BY-SA 4.0 ",
     "source-name": "KB, national library of the Netherlands",
     "source-url": "https://github.com/KBNLwikimedia/xxxxxx",
-    "aria-description": "xx"
+    "aria-description": "This table summarizes the expiration periodes specified in Wikimedia Commons copyright templates for Delpher-sourced media files. These files are now in the public domain because of age. Copyright on a work can expire when enough time has passed since the author’s death, the work’s first publication, or its creation. The template usage is taken \"as observed\". Data as of 9 April 2025."
   },
 "visualize":{
   "dark-mode-invert": true,
@@ -737,7 +737,7 @@
   "firstColumnIsSticky": false
 },
 "annotate": {
-    "notes": "(*) Media files in <u><a href='https://commons.wikimedia.org/wiki/Category:Media_from_Delpher' style='color:#b1bfc3'; target='_blank' rel='nofollow noopener'>Category:Media from Delpher</a></u> <br/>(**) This table and its underlying data <u>exclude</u> any files that are also in the <u><a href='https://commons.wikimedia.org/wiki/Category:Scans_from_the_Internet_Archive' style='color:#b1bfc3'; target='_blank' rel='nofollow noopener'>Category:Scans from the Internet Archive</a></u>. See for instance the excluded file <u><a href='https://commons.wikimedia.org/entity/M109025843' style='color:#b1bfc3'; target='_blank' rel='nofollow noopener'>https://commons.wikimedia.org/entity/M109025843</a></u> that falls in both categories. <br/>(***) The template usage is taken 'as observed', ie. without further assessment, judgement or corrections. This means that the usage of these templates in Wikimedia Commons files has not been checked for correctness or completeness, nor have any files been adapted in case public domain claims were false or inconsistent."
+    "notes": "(*) Media files in Wikimedia Commons <u><a href='https://commons.wikimedia.org/wiki/Category:Media_from_Delpher' style='color:#b1bfc3'; target='_blank' rel='nofollow noopener'>Category:Media from Delpher</a></u> <br/>(**) This table and its underlying data <u>exclude</u> any files from that category that <br/> &nbsp;&nbsp;- Are also in the <u><a href='https://commons.wikimedia.org/wiki/Category:Scans_from_the_Internet_Archive' style='color:#b1bfc3'; target='_blank' rel='nofollow noopener'>Category:Scans from the Internet Archive</a></u>. See for instance the excluded file <u><a href='https://commons.wikimedia.org/entity/M109025843' style='color:#b1bfc3'; target='_blank' rel='nofollow noopener'>https://commons.wikimedia.org/entity/M109025843</a></u> that falls in both categories.<br/> &nbsp;&nbsp;- Provide insufficient or no information about the date/time/period the original publication was published or created. <br/>(***) The template usage is taken 'as observed', ie. without further assessment, judgement or corrections. This means that the usage of these templates in Wikimedia Commons files has not been checked for correctness or completeness, nor have any files been adapted in case public domain claims were false or inconsistent."
   },
   "publish": {
     "embed-options": {

@@ -155,9 +155,17 @@ Next., lets';s zoom in on the copyright templates that are used for files that a
 
 <div style="min-height:1167px" id="datawrapper-vis-2NsXE"><script type="text/javascript" defer src="https://datawrapper.dwcdn.net/2NsXE/embed.js" charset="utf-8" data-target="#datawrapper-vis-2NsXE"></script><noscript><img src="https://datawrapper.dwcdn.net/2NsXE/full.png" alt="xx" /></noscript></div>
 
+## Section 3 Compliance of the community to the copyrights stramtrwents
+Are thre any violations of big mistakes?
 
+## Section 4: Commonmly made mistakes of the community when aplying PD templtes to Delphetr files
 
-## Section 3 
+## Section 5: Recommendactions to the 
+* Wikimedia community to improve the copyright templates and their usage
+* Delpher/ KB team
+* KB copyright lawyers
+* CBO's & publishers 
+
 
 ## Raw data
 All data used for the visualisations and analytics in this article is [available on Github](https://github.com/KBNLwikimedia/xxxx). You can also [download the main Excel file directly](https://kbnlwikimedia.github.io/xxxx.xlsx).
