@@ -1,11 +1,80 @@
+"""
+📊 Delpher Copyright Template Visualization Script (Datawrapper Integration)
+
+This script automates the process of generating, updating, and publishing a Datawrapper chart
+based on copyright template metadata extracted from a Delpher-sourced Excel file.
+
+✅ **Purpose**:
+- To analyze how frequently specific copyright templates are used.
+- To prepare and format this data (including HTML rendering of template names).
+- To upload the processed data directly into a pre-configured Datawrapper table chart.
+- To update the chart's metadata, annotations, and descriptions from a separate JSON config file.
+- To publish the chart and optionally retrieve the responsive embed code.
+
+⚙️ **Workflow**:
+1. Loads environment variables (for the Datawrapper API token).
+2. Reads configuration settings from a JSON file.
+3. Loads and processes template metadata from an Excel sheet.
+4. Formats template names as clickable HTML links.
+5. Filters, cleans, and sorts the data for upload.
+6. Updates an existing Datawrapper chart using the Datawrapper API.
+7. Publishes the chart and prints the responsive embed code.
+
+📂 **Expected Directory Structure**:
+project-root/
+├── data/                # Contains the source Excel file with metadata
+├── scripts/             # Contains this script and the JSON configuration file
+
+🔒 **Requirements**:
+- `.env` file containing the Datawrapper API token (`DW_API_TOKEN`).
+- `pandas`, `python-dotenv`, and `datawrapper` Python packages installed.
+
+📌 **Limitations**:
+- This script assumes that the target Datawrapper chart has already been created manually.
+- The configuration must match the structure expected by Datawrapper (title, metadata blocks).
+
+🖋️ **Author**:
+- Olaf Janssen, Wikimedia Coordinator @ KB, National Library of the Netherlands
+- Assisted by ChatGPT
+- Last updated: 25 April 2025
+"""
+
 import os
 import pandas as pd
 from datawrapper import Datawrapper
 from dotenv import load_dotenv
 from pathlib import Path
 import json
+from typing import Dict
 
 def load_and_process_data(excel_path: str, sheet_name: str) -> pd.DataFrame:
+    """
+    Load and process template metadata from an Excel sheet, formatting the template names as HTML links
+    and preparing the data for visualization (e.g., in a Datawrapper table chart).
+
+    The function:
+    - Loads data from the specified Excel sheet.
+    - Verifies the presence of required columns.
+    - Cleans and formats the columns.
+    - Optionally merges the 'NoCopyrightReason' column if it exists.
+    - Formats the 'Template' column as an HTML hyperlink using the 'TemplateURL'.
+    - Sorts the results by 'NoCopyrightReason' (A-Z) and the number of files using the template (descending).
+    - Returns the processed DataFrame ready for upload or further analysis.
+
+    Parameters:
+        excel_path (str): Path to the Excel file containing the template metadata.
+        sheet_name (str): Name of the sheet to process.
+
+    Returns:
+        pd.DataFrame: Processed DataFrame with the following columns:
+            - 'Template' (HTML link format)
+            - 'NoCopyrightReason'
+            - 'Description'
+
+    Raises:
+        ValueError: If required columns are missing from the input data.
+        Exception: Any unexpected error during processing is caught and logged.
+    """
     try:
         # Load Excel sheet
         df = pd.read_excel(excel_path, sheet_name=sheet_name)
@@ -71,59 +140,64 @@ def load_and_process_data(excel_path: str, sheet_name: str) -> pd.DataFrame:
         return pd.DataFrame()
 
 
-def update_datawrapper_chart(dw: Datawrapper, chart_id: str, data: pd.DataFrame, config: dict):
-    dw.add_data(chart_id=chart_id, data=data)
-
-    dw.update_chart(
-        chart_id=chart_id,
-        title=config.get("title", "Datawrapper Table"),
-        metadata={
-            "visualize": config.get("visualize", {}),
-            "annotate": config.get("annotate", {}),
-            "publish": config.get("publish", {})
-        }
-    )
-
-    desc = config.get("description", {})
-    dw.update_description(
-        chart_id=chart_id,
-        intro=desc.get("intro", ""),
-        byline=desc.get("byline", ""),
-        source_name=desc.get("source-name", ""),
-        source_url=desc.get("source-url", ""),
-        aria_description=desc.get("aria-description", "")
-    )
-
-    dw.publish_chart(chart_id=chart_id)
-    print(f"✅ Chart '{config.get('title', 'Datawrapper Table')}' updated and published successfully.")
-
-
-def get_responsive_embed_code(dw, chart_id: str) -> str | None:
+def update_datawrapper_chart(
+    dw: Datawrapper,
+    chart_id: str,
+    data: pd.DataFrame,
+    config: Dict
+) -> None:
     """
-    Fetch the responsive iframe embed code for a published Datawrapper chart.
+    Uploads data, updates metadata and description, and publishes a Datawrapper chart.
+
+    This function performs the following:
+    - Uploads a pandas DataFrame directly into the specified Datawrapper chart.
+    - Updates chart metadata using the provided configuration dictionary.
+    - Sets the textual description for the chart (intro, byline, source).
+    - Publishes the chart on Datawrapper.
+    - Prints a confirmation message upon success.
 
     Parameters:
         dw (Datawrapper): An instance of the Datawrapper API client.
-        chart_id (str): The public or internal ID of the Datawrapper chart.
+        chart_id (str): The ID of the chart to update.
+        data (pd.DataFrame): The data to upload into the chart.
+        config (dict): Chart configuration containing 'title', 'visualize', 'annotate', 'publish', and 'description' keys.
 
-    Returns:
-        str | None: The responsive embed code if available, or None if not found or an error occurred.
+    Raises:
+        RuntimeError: If any step of the chart update or publishing process fails.
     """
     try:
-        chart_info = dw.get_chart(chart_id)
-        embed_codes = chart_info.get("metadata", {}).get("publish", {}).get("embed-codes", {})
-        script_embed = embed_codes.get("embed-method-web-component", None)
+        # Upload data directly
+        dw.add_data(chart_id=chart_id, data=data)
 
-        if script_embed:
-            return script_embed
-        else:
-            print("❌ Script embed code not found. Make sure the chart is published.")
-            return None
+        # Update chart metadata
+        title = config.get("title", "Datawrapper Table")
+        dw.update_chart(
+            chart_id=chart_id,
+            title=title,
+            metadata={
+                "visualize": config.get("visualize", {}),
+                "annotate": config.get("annotate", {}),
+                "publish": config.get("publish", {})
+            }
+        )
+
+        # Update chart description
+        desc = config.get("description", {})
+        dw.update_description(
+            chart_id=chart_id,
+            intro=desc.get("intro", ""),
+            byline=desc.get("byline", ""),
+            source_name=desc.get("source-name", ""),
+            source_url=desc.get("source-url", ""),
+            aria_description=desc.get("aria-description", "")
+        )
+
+        # Publish chart
+        dw.publish_chart(chart_id=chart_id)
+        print(f"✅ Chart '{title}' updated and published successfully.")
 
     except Exception as e:
-        print(f"❌ Error retrieving embed code: {e}")
-        return None
-
+        raise RuntimeError(f"❌ Error while updating and publishing chart '{chart_id}': {e}")
 
 def load_api_token() -> str:
     """Load the Datawrapper API token from .env."""
@@ -167,6 +241,32 @@ def get_chart_visualize_config(dw: Datawrapper, chart_id: str) -> dict:
 
     except Exception as e:
         raise RuntimeError(f"Failed to retrieve 'visualize' config for chart '{chart_id}': {e}")
+
+def get_responsive_embed_code(dw, chart_id: str) -> str | None:
+    """
+    Fetch the responsive iframe embed code for a published Datawrapper chart.
+
+    Parameters:
+        dw (Datawrapper): An instance of the Datawrapper API client.
+        chart_id (str): The public or internal ID of the Datawrapper chart.
+
+    Returns:
+        str | None: The responsive embed code if available, or None if not found or an error occurred.
+    """
+    try:
+        chart_info = dw.get_chart(chart_id)
+        embed_codes = chart_info.get("metadata", {}).get("publish", {}).get("embed-codes", {})
+        script_embed = embed_codes.get("embed-method-web-component", None)
+
+        if script_embed:
+            return script_embed
+        else:
+            print("❌ Script embed code not found. Make sure the chart is published.")
+            return None
+
+    except Exception as e:
+        print(f"❌ Error retrieving embed code: {e}")
+        return None
 
 def main():
     """

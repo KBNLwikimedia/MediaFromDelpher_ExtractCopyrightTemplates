@@ -52,7 +52,6 @@ Olaf Janssen, Wikimedia-coördinator @KB, National Library of the Netherlands
 🔗 User-Agent: OlafJanssenBot/1.0
 """
 
-
 import os
 from datawrapper import Datawrapper #https://datawrapper.readthedocs.io/en/latest/user-guide/api.html
 from dotenv import load_dotenv
@@ -60,7 +59,6 @@ import pandas as pd
 import json
 from pathlib import Path
 from typing import Tuple
-
 
 def count_template_usages(
     excel_path: str,
@@ -302,33 +300,6 @@ def update_and_publish_chart(
         print(f"❌ Error during chart update: {e}")
 
 
-def get_responsive_embed_code(dw, chart_id: str) -> str | None:
-    """
-    Fetch the responsive iframe embed code for a published Datawrapper chart.
-
-    Parameters:
-        dw (Datawrapper): An instance of the Datawrapper API client.
-        chart_id (str): The public or internal ID of the Datawrapper chart.
-
-    Returns:
-        str | None: The responsive embed code if available, or None if not found or an error occurred.
-    """
-    try:
-        chart_info = dw.get_chart(chart_id)
-        embed_codes = chart_info.get("metadata", {}).get("publish", {}).get("embed-codes", {})
-        script_embed = embed_codes.get("embed-method-web-component", None)
-
-        if script_embed:
-            return script_embed
-        else:
-            print("❌ Script embed code not found. Make sure the chart is published.")
-            return None
-
-    except Exception as e:
-        print(f"❌ Error retrieving embed code: {e}")
-        return None
-
-
 def load_config(path: Path) -> dict:
     """Load and return the chart configuration from a JSON file."""
     try:
@@ -379,6 +350,33 @@ def get_chart_visualize_config(dw: Datawrapper, chart_id: str) -> dict:
 
     except Exception as e:
         raise RuntimeError(f"Failed to retrieve 'visualize' config for chart '{chart_id}': {e}")
+
+def get_responsive_embed_code(dw, chart_id: str) -> str | None:
+    """
+    Fetch the responsive iframe embed code for a published Datawrapper chart.
+
+    Parameters:
+        dw (Datawrapper): An instance of the Datawrapper API client.
+        chart_id (str): The public or internal ID of the Datawrapper chart.
+
+    Returns:
+        str | None: The responsive embed code if available, or None if not found or an error occurred.
+    """
+    try:
+        chart_info = dw.get_chart(chart_id)
+        embed_codes = chart_info.get("metadata", {}).get("publish", {}).get("embed-codes", {})
+        script_embed = embed_codes.get("embed-method-web-component", None)
+
+        if script_embed:
+            return script_embed
+        else:
+            print("❌ Script embed code not found. Make sure the chart is published.")
+            return None
+
+    except Exception as e:
+        print(f"❌ Error retrieving embed code: {e}")
+        return None
+
 
 def main():
     """

@@ -112,7 +112,8 @@ Zoom in on Categortry: Media from Delpher Delpher
 
 ## Section 3 
 
-<div style="min-height:839px" id="datawrapper-vis-gZqMt"><script type="text/javascript" defer src="https://datawrapper.dwcdn.net/gZqMt/embed.js" charset="utf-8" data-target="#datawrapper-vis-gZqMt"></script><noscript><img src="https://datawrapper.dwcdn.net/gZqMt/full.png" alt="This donut chart shows the reasons why media files that were sourced from Delpher are out of copyright, according to  Wikimedia Commons. For instance, the 6,191 files in the blue sector are in the public domain because the historical newspapers, books and magazines they were sourced from, are too old to carry copyrights. One file can contain multiple out-of-copyright claims. All such claims are taken &quot;as observed&quot;. Data as of 9 April 2025." /></noscript></div>
+<div style="min-height:839px" id="datawrapper-vis-gZqMt"><script type="text/javascript" defer src="https://datawrapper.dwcdn.net/gZqMt/embed.js" charset="utf-8" data-target="#datawrapper-vis-gZqMt"></script><noscript><img src="https://datawrapper.dwcdn.net/gZqMt/full.png" alt="This donut chart shows the reasons why media files that were sourced from Delpher are out of copyright, according to Wikimedia Commons. For instance, the 6,191 files in the blue sector are in the public domain because the historical newspapers, books and magazines they were sourced from, are too old to carry copyrights. One file can contain multiple out-of-copyright claims. All such claims are taken &quot;as observed&quot;. Data as of 9 April 2025." /></noscript></div>
+
 
 
 After having done the scan, from the Excel, we could quite ealiy look for opublications that possibly did copyvio, based on the yerar of publication. We looked for files that were published in the last 70 years, and that were not marked as public domain. We found 5 files that were published in the last 70 years, and that were not marked as public domain.
@@ -135,13 +136,15 @@ In total 5 deletion trequerst due to copyvio, all of which were granted and the 
 
 Explan which templates have been found
 
-<div style="min-height:766px" id="datawrapper-vis-PJ96v"><script type="text/javascript" defer src="https://datawrapper.dwcdn.net/PJ96v/embed.js" charset="utf-8" data-target="#datawrapper-vis-PJ96v"></script><noscript><img src="https://datawrapper.dwcdn.net/PJ96v/full.png" alt="This table explains the 39 distinct copyright templates that are used in Wikimedia Commons media files that were sourced from Delpher.The templates are sorted and color-coded by the main reason why they categorize files into the public domain. The template usage is taken &quot;as observed&quot; Data as of 9 April 2025." /></noscript></div>
+<div style="min-height:748px" id="datawrapper-vis-PJ96v"><script type="text/javascript" defer src="https://datawrapper.dwcdn.net/PJ96v/embed.js" charset="utf-8" data-target="#datawrapper-vis-PJ96v"></script><noscript><img src="https://datawrapper.dwcdn.net/PJ96v/full.png" alt="This table describes the 39 distinct copyright templates that are used in Wikimedia Commons media files that were sourced from Delpher. The templates are sorted and color-coded by the reason why they categorise files into the public domain. The template usage is taken &quot;as observed&quot;. Data as of 9 April 2025." /></noscript></div>
+
 
 
 xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 
 
-<div style="min-height:1665px" id="datawrapper-vis-UewJt"><script type="text/javascript" defer src="https://datawrapper.dwcdn.net/UewJt/embed.js" charset="utf-8" data-target="#datawrapper-vis-UewJt"></script><noscript><img src="https://datawrapper.dwcdn.net/UewJt/full.png" alt="This chart shows how often which copyright templates are used in Wikimedia Commons media files that were sourced from Delpher. The bars are grouped by the main reason why the files are in the public domain. The template usage is taken \&quot;as observed\&quot;. The 3 key figures are: 1) Total number of distinct media files: 6,248. 2) Total number of template usages: 6,329 (one file can contain multiple copyright templates). 3) Total number of distinct templates used: 39. Data as of 9 April 2025." /></noscript></div>
+<div style="min-height:1625px" id="datawrapper-vis-UewJt"><script type="text/javascript" defer src="https://datawrapper.dwcdn.net/UewJt/embed.js" charset="utf-8" data-target="#datawrapper-vis-UewJt"></script><noscript><img src="https://datawrapper.dwcdn.net/UewJt/full.png" alt="This chart shows how often which copyright templates are used in Wikimedia Commons media files that were sourced from Delpher. The bars are grouped by the reason why the files are in the public domain. The template usage is taken &quot;as observed&quot;. The 3 key figures are: 1) Total number of distinct media files: 6,248. 2) Total number of template usages: 6,329 (one file can contain multiple copyright templates). 3) Total number of distinct templates used: 39. Data as of 9 April 2025." /></noscript></div>
+
 
 
 <!-- <a href="../media/media-from-delpher-in-wikimedia-commons-usage-of-copyright-templates-grouped-by-reason.png" target="_blank"><img src="../media/media-from-delpher-in-wikimedia-commons-usage-of-copyright-templates-grouped-by-reason.png" border="1" align="left" width="90%" hspace="30" alt="This chart shows how often which copyright templates are used in Wikimedia Commons media files that were sourced from Delpher. The bars are grouped by the main reason why the files are in the public domain. The template usage is taken \&quot;as observed\&quot;. The 3 key figures are: 1) Total number of distinct media files: 6,248. 2) Total number of template usages: 6,329 (one file can contain multiple copyright templates). 3) Total number of distinct templates used: 39. Data as of 9 April 2025."/></a>
@@ -153,7 +156,9 @@ Next., lets';s zoom in on the copyright templates that are used for files that a
  In total theis comprises 24 templates 6191 used in xx distinct files
 
 
-<div style="min-height:1167px" id="datawrapper-vis-2NsXE"><script type="text/javascript" defer src="https://datawrapper.dwcdn.net/2NsXE/embed.js" charset="utf-8" data-target="#datawrapper-vis-2NsXE"></script><noscript><img src="https://datawrapper.dwcdn.net/2NsXE/full.png" alt="xx" /></noscript></div>
+<div style="min-height:1333px" id="datawrapper-vis-2NsXE"><script type="text/javascript" defer src="https://datawrapper.dwcdn.net/2NsXE/embed.js" charset="utf-8" data-target="#datawrapper-vis-2NsXE"></script><noscript><img src="https://datawrapper.dwcdn.net/2NsXE/full.png" alt="This table summarizes the expiration periodes specified in Wikimedia Commons copyright templates for Delpher-sourced media files. These files are now in the public domain because of age. Copyright on a work can expire when enough time has passed since the author’s death, the work’s first publication, or its creation. The template usage is taken &quot;as observed&quot;. Data as of 9 April 2025." /></noscript></div>
+
+
 
 ## Section 3 Compliance of the community to the copyrights stramtrwents
 Are thre any violations of big mistakes?

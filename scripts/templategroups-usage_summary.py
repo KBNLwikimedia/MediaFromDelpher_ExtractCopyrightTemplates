@@ -1,53 +1,50 @@
 """
-📊 Donut Chart Generator: Copyright Template Group Usage (Delpher Media)
+📊 Donut Chart Generator – Copyright Template Group Usage (Wikimedia Commons, Delpher Sources)
 
-This script processes metadata from an Excel dataset about Wikimedia Commons
-media files sourced from Delpher. It summarizes how many media files fall into
-various 'NoCopyrightReason' categories (such as 'Expired copyright',
-'Government work', or 'No originality').
+This script analyzes metadata from an Excel spreadsheet that documents copyright templates
+applied to media files sourced from [Delpher](https://www.delpher.nl) and uploaded to
+Wikimedia Commons. Its goal is to visualize how these files are categorized by the
+Wikimedia community in terms of copyright status—focusing on high-level categories like
+“Expired Copyright” or “No Originality”.
 
-The results are visualized as a grouped usage summary using the Datawrapper API
-in the form of a donut chart. The script directly uploads the summarized data
-to a pre-created Datawrapper chart, updates its metadata, and publishes it.
+The script summarizes the number of files grouped by 'NoCopyrightReason' and uses the
+[Datawrapper API](https://developer.datawrapper.de) to update and publish a donut chart.
 
-🚀 Key Features:
-- Reads copyright metadata from an Excel file (processed data).
-- Groups and counts the number of files by 'NoCopyrightReason'.
-- Automatically updates a specific donut chart in Datawrapper via API.
-- Loads configuration (metadata, title, description, color mapping) from a JSON config file.
-- Publishes the chart and prints the responsive embed code.
+🔧 Core Functionalities:
+- Loads and processes Excel data with information about copyright templates.
+- Aggregates the number of files by 'NoCopyrightReason'.
+- Loads chart configuration (title, metadata, colors, etc.) from a local JSON config file.
+- Uploads the summarized data directly into a pre-created Datawrapper donut chart.
+- Updates chart metadata and textual descriptions (title, source, byline, etc.).
+- Publishes the chart and prints the responsive embed code for reuse.
 
-⚙️ Dependencies:
-- `pandas`: For data processing and aggregation.
-- `pathlib`: For reliable file path handling.
-- `dotenv`: For managing API tokens securely via a `.env` file.
-- `datawrapper`: Official Python client for interacting with Datawrapper charts.
+🧩 Technologies & Libraries Used:
+- `pandas`: For data handling and transformation.
+- `datawrapper`: Official API wrapper for interacting with Datawrapper.
+- `dotenv`: For securely loading the API key from a `.env` file.
+- `pathlib` & `json`: For modern file handling and configuration loading.
 
-📂 Expected Project Structure:
+📁 Project Structure:
 project-root/
 ├── data/
 │   └── Media_from_Delpher-Extracted_copyright_templates-*.xlsx
 ├── scripts/
 │   └── this_script.py
-│   └── templategroups_usage_summary-config.json
+│   └── templategroups-usage-summary-config.json
 ├── .env                   # Contains DW_API_TOKEN
 
-📎 Required Environment Variable:
-- DW_API_TOKEN: Your Datawrapper API access token (stored in .env).
-
-💡 Output:
-- Publishes the updated donut chart directly to your Datawrapper account.
-- Outputs the responsive embed code to paste into your website or wiki.
+🌐 Output:
+- Publishes an updated donut chart (e.g., https://www.datawrapper.de/_/gZqMt/).
+- Logs summary statistics and prints the responsive embed code to console.
 
 👤 Author:
 - Olaf Janssen, Wikimedia Coordinator @ KB (National Library of the Netherlands)
-- Assisted by ChatGPT
-- Last updated: 22 April 2025
+- With scripting support from ChatGPT
+- Last updated: 25 April 2025
 
 🆓 License:
-- Released into the public domain (CC0-style). Free to reuse, adapt, and distribute.
+- This script is released into the public domain (CC0-style). Free to use, modify, and distribute.
 """
-
 
 from datawrapper import Datawrapper #https://datawrapper.readthedocs.io/en/latest/user-guide/api.html
 from dotenv import load_dotenv
@@ -61,15 +58,30 @@ def count_nocopyrightreason_usage(
     sheet_name: str
 ) -> pd.DataFrame:
     """
-    Summarize the number of files per 'NoCopyrightReason'.
+    Count the number of media files per 'NoCopyrightReason' in the provided Excel dataset.
+
+    This function analyzes the given Excel sheet to:
+    - Group the media files by their 'NoCopyrightReason' (e.g., "Copyrights expired because of age").
+    - Count the number of unique files (using 'FileMid') associated with each reason.
+    - Return the result as a summary DataFrame, listing the reasons and their corresponding file counts.
+
+    This function helps provide insights into how frequently each copyright rationale
+    is applied across media files in Wikimedia Commons (sourced from Delpher).
 
     Parameters:
-        excel_path (str): Path to the Excel file containing the data.
-        sheet_name (str): Name of the sheet to process.
+        excel_path (str): Path to the Excel file containing the metadata.
+        sheet_name (str): Name of the worksheet to process within the Excel file.
 
     Returns:
-        pd.DataFrame: A DataFrame with 'NoCopyrightReason' and 'Number of files using this template'.
+        pd.DataFrame: A summary table with two columns:
+            - 'NoCopyrightReason' (the grouped reason category)
+            - 'Number of files using this template' (the count of files for each reason)
+
+    Raises:
+        ValueError: If the required columns ('NoCopyrightReason' and 'FileMid') are missing from the Excel sheet.
+        Exception: Other unexpected errors are caught, logged, and result in returning an empty DataFrame.
     """
+
     try:
         df = pd.read_excel(excel_path, sheet_name=sheet_name)
 
@@ -147,33 +159,6 @@ def update_and_publish_chart(
         print(f"❌ Error during chart update: {e}")
 
 
-def get_responsive_embed_code(dw, chart_id: str) -> str | None:
-    """
-    Fetch the responsive iframe embed code for a published Datawrapper chart.
-
-    Parameters:
-        dw (Datawrapper): An instance of the Datawrapper API client.
-        chart_id (str): The public or internal ID of the Datawrapper chart.
-
-    Returns:
-        str | None: The responsive embed code if available, or None if not found or an error occurred.
-    """
-    try:
-        chart_info = dw.get_chart(chart_id)
-        embed_codes = chart_info.get("metadata", {}).get("publish", {}).get("embed-codes", {})
-        script_embed = embed_codes.get("embed-method-web-component", None)
-
-        if script_embed:
-            return script_embed
-        else:
-            print("❌ Script embed code not found. Make sure the chart is published.")
-            return None
-
-    except Exception as e:
-        print(f"❌ Error retrieving embed code: {e}")
-        return None
-
-
 def load_api_token() -> str:
     """Load the API token securely from the .env file."""
     load_dotenv()
@@ -221,6 +206,31 @@ def get_chart_visualize_config(dw: Datawrapper, chart_id: str) -> dict:
     except Exception as e:
         raise RuntimeError(f"Failed to retrieve 'visualize' config for chart '{chart_id}': {e}")
 
+def get_responsive_embed_code(dw, chart_id: str) -> str | None:
+    """
+    Fetch the responsive iframe embed code for a published Datawrapper chart.
+
+    Parameters:
+        dw (Datawrapper): An instance of the Datawrapper API client.
+        chart_id (str): The public or internal ID of the Datawrapper chart.
+
+    Returns:
+        str | None: The responsive embed code if available, or None if not found or an error occurred.
+    """
+    try:
+        chart_info = dw.get_chart(chart_id)
+        embed_codes = chart_info.get("metadata", {}).get("publish", {}).get("embed-codes", {})
+        script_embed = embed_codes.get("embed-method-web-component", None)
+
+        if script_embed:
+            return script_embed
+        else:
+            print("❌ Script embed code not found. Make sure the chart is published.")
+            return None
+
+    except Exception as e:
+        print(f"❌ Error retrieving embed code: {e}")
+        return None
 
 def main():
     """
