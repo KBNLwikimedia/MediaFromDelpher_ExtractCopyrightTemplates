@@ -532,7 +532,7 @@ def process_templates_for_category(include_term, exclude_term):
 
         # Build Excel header
         max_tpls = max((len(r) - 3) // 2 for r in records)  # each template = 2 columns
-        columns = ['File URL', 'NumberOfTemplates', 'DateOfCreation']
+        columns = ['File URL', 'NumberOfTemplates', 'YearOfPublicationOrCreation']
         for i in range(max_tpls):
             columns.extend([f'Template {i+1}', f'Template {i+1} URL'])
 

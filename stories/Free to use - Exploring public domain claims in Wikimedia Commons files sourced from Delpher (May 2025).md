@@ -7,13 +7,8 @@ This article is also [available as PDF](ongithub.pdf).
 
 <img src="../media/delpher_logo_new.png" align="right" width="170" hspace="20" alt="Logo Delpher"/>
 
-_**[Delpher](https://www.delpher.nl)** offers access to millions of digitized pages from Dutch historical newspapers, books, and magazines — a valuable resource frequently used on Wikimedia Commons. In the first part of this data story, we examine how the Wikimedia community has assigned public domain status to Commons files that have been [sourced from Delpher](https://commons.wikimedia.org/wiki/Category:Media_from_Delpher). In the second part, we explore the validity of these claims and assess whether they align with the actual copyright status of these works._
-
-----------------
-
-Much of the historical content from Delpher falls into the public domain due to its age and can therefore be uploaded to Wikimedia Commons without concern. At the same time, the KB — being the operator of Delpher — has a contractual obligation towards authors and publishers to monitor potential copyright infringements and to prevent them as much as possible, including Delpher content that has been uploaded to Wikimedia Commons.
-
-For this reason, the KB wants to gain a better understanding of which newspaper articles, books, magazines and other materials from Delpher have been uploaded to Wikimedia Commons, and how public domain claims to those files have been assigned by the Wikimedia community. In doing so, it is important to emphasize that the KB has absolutely **no** intention to act as a copyright police force. The goal is to work together with the Wikimedia community to handle copyright matters responsibly, with respect for both creators and users.
+_**[Delpher](https://www.delpher.nl)** offers access to millions of digitized pages from Dutch historical newspapers, books, and magazines — a valuable resource frequently used on Wikimedia Commons. In the first part of this data story, we examine how the Wikimedia community has assigned public domain status to Commons files that have been [sourced from Delpher](https://commons.wikimedia.org/wiki/Category:Media_from_Delpher). <br/>
+In the second part, we explore the validity of these claims and assess whether they align with the actual copyright status of the works. We identify common mistakes made by the Wikimedia community when applying public domain templates to files. Finally, we examine whether these errors have resulted in any serious copyright violations._
 
 ## Key figures and findings
 The most important key figures and findings of this story are:
@@ -21,6 +16,13 @@ The most important key figures and findings of this story are:
 * kf 2
 * kf 3
 * 
+
+## Intro, preamble, and background
+
+### Why did I write this article? 
+Much of the historical content from Delpher falls into the public domain due to its age and can therefore be uploaded to Wikimedia Commons without concern. At the same time, the KB — being the operator of Delpher — has a contractual obligation towards authors and publishers to monitor potential copyright infringements and to prevent them as much as possible, including Delpher content that has been uploaded to Wikimedia Commons.
+
+For this reason, the KB wants to gain a better understanding of which newspaper articles, books, magazines and other materials from Delpher have been uploaded to Wikimedia Commons, and how public domain claims to those files have been assigned by the Wikimedia community. In doing so, it is important to emphasize that the KB has absolutely **no** intention to act as a copyright police force. The goal is to work together with the Wikimedia community to handle copyright matters responsibly, with respect for both creators and users.
 
 ### What this article aims to do
 1. Provide a **practical case study** of how public domain claims are applied in a real-world environment — specifically, how Wikimedia Commons contributors handle copyright claims for [files sourced from Delpher](https://commons.wikimedia.org/wiki/Category:Media_from_Delpher).
@@ -33,6 +35,15 @@ The most important key figures and findings of this story are:
 2. Provide a **formal and/or detailed legal analysis** of every public domain claim for these files — such an approach would be far too extensive for the scope of this data story.
 3. XXXXXXXXX **Identify and flag every potential copyright infringement** — aside from highlighting a few obvious and illustrative cases mentioned later in this story. XXXXXXXXXXXX (besides the 5 obvious cases mention below)
 4. Offer **recommendations or proposals on how to simplify public domain claims** on Wikimedia Commons. This article takes the current public domain landscape "as is," observing how it functions in practice without suggesting reform.
+
+### Who is this article relevant for? 
+This analysis of public domain template usage on Wikimedia Commons applied to files sourced from Delpher may be of interest to:
+* **The Wikimedia community** – to gain insights into how (accurately) they have implemented public domain copyright templates, especially for Delpher-sourced files.
+* **The Delpher development team and user community** – to better understand how a decentralized, international community of content re-users deals with public domain Delpher-sourced materials in a real-world scenario, i.e. on Wikimedia Commons.
+* **Other GLAM institutions with collections on Wikimedia Commons** – to explore how this Delpher case study could be replicated for their own Wikimedia Commons files, supported by the freely available code, data and documentation shared via this article.
+* **KB copyright lawyers and the wider legal/copyright community** – to see how copyright law and public domain issues play out in a real-world, community-driven environment, and to reflect on the practical implications for heritage institutions like the KB.
+* **Rights holders, publishers and collective rights organizations** – to assess whether there should be reasons for serious concern about large-scale copyright violations by the Wikimedia community (spoiler: our findings suggest there is little to no cause for such concern).
+
 
 ## Copyrights templates in Wikimedia Commons
 
@@ -114,17 +125,20 @@ Zoom in on Categortry: Media from Delpher Delpher
 
 <div style="min-height:839px" id="datawrapper-vis-gZqMt"><script type="text/javascript" defer src="https://datawrapper.dwcdn.net/gZqMt/embed.js" charset="utf-8" data-target="#datawrapper-vis-gZqMt"></script><noscript><img src="https://datawrapper.dwcdn.net/gZqMt/full.png" alt="This donut chart shows the reasons why media files that were sourced from Delpher are out of copyright, according to Wikimedia Commons. For instance, the 6,191 files in the blue sector are in the public domain because the historical newspapers, books and magazines they were sourced from, are too old to carry copyrights. One file can contain multiple out-of-copyright claims. All such claims are taken &quot;as observed&quot;. Data as of 9 April 2025." /></noscript></div>
 
+After having done the scan, from the Excel, we could quite ealiy look for opublications that possibly did copyvio, based on the yerar of publication. We looked for content that was published in the last 70 years, and that still was marked as public domain or under CC-licensing. We found 4 files that were published in the last 70 years (after 1955), but that were marked as public domain or under CC-licensing.In total 4 deletion trequerst due to copyvio, all of which were granted and the fielswere deleted very quicly. 
+
+* [De Telegraaf, 1985](https://commons.wikimedia.org/w/index.php?title=File:Newspaper_article_-_De_Telegraaf_-_Date_09-07-1985_-_Bank_robbery_-_Rob_Kaman_-_Kickboxing.jpg&action=edit&redlink=1)
+This is a file from Dutch newspaper 'De Telegraaf' from 1985, this article is still under copyright, as it was published less than 70 years ago. I cannot have a CC0 license
+
+* [Trouw, 1974](https://commons.wikimedia.org/w/index.php?title=File:Advertentie_Pottenbakkerij_Henk_en_Lieske_Potters_in_Trouw_dd_22_maart_1974.jpg&action=edit&redlink=1)
+This is a file from Dutch newspaper 'Trouw' from 1974. This article is still under copyright, as it was published less than 70 years ago. So we must assume that the copyright of this publication is with the newspaper publisher, unless proven otherwise.) 
 
 
-After having done the scan, from the Excel, we could quite ealiy look for opublications that possibly did copyvio, based on the yerar of publication. We looked for files that were published in the last 70 years, and that were not marked as public domain. We found 5 files that were published in the last 70 years, and that were not marked as public domain.
-Example of delted file: artiocle in Telgraaf from 1985
-In total 5 deletion trequerst due to copyvio, all of which were granted and the fielswere deleted very quicly. 
+* [Algemeen Dagblad, 1966](https://commons.wikimedia.org/w/index.php?title=File:Ad_25_6_1966.jpg&action=edit&redlink=1)
+This is a file from Dutch newspaper 'Algemeen Dagblad' from 1966. This article is still under copyright, as it was published less than 70 years ago. So we must assume that the copyright of this publication is with the newspaper publisher, unless proven otherwise. Futhermore, it can not have a CCO license.
 
-* https://commons.wikimedia.org/w/index.php?title=File:Newspaper_article_-_De_Telegraaf_-_Date_09-07-1985_-_Bank_robbery_-_Rob_Kaman_-_Kickboxing.jpg&action=edit&redlink=1
-* https://commons.wikimedia.org/w/index.php?title=File:Advertentie_Pottenbakkerij_Henk_en_Lieske_Potters_in_Trouw_dd_22_maart_1974.jpg&action=edit&redlink=1
-* https://commons.wikimedia.org/w/index.php?title=File:Ad_25_6_1966.jpg&action=edit&redlink=1
-* https://commons.wikimedia.org/w/index.php?title=File:Een_oproep_van_Duco_Sickinghe_(1888-1983)_in_dagblad_Het_Binnenhof_en_Het_Vaderland_(1956).jpg&action=edit&redlink=1
-* https://commons.wikimedia.org/w/index.php?title=File:Een_oproep_van_Duco_Sickinghe_(1888-1983)_in_dagblad_Het_Binnenhof_en_Het_Vaderland_(1956).jpg&action=edit&redlink=1
+* [Het Binnenhof en Het Vaderland, 1956](https://commons.wikimedia.org/w/index.php?title=File:Een_oproep_van_Duco_Sickinghe_(1888-1983)_in_dagblad_Het_Binnenhof_en_Het_Vaderland_(1956).jpg&action=edit&redlink=1)
+his is a text by Duco Sickinghe in a Dutch newspaper from 1956. According to Dutch coppyright law, this article is still under copyright, as the author only died in 1983 AND the article was published less than 70 years ago. So we must assume that the copyright of this publication is still with the (heirs of the) author or with the newspaper publisher, unless proven otherwise. Futhermore, it can not have a CC-BY license
 
 ><big><b><em>Quote 1</em></b></big>
 
@@ -162,6 +176,27 @@ Next., lets';s zoom in on the copyright templates that are used for files that a
 
 ## Section 3 Compliance of the community to the copyrights stramtrwents
 Are thre any violations of big mistakes?
+
+forthe "pd becauase of age groop" (98% of uses) we will llok at the year in which the orginalwork was published or creaed (column F "DateOfPublicationOrCreation" in the Excel)
+
+- The years of publication or creation have been extrachred from the Wikitext, typically the "Date-field"
+- for most fies the date could be extracted as a single year, for instance files taken from newspapers that were published in [1863](https://commons.wikimedia.org/wiki/File:1863_03_14_De_Spoorbrug_te_Venlo.jpg), [1926](https://commons.wikimedia.org/wiki/File:Nieuwe_Venlosche_Courant_vol_064_no_185_obituary_m%C3%A8re_Louise_Hanrath.jpg) or [1952](https://commons.wikimedia.org/wiki/File:Portret_van_Eug%C3%A8ne_Brands,_1952.jpg).
+- In case this date was not a single year the latest/most recent year has been taken. For isntance [1920s]() *(--> YYYY)* , [before 1880]() *(--> YYYY)* or [circa 1949]()*(--> YYYY)*.  
+
+Interesting cases to study, in the Excel 
+* Files classified ""Copyrights waived or made free""
+* Fioles from publ;ications 1955 or later that are marked as public domain
+
+Make Datarwapper for trhat
+https://commons.wikimedia.org/wiki/File:Proclamatie1955-Amigoe.jpg	File:Proclamatie1955-Amigoe.jpg	M147748690	Klik	1	1955	{{PD-anon-70-EU}}	https://commons.wikimedia.org/wiki/Template:PD-anon-70-EU	Klik	Copyrights expired because of age
+https://commons.wikimedia.org/wiki/File:1957_Foto-album_van_burgemeester_P.M.J.S._Cremers%2C_1957_18.jpg	File:1957_Foto-album_van_burgemeester_P.M.J.S._Cremers,_1957_18.jpg	M150325640	Klik	1	1957	{{Cc-by-4.0}}	https://commons.wikimedia.org/wiki/Template:Cc-by-4.0	Klik	Copyrights waived or made free
+https://commons.wikimedia.org/wiki/File:Hindeloopen_vlag_1650.svg	File:Hindeloopen_vlag_1650.svg	M81840054	Klik	1	1957	{{PD-self}}	https://commons.wikimedia.org/wiki/Template:PD-self	Klik	Copyrights waived or made free
+https://commons.wikimedia.org/wiki/File:Handtekening_George_van_den_Bergh.jpg	File:Handtekening_George_van_den_Bergh.jpg	M89816821	Klik	1	1960	{{PD-signature}}	https://commons.wikimedia.org/wiki/Template:PD-signature	Klik	Not eligible for copyrights due to lack of sufficient originality
+https://commons.wikimedia.org/wiki/File:Expositie_van_18_jonge_Nederlandse_striptekenaars_in_Kunstcentrum_Lijnbaan%2C_1971.jpg	File:Expositie_van_18_jonge_Nederlandse_striptekenaars_in_Kunstcentrum_Lijnbaan,_1971.jpg	M112239095	Klik	1	1971	{{Cc-zero}}	https://commons.wikimedia.org/wiki/Template:Cc-zero	Klik	Copyrights waived or made free
+https://commons.wikimedia.org/wiki/File:IJ_with_two_acute_accents_in_Staatsblad_van_het_Koninkrijk_der_Nederlanden%2C_no._394%2C_1996%2C_p._17.png	File:IJ_with_two_acute_accents_in_Staatsblad_van_het_Koninkrijk_der_Nederlanden,_no._394,_1996,_p._17.png	M129412274	Klik	1	1996	{{PD-text}}	https://commons.wikimedia.org/wiki/Template:PD-text	Klik	Not eligible for copyrights due to lack of sufficient originality
+
+
+
 
 ## Section 4: Commonmly made mistakes of the community when aplying PD templtes to Delphetr files
 
