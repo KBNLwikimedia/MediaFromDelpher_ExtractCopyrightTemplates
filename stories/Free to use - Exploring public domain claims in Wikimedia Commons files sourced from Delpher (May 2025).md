@@ -97,24 +97,26 @@ In practice This means that for many Commons files, multiple templates are requi
 
 ##  Zooming in further: licensing templates used in Delpher fioles
 
-1 Expla nthat all files have been brohju together in the Caterogy Mdioa from depher
+## Creating the dataset
+1 Expla nthat the community has been uploading newspaprratciels, adversisent, obituaries, book pages, ortaits from magazines and other material;s from Delpher (and its predecessors) to Wikimedia Commons [since March 2008](https://commons.wikimedia.org/wiki/File%3AKrantenartikel%5FTentoonstelling%5FDe%5FBranding%2Ejpg). As thse were all over Commons (not categoprized), the first thing we did weas to bring them toget in a [Categopry;Medoa from depher](). This catelory has 63K files
 
-2 xpln how the sxcrit you made helped in trackuing doan all templated that are used in the 62oo files in Cat:media fronm Depher
-
-date: 9 april 2025
-
-Expln that I wot a Franenstein Puthin script that extracted the copyright templaat and dataOfCreation from the files in that categorty. see the technical notes for more detaiols 
-
-3 Expan tha files from the IA are excluided fronm the sanayses - https://commons.wikimedia.org/wiki/File:%27s_Gravenhaagsche_courant_02-09-1822_(IA_ddd_010124645_mpeg21).pdf . 
+As tou can see, there are very many files fro the IA, - 3 Explain that [NNNN files](petscan URL) from the IA are excluided fronm the sanayses - such as  https://commons.wikimedia.org/wiki/File:%27s_Gravenhaagsche_courant_02-09-1822_(IA_ddd_010124645_mpeg21).pdf . 
 https://commons.wikimedia.org/wiki/Category:Scans_from_the_Internet_Archive
-- all the files have the {{PD-old-70-expired}} template
+all the files have the {{PD-old-70-expired}} template. Bcasuwe these are 59K, the anayses would be skwed toom uchto these files, so we leave thm uit. 
 
-Fromn the total of 6496 files in this cat dd 9-4-2025 https://petscan.wmcloud.org/?templates_any=&language=commons&combination=subset&search_max_results=500&langs_labels_yes=&cb_labels_no_l=1&negcats=Scans+from+the+Internet+Archive&format=html&project=wikimedia&cb_labels_yes_l=1&pagepile=&before=20250409&active_tab=tab_pageprops&links_to_all=&min_sitelink_count=&interface_language=en&min_redlink_count=1&only_new=on&ns%5B6%5D=1&sitelinks_any=&categories=Media+from+Delpher&cb_labels_any_l=1&wikidata_source_sites=&rxp_filter=&langs_labels_any=&manual_list_wiki=&doit=
-ecluding the IA scans**
+This left us with 6,496 'non-IA' public domain files dd 9-4-2025 https://petscan.wmcloud.org/?templates_any=&language=commons&combination=subset&search_max_results=500&langs_labels_yes=&cb_labels_no_l=1&negcats=Scans+from+the+Internet+Archive&format=html&project=wikimedia&cb_labels_yes_l=1&pagepile=&before=20250409&active_tab=tab_pageprops&links_to_all=&min_sitelink_count=&interface_language=en&min_redlink_count=1&only_new=on&ns%5B6%5D=1&sitelinks_any=&categories=Media+from+Delpher&cb_labels_any_l=1&wikidata_source_sites=&rxp_filter=&langs_labels_any=&manual_list_wiki=&doit=
 
-we were able to tretrioeve 6,248 distinct filies, that had both template information as well as a date of creation 
+Next for the remaong 6,496 file, we wanted to extct2 xpln how the sxcrit you made helped in trackuing doan all templated that are used in the 62oo files in Cat:media fronm Depher
 
-Dd 09 May 2025 thi category 
+Expln that I wot a Franenstein Puthin script that extracted the 
+- copyright templaat and 
+- dataOfPublicationIOrCreation from the files in that categorty. In Aprt 2 of thi arcitlce we wil llok at these closer.
+ See the technical notes for more detaiols 
+
+4 Explan dat files without a date of opublicaion or creation are also exlusded, because in part 2 we wantto be able to assess of the copyright/pd claims made in the fie are valid, we'll do thasr by looking a the year of publiocaionm or creationi
+
+in theend we were able to tretrioeve 6,248 distinct filies, that had both template information as well as a date of publication/creation. This is the [dataset used in this nalyuses](link naar Excel)
+
 
 
 ## Section 2: Tracking the copyright templates in Wikimedia Commons, for Media from Delpher Delpher
