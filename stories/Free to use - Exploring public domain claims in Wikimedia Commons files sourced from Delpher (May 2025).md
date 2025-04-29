@@ -1,3 +1,5 @@
+[<< Back to stories index](https://kbnlwikimedia.github.io/stories/)
+
 # Free to use? Exploring public domain claims in Wikimedia Commons files sourced from Delpher (May 2025)
 <sup>Olaf Janssen, xx May 2025</sup>
 
