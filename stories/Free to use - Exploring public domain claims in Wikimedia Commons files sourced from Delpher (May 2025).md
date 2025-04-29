@@ -100,13 +100,28 @@ In practice This means that for many Commons files, multiple templates are requi
 ##  Zooming in further: licensing templates used in Delpher fioles
 
 ## Creating the dataset
-1 Expla nthat the community has been uploading newspaprratciels, adversisent, obituaries, book pages, ortaits from magazines and other material;s from Delpher (and its predecessors) to Wikimedia Commons [since March 2008](https://commons.wikimedia.org/wiki/File%3AKrantenartikel%5FTentoonstelling%5FDe%5FBranding%2Ejpg). As thse were all over Commons (not categoprized), the first thing we did weas to bring them toget in a [Categopry;Medoa from depher](). This catelory has 63K files
+The Wikimedia community has been uploading newspaper articles, advertisements, obituaries, book pages, portraits from magazines, and other materials from Delpher (and its predecessor projects) to Wikimedia Commons [since March 2008](https://commons.wikimedia.org/wiki/File:Krantenartikel_Tentoonstelling_De_Branding.jpg). Since these files were originally scattered across Commons without consistent categorization, the first step was to bring them together into a single, central category: [Category:Media from Delpher](https://commons.wikimedia.org/wiki/Category:Media_from_Delpher). 
+This category currently contains just over over 62K files. 
 
-As tou can see, there are very many files fro the IA, - 3 Explain that [NNNN files](petscan URL) from the IA are excluided fronm the sanayses - such as  https://commons.wikimedia.org/wiki/File:%27s_Gravenhaagsche_courant_02-09-1822_(IA_ddd_010124645_mpeg21).pdf . 
-https://commons.wikimedia.org/wiki/Category:Scans_from_the_Internet_Archive
-all the files have the {{PD-old-70-expired}} template. Bcasuwe these are 59K, the anayses would be skwed toom uchto these files, so we leave thm uit. 
+### Delpher source template
 
-This left us with 6,496 'non-IA' public domain files dd 9-4-2025 https://petscan.wmcloud.org/?templates_any=&language=commons&combination=subset&search_max_results=500&langs_labels_yes=&cb_labels_no_l=1&negcats=Scans+from+the+Internet+Archive&format=html&project=wikimedia&cb_labels_yes_l=1&pagepile=&before=20250409&active_tab=tab_pageprops&links_to_all=&min_sitelink_count=&interface_language=en&min_redlink_count=1&only_new=on&ns%5B6%5D=1&sitelinks_any=&categories=Media+from+Delpher&cb_labels_any_l=1&wikidata_source_sites=&rxp_filter=&langs_labels_any=&manual_list_wiki=&doit=
+We added a [{{Delpher}} source template](https://commons.wikimedia.org/wiki/Template:Delpher) to all of these files ([example](https://commons.wikimedia.org/w/index.php?title=File:1863_Commissie_tot_de_Vervoermiddelen_op_Java_1863.jpg&action=edit)). This is not only to visually and textually communicate that Delpher is the source of these files, but also to automatically include the files into the said category. 
+
+<a href="https://commons.wikimedia.org/wiki/Template:Delpher" target="_blank"><img src="../media/delpher-wmc-template.png" align="left" width="100%" vspace="5" alt="Screenshot of the rendered Delpher template on Wikimedia Commons."/></a>
+<br clear="all"/><sub>*A screenshot of the rendered [Delpher template](https://commons.wikimedia.org/wiki/Template:Delpher) on Wikimedia Commons.*</sub>
+
+### Excluding scans from the Internet Archive
+
+As you can see, a significant part of the category is filled with files claimed to be uploaded from the Internet Archive, but that find their real origins in Delpher. These are the PDFs with *IA ddd ...mpeg21* in their titles ([example](https://commons.wikimedia.org/wiki/File:%27s_Gravenhaagsche_courant_02-09-1822_(IA_ddd_010124645_mpeg21).pdf)). In total there are [55,761 files from the Internet Archive](https://petscan.wmcloud.org/?templates_yes=&ores_prob_from=&search_query=&edits%5Bflagged%5D=both&show_disambiguation_pages=both&common_wiki_other=&wikidata_prop_item_use=&edits%5Banons%5D=both&combination=subset&larger=&min_sitelink_count=&language=commons&manual_list_wiki=&search_max_results=500&edits%5Bbots%5D=both&project=wikimedia&rxp_filter=&negcats=&cb_labels_no_l=1&since_rev0=&sparql=&ores_type=any&links_to_any=&outlinks_no=&sitelinks_yes=&langs_labels_yes=&output_compatability=catscan&sitelinks_no=&categories=Scans_from_the_Internet_Archive%0D%0AMedia+from+Delpher&min_redlink_count=1&interface_language=en&cb_labels_any_l=1&pagepile=&cb_labels_yes_l=1&ores_prob_to=&format=html&wikidata_source_sites=&labels_any=&ns%5B6%5D=1&smaller=&doit) that were originally sourced from Delpher. 
+
+All of these files are marked with the [{{PD-old-70-expired}} copyright template](https://commons.wikimedia.org/wiki/Template:PD-old-70-expired), which means that they are safely in the public domain in the Netherlands (and its predecessors), the rest of the EU and the United States. 
+
+Because such a large part - 89.6% of the files - in the [Category:Media from Delpher]((https://commons.wikimedia.org/wiki/Category:Media_from_Delpher)) come from the Internet Archive, we decided to exclude them from our further analysis. And because all of them are marked with the exact same copyright template, including them would make our analysis too biased (or skewed) towards these files and templates.
+
+### Extracting copyright templates and publication/creation dates
+
+This left us with [6,496 'non-Internet Archive' files from Delpher](https://petscan.wmcloud.org/?templates_any=&language=commons&combination=subset&search_max_results=500&langs_labels_yes=&cb_labels_no_l=1&negcats=Scans+from+the+Internet+Archive&format=html&project=wikimedia&cb_labels_yes_l=1&pagepile=&before=20250409&active_tab=tab_pageprops&links_to_all=&min_sitelink_count=&interface_language=en&min_redlink_count=1&only_new=on&ns%5B6%5D=1&sitelinks_any=&categories=Media+from+Delpher&cb_labels_any_l=1&wikidata_source_sites=&rxp_filter=&langs_labels_any=&manual_list_wiki=&doit=) (d.d. 9 April 2025) 
+
 
 Next for the remaong 6,496 file, we wanted to extct2 xpln how the sxcrit you made helped in trackuing doan all templated that are used in the 62oo files in Cat:media fronm Depher
 
@@ -114,6 +129,8 @@ Expln that I wot a Franenstein Puthin script that extracted the
 - copyright templaat and 
 - dataOfPublicationIOrCreation from the files in that categorty. In Aprt 2 of thi arcitlce we wil llok at these closer.
  See the technical notes for more detaiols 
+
+### Excluding files without publication/creation dates
 
 4 Explan dat files without a date of opublicaion or creation are also exlusded, because in part 2 we wantto be able to assess of the copyright/pd claims made in the fie are valid, we'll do thasr by looking a the year of publiocaionm or creationi
 
