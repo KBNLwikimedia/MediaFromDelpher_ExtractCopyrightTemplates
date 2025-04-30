@@ -118,24 +118,15 @@ All of these files are marked with the [\{\{PD-old-70-expired\}\} copyright temp
 
 Because such a large part - 89.6% of the files - in the [Category:Media from Delpher]((https://commons.wikimedia.org/wiki/Category:Media_from_Delpher)) come from the Internet Archive, we decided to exclude them from our further analysis. And because all of them are marked with the exact same copyright template, including them would make our analysis too biased (or skewed) towards these files and templates.
 
-### Extracting copyright templates and publication/creation dates
+### Extracting copyright templates
 
-This left us with [6,496 'non-Internet Archive' files from Delpher](https://petscan.wmcloud.org/?templates_any=&language=commons&combination=subset&search_max_results=500&langs_labels_yes=&cb_labels_no_l=1&negcats=Scans+from+the+Internet+Archive&format=html&project=wikimedia&cb_labels_yes_l=1&pagepile=&before=20250409&active_tab=tab_pageprops&links_to_all=&min_sitelink_count=&interface_language=en&min_redlink_count=1&only_new=on&ns%5B6%5D=1&sitelinks_any=&categories=Media+from+Delpher&cb_labels_any_l=1&wikidata_source_sites=&rxp_filter=&langs_labels_any=&manual_list_wiki=&doit=) (d.d. 9 April 2025) 
-
-
-Next for the remaong 6,496 file, we wanted to extct2 xpln how the sxcrit you made helped in trackuing doan all templated that are used in the 62oo files in Cat:media fronm Depher
-
-Expln that I wot a Franenstein Puthin script that extracted the 
-- copyright templaat and 
-- dataOfPublicationIOrCreation from the files in that categorty. In Aprt 2 of thi arcitlce we wil llok at these closer.
- See the technical notes for more detaiols 
+This left us with [6,496 'non-Internet Archive' files from Delpher](https://petscan.wmcloud.org/?templates_any=&language=commons&combination=subset&search_max_results=500&langs_labels_yes=&cb_labels_no_l=1&negcats=Scans+from+the+Internet+Archive&format=html&project=wikimedia&cb_labels_yes_l=1&pagepile=&before=20250409&active_tab=tab_pageprops&links_to_all=&min_sitelink_count=&interface_language=en&min_redlink_count=1&only_new=on&ns%5B6%5D=1&sitelinks_any=&categories=Media+from+Delpher&cb_labels_any_l=1&wikidata_source_sites=&rxp_filter=&langs_labels_any=&manual_list_wiki=&doit=). For these files, we wanted to extract the associated copyright templates. With some help from ChatGPT, we developed a (rather inelegant) [Python script](../scripts/extract_copyright_templates.py) to extract public domain or public domain-like license templates (e.g., Creative Commons).
 
 ### Excluding files without publication/creation dates
+As we plan to assess the validity of copyright claims against the actual publication or creation dates of the works, we also designed the script to extract simplified date information. Files without a publication or creation date were excluded from further analysis. We will discuss the date extraction process in more detail in SECTIONXXXXXXXXXXXXXXXXXXX.
 
-4 Explan dat files without a date of opublicaion or creation are also exlusded, because in part 2 we wantto be able to assess of the copyright/pd claims made in the fie are valid, we'll do thasr by looking a the year of publiocaionm or creationi
-
-in theend we were able to tretrioeve 6,248 distinct filies, that had both template information as well as a date of publication/creation. This is the [dataset used in this nalyuses](link naar Excel)
-
+### The final dataset
+In the end, we were able to retrieve 6,248 distinct files that contained both (one or more) copyright templates and a publication or creation date. This is the [dataset used in our further analysis](link to Excel).
 
 
 ## Section 2: Tracking the copyright templates in Wikimedia Commons, for Media from Delpher Delpher
