@@ -1,4 +1,9 @@
-[<< Back to stories index](https://kbnlwikimedia.github.io/stories/)
+<table width="100%" border="0"><tr><td align="left">
+<a href="https://kbnlwikimedia.github.io/stories/"><< Back to stories index</a>
+</td><td align="right">
+<a href="https://github.com/KBNLwikimedia/wikimedia-commons_copyright-templates" target="_blank">>> To the Github repo of this page</a>
+</td></tr></table>
+<hr/>
 
 # Free to use? Exploring public domain claims in Wikimedia Commons files sourced from Delpher (May 2025)
 <sup>Olaf Janssen, xx May 2025</sup>
