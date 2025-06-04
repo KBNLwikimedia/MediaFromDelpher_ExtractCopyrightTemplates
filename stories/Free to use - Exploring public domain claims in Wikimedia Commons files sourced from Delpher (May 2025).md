@@ -92,9 +92,11 @@ In practice, this means that many Commons files require multiple templates:<br/>
 <a href="../media/wmc-pd-templates-sample.png"><img src="../media/wmc-pd-templates-sample.png" align="left" width="100%" vspace="5" alt="A non-exhaustive collage of screenshots of public domain template description pages used in Wikimedia Commons files that have been sourced from Delpher."/></a>
 <br clear="all"/><sub>*A (non-exhaustive) collage of screenshots of public domain template description pages, as used in Wikimedia Commons [files that have been sourced from Delpher](https://commons.wikimedia.org/wiki/Category:Media_from_Delpher) (Click to enlarge).<br/>Image license: <a href="https://creativecommons.org/licenses/by-sa/4.0/deed.nl" target="_blank">CC-BY-SA 4.0</a> / Olaf Janssen, KB national library of the Netherlands.*</sub>
 
-=============== tot hier gekommmen met schrijven =======================
+=============== tot hier gekomen met schrijven =======================
 
-##  Zooming in further: licensing templates used in Delpher fioles
+##  Zooming in further: copyright templates used in Delpher files
+
+Add some text here
 
 ## Creating the dataset
 
