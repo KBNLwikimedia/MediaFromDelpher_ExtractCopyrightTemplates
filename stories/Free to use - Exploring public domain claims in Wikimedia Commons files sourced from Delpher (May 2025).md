@@ -85,7 +85,7 @@ The [General public domain templates](https://commons.wikimedia.org/wiki/Commons
 
 Adding to this complexity is a crucial requirement: *Every file on Wikimedia Commons must also include a justification for its public domain status under U.S. law.* This requirement arises from the fact that Wikimedia’s servers are located in the United States. Therefore, all hosted content must comply not only with the copyright laws of the country of origin but also with those of the U.S., which [can be particularly intricate](https://guides.library.cornell.edu/copyright/publicdomain) and often differ substantially from other jurisdictions.
 
-In practice, this means that many Commons files require multiple templates:
+In practice, this means that many Commons files require multiple templates:<br/>
 * One or more templates describing the copyright status in the country of origin;
 * An additional template confirming the file's public domain status in the United States.
 
