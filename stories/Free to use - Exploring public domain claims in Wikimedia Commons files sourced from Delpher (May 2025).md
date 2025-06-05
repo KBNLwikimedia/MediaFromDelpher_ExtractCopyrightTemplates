@@ -89,14 +89,14 @@ In practice, this means that many Commons files require multiple templates:<br/>
 * One or more templates describing the copyright status in the country of origin;
 * An additional template confirming the file's public domain status in the United States.
 
-<a href="../media/wmc-pd-templates-sample.png"><img src="../media/wmc-pd-templates-sample.png" align="left" width="100%" vspace="5" alt="A non-exhaustive collage of screenshots of public domain template description pages used in Wikimedia Commons files that have been sourced from Delpher."/></a>
-<br clear="all"/><sub>*A (non-exhaustive) collage of screenshots of public domain template description pages, as used in Wikimedia Commons [files that have been sourced from Delpher](https://commons.wikimedia.org/wiki/Category:Media_from_Delpher) (Click to enlarge).<br/>Image license: <a href="https://creativecommons.org/licenses/by-sa/4.0/deed.nl" target="_blank">CC-BY-SA 4.0</a> / Olaf Janssen, KB national library of the Netherlands.*</sub>
-
 ##  Zooming in further: copyright templates used in Delpher files
 
 For the purposes of this article, we aim to narrow the scope even further. We are interested only in copyright templates used for files sourced from [Delpher](https://www.delpher.nl), the Dutch platform providing access to millions of full-text pages from Dutch historical newspapers, books, and magazines. Delpher is a frequently used resource for illustrating Wikipedia articles and for uploads to Wikimedia Commons.
 
 By limiting our focus to this single source, our dataset and analysis become relatively straightforward: we are primarily dealing with materials from one source (Delpher) and largely from one country (the Netherlands). Nevertheless, as we will explore below, there remains sufficient complexity to make this investigation both meaningful and nuanced.
+
+<a href="../media/wmc-pd-templates-sample.png"><img src="../media/wmc-pd-templates-sample.png" align="left" width="100%" vspace="5" alt="A non-exhaustive collage of screenshots of public domain template description pages used in Wikimedia Commons files that have been sourced from Delpher."/></a>
+<br clear="all"/><sub>*A (non-exhaustive) collage of screenshots of public domain template description pages, as used in Wikimedia Commons [files that have been sourced from Delpher](https://commons.wikimedia.org/wiki/Category:Media_from_Delpher) (Click to enlarge).<br/>Image license: <a href="https://creativecommons.org/licenses/by-sa/4.0/deed.nl" target="_blank">CC-BY-SA 4.0</a> / Olaf Janssen, KB national library of the Netherlands.*</sub>
 
 
 =====================================
