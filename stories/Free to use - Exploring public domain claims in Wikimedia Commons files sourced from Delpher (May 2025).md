@@ -98,9 +98,6 @@ By limiting our focus to this single source, our dataset and analysis become rel
 <a href="../media/wmc-pd-templates-sample.png"><img src="../media/wmc-pd-templates-sample.png" align="left" width="100%" vspace="5" alt="A non-exhaustive collage of screenshots of public domain template description pages used in Wikimedia Commons files that have been sourced from Delpher."/></a>
 <br clear="all"/><sub>*A (non-exhaustive) collage of screenshots of public domain template description pages, as used in Wikimedia Commons [files that have been sourced from Delpher](https://commons.wikimedia.org/wiki/Category:Media_from_Delpher) (Click to enlarge).<br/>Image license: <a href="https://creativecommons.org/licenses/by-sa/4.0/deed.nl" target="_blank">CC-BY-SA 4.0</a> / Olaf Janssen, KB national library of the Netherlands.*</sub>
 
-
-=====================================
-
 ## Creating the dataset
 
 To examine how the Wikimedia community has assigned public domain status to Commons files sourced from Delpher, we first needed a robust and reliable dataset. Let's look at the steps we took to create it.
@@ -119,17 +116,19 @@ As you can see in the category, a significant part is filled with files claimed 
 
 All of these files are marked with the [\{\{PD-old-70-expired\}\} copyright template](https://commons.wikimedia.org/wiki/Template:PD-old-70-expired), which means that they are safely in the public domain in the Netherlands (and its predecessors), the rest of the EU and the United States. 
 
-Because such a large part - 89.6% of the files - in the [Category:Media from Delpher]((https://commons.wikimedia.org/wiki/Category:Media_from_Delpher)) come from the Internet Archive, we decided to exclude them from our further analysis. And because all of them are marked with the exact same copyright template, including them would make our analysis too biased (or skewed) towards these files and templates.
+Because such a large part - 89.6% of the files - in the [Category:Media from Delpher]((https://commons.wikimedia.org/wiki/Category:Media_from_Delpher)) come from the Internet Archive, we decided to exclude all of them from our further analysis. And because they are marked with the exact same copyright template, including them would make our analysis too biased (or skewed) towards these files and templates.
 
 **Extracting copyright templates**<br/>
-This left us with [6,496 'non-Internet Archive' files from Delpher](https://petscan.wmcloud.org/?templates_any=&language=commons&combination=subset&search_max_results=500&langs_labels_yes=&cb_labels_no_l=1&negcats=Scans+from+the+Internet+Archive&format=html&project=wikimedia&cb_labels_yes_l=1&pagepile=&before=20250409&active_tab=tab_pageprops&links_to_all=&min_sitelink_count=&interface_language=en&min_redlink_count=1&only_new=on&ns%5B6%5D=1&sitelinks_any=&categories=Media+from+Delpher&cb_labels_any_l=1&wikidata_source_sites=&rxp_filter=&langs_labels_any=&manual_list_wiki=&doit=). For these files, we wanted to extract the associated copyright templates. With some help from ChatGPT, we developed a (rather monsterous) [Python script](../scripts/extract_copyright_templates.py) to extract public domain or public domain-like license templates (e.g., Creative Commons). This script was not 100% perfect, some manual post-processing was needed to clean up the data.
+This left us with [6,496 'non-Internet Archive' files from Delpher](https://petscan.wmcloud.org/?templates_any=&language=commons&combination=subset&search_max_results=500&langs_labels_yes=&cb_labels_no_l=1&negcats=Scans+from+the+Internet+Archive&format=html&project=wikimedia&cb_labels_yes_l=1&pagepile=&before=20250409&active_tab=tab_pageprops&links_to_all=&min_sitelink_count=&interface_language=en&min_redlink_count=1&only_new=on&ns%5B6%5D=1&sitelinks_any=&categories=Media+from+Delpher&cb_labels_any_l=1&wikidata_source_sites=&rxp_filter=&langs_labels_any=&manual_list_wiki=&doit=). For these files we wanted to extract the associated copyright templates. Assisted by ChatGPT, we developed a (rather monsterous) [Python script](https://github.com/KBNLwikimedia/wikimedia-commons_copyright-templates/blob/main/scripts/extract_copyright_templates.py) to extract public domain or public domain-like license templates (e.g., Creative Commons). As this script was not 100% perfect, we needed to do some manual post-processing to clean up the data.
 
 **Excluding files without publication/creation dates**<br/>
 As we plan to assess the validity of copyright claims against the actual publication or creation dates of the underlying works, we also designed the script to extract simplified date information. Files that provided no publication or creation dates were excluded from further analysis. We will discuss the date extraction process in more detail in SECTIONXXXXXXXXXXXXXXXXXXX.
 
 **The final dataset**<br/>
-In the end, we were able to retrieve 6,248 distinct files that contained both (one or more) copyright templates and a publication or creation date. This is the [dataset used in our further analysis](link to Excel). XXXXXXXXXXXXX
+In the end, we were able to retrieve 6,248 distinct files that contained both (one or more) copyright templates and a publication or creation date. This is the [dataset used in our further analysis](link to Excel). XXXXX TODO XXXXXXXX
 
+
+=====================================
 
 ## Section 2: Tracking the copyright templates in Wikimedia Commons, for Media from Delpher Delpher
 Zoom in on Categortry: Media from Delpher Delpher
