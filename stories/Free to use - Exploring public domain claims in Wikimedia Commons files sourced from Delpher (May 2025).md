@@ -70,15 +70,15 @@ See for instance the [public domain claim](https://commons.wikimedia.org/w/index
 
 ### The copyright template jungle   
 
-But here’s the problem: although the purpose of these templates is to provide a clear and standardized way to declare copyright status, the practical reality is that the license tagging system — built over the years by the international Wikimedia community — has evolved into a very complex thing. The number of different copyright templates in use on Commons is enormous.
+But here’s the problem: although the purpose of these templates is to provide a clear and standardized way to declare copyright status, the practical reality is that the license tagging system — built over the years by the international Wikimedia community — has evolved into a very complex beast. The number of different copyright templates in use on Commons is enormous.
 
 To get a sense of this complexity, take a look at [this summary of the most common template types](https://commons.wikimedia.org/wiki/Commons:Copyright_tags) or explore this nested [overview of several thousands(!) of copyright templates](https://commons.wikimedia.org/wiki/Category:License_tags) being used on Commons.
 
 Both insiders and outsiders will struggle to find their ways in this system, it can feel like working through a jungle of overlapping licensing options and confusing terminology, undermining the intended simplicity and standardization.
 
-However, this complexity is not entirely surprising. Wikimedia Commons accepts media from any country, any jurisdiction and any historical period, and must therefore be able to handle the copyright rules and exceptions from dozens of legal systems worldwide. This elaborate system is necessary because Wikimedia Commons is a global, evolving platform. Templates are regularly added or updated as contributors find new sources for uploads or as local copyright regulations change.
+However, this complexity is not entirely surprising. Wikimedia Commons accepts media from any country, any jurisdiction and any historical period, and must therefore be able to handle the copyright rules and exceptions from dozens of legal systems worldwide. The elaborate system is necessary because Wikimedia Commons is a global, evolving platform. Templates are regularly added or updated as contributors find new sources for uploads or as local copyright regulations change.
 
-## Zooming in: public domain templates in Wikimedia Commons
+## Zooming in: public domain templates
 To somewhat trim down this jungle, we can narrow the scope and look only at public domain templates, used for files that are out of copyright. Yet even within this limited scope, things remain complicated, as the number and variety of such templates is still pretty large.
 
 The [general public domain templates](https://commons.wikimedia.org/wiki/Commons:Copyright_tags/General_public_domain) page provides an overview of more than 70 templates based on general criteria, not tied to a specific country or source of the work. The complexity becomes more apparent when examining the [Category:PD license tags](https://commons.wikimedia.org/wiki/Category:PD_license_tags) and its subcategories. These include numerous [country-specific public domain templates](https://commons.wikimedia.org/wiki/Commons:Copyright_tags/Country-specific_tags), each reflecting the legal nuances of copyright legislation in the country of origin.
@@ -91,9 +91,9 @@ In practice, this means that many Commons files require multiple templates:<br/>
 
 ##  Zooming in further: copyright templates used in Delpher files
 
-For the purposes of this article, we aim to narrow the scope even further. We are interested only in copyright templates used for files sourced from [Delpher](https://www.delpher.nl), the Dutch platform providing access to millions of full-text pages from Dutch historical newspapers, books, and magazines. Delpher is a frequently used resource for illustrating Wikipedia articles and for uploads to Wikimedia Commons.
+For the purposes of this article, we aim to narrow the scope even further. We are interested only in public domain copyright templates used for files sourced from [Delpher](https://www.delpher.nl), the Dutch platform providing access to millions of full-text pages from Dutch historical newspapers, books, and magazines. Delpher is a frequently used resource for illustrating Wikipedia articles and for uploads to Wikimedia Commons.
 
-By limiting our focus to this single source, our dataset and analysis become relatively straightforward: we are primarily dealing with materials from one source (Delpher) and largely from one country (the Netherlands). Nevertheless, as we will explore below, there remains sufficient complexity to make this investigation both meaningful and nuanced.
+By limiting our focus to this single source, our dataset and analysis become relatively straightforward: we are primarily dealing with materials from one provider (Delpher) and largely from one country (the Netherlands). Nevertheless, as we will explore below, there remains sufficient complexity to make this investigation both meaningful and nuanced.
 
 <a href="../media/wmc-pd-templates-sample.png"><img src="../media/wmc-pd-templates-sample.png" align="left" width="100%" vspace="5" alt="A non-exhaustive collage of screenshots of public domain template description pages used in Wikimedia Commons files that have been sourced from Delpher."/></a>
 <br clear="all"/><sub>*A (non-exhaustive) collage of screenshots of public domain template description pages, as used in Wikimedia Commons [files that have been sourced from Delpher](https://commons.wikimedia.org/wiki/Category:Media_from_Delpher) (Click to enlarge).<br/>Image license: <a href="https://creativecommons.org/licenses/by-sa/4.0/deed.nl" target="_blank">CC-BY-SA 4.0</a> / Olaf Janssen, KB national library of the Netherlands.*</sub>
@@ -103,7 +103,9 @@ By limiting our focus to this single source, our dataset and analysis become rel
 
 ## Creating the dataset
 
-The Wikimedia community has been uploading newspaper articles, advertisements, obituaries, book pages, portraits from magazines, and other materials from Delpher (and its predecessor projects) to Wikimedia Commons [since March 2008](https://commons.wikimedia.org/wiki/File:Krantenartikel_Tentoonstelling_De_Branding.jpg). Because these files were originally scattered across Commons without consistent categorization, the first step was to bring them together into a single, central place: [Category:Media from Delpher](https://commons.wikimedia.org/wiki/Category:Media_from_Delpher). 
+To examine how the Wikimedia community has assigned public domain status to Commons files sourced from Delpher, we first needed a robust and reliable dataset. Let's look at the steps we took to create it.
+
+This community has been uploading newspaper articles, advertisements, obituaries, book pages, portraits from magazines, and other materials from Delpher (and its predecessor projects) to Wikimedia Commons [since March 2008](https://commons.wikimedia.org/wiki/File:Krantenartikel_Tentoonstelling_De_Branding.jpg). Because these files were originally scattered across Commons without consistent categorization, the first step was to bring them together into a single, central place: [Category:Media from Delpher](https://commons.wikimedia.org/wiki/Category:Media_from_Delpher). 
 This category currently contains just over over 62K files. 
 
 **Delpher source template**<br/>
