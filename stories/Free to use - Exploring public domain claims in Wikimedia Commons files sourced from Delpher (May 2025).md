@@ -124,21 +124,22 @@ This left us with [6,496 'non-Internet Archive' files from Delpher](https://pets
 **Excluding files without publication/creation dates**<br/>
 As we plan to assess the validity of copyright claims against the actual publication or creation dates of the underlying works, we also designed the script to extract simplified date information. Files that provided no publication or creation dates were excluded from further analysis. We will discuss the date extraction process in more detail in SECTIONXXXXXXXXXXXXXXXXXXX.
 
-
 **Excluding obvious copyright violations**<br/> NOGUITWERKEN
-After having done the scan, from the Excel, we could quite ealiy look for opublications that possibly did copyvio, based on the yerar of publication. We looked for content that was published in the last 70 years, and that still was marked as public domain or under CC-licensing. We found 4 files that were published in the last 70 years (after 1955), but that were marked as public domain or under CC-licensing.In total 4 deletion trequerst due to copyvio, all of which were granted and the fielswere deleted very quicly. 
+After having done the scan, from the Excel, we did a quick scan of very abvoius copyvio we antete to exclude from iour dataset.
+  
+could quite ealiy look for opublications that possibly did copyvio, based on the yerar of publication. We looked for content that was published in the last 70 years, and that still was marked as public domain or under CC-licensing. We found 4 files that were after 1955, but that were marked as public domain or under CC-licensing.In total 4 deletion trequerst due to copyvio, all of which were granted and the fielswere deleted very quicly. 
 
-* [De Telegraaf, 1985](https://commons.wikimedia.org/w/index.php?title=File:Newspaper_article_-_De_Telegraaf_-_Date_09-07-1985_-_Bank_robbery_-_Rob_Kaman_-_Kickboxing.jpg&action=edit&redlink=1)
-This is a file from Dutch newspaper 'De Telegraaf' from 1985, this article is still under copyright, as it was published less than 70 years ago. I cannot have a CC0 license
+* [De Telegraaf, 1985](https://commons.wikimedia.org/w/index.php?title=File:Newspaper_article_-_De_Telegraaf_-_Date_09-07-1985_-_Bank_robbery_-_Rob_Kaman_-_Kickboxing.jpg)
+This is a file from Dutch newspaper 'De Telegraaf' from 1985, this article is still under copyright, as it was published less than 70 years ago. It cannot have a CC0 license
 
-* [Trouw, 1974](https://commons.wikimedia.org/w/index.php?title=File:Advertentie_Pottenbakkerij_Henk_en_Lieske_Potters_in_Trouw_dd_22_maart_1974.jpg&action=edit&redlink=1)
+* [Trouw, 1974](https://commons.wikimedia.org/w/index.php?title=File:Advertentie_Pottenbakkerij_Henk_en_Lieske_Potters_in_Trouw_dd_22_maart_1974.jpg)
 This is a file from Dutch newspaper 'Trouw' from 1974. This article is still under copyright, as it was published less than 70 years ago. So we must assume that the copyright of this publication is with the newspaper publisher, unless proven otherwise.) 
 
 
-* [Algemeen Dagblad, 1966](https://commons.wikimedia.org/w/index.php?title=File:Ad_25_6_1966.jpg&action=edit&redlink=1)
+* [Algemeen Dagblad, 1966](https://commons.wikimedia.org/w/index.php?title=File:Ad_25_6_1966.jpg)
 This is a file from Dutch newspaper 'Algemeen Dagblad' from 1966. This article is still under copyright, as it was published less than 70 years ago. So we must assume that the copyright of this publication is with the newspaper publisher, unless proven otherwise. Futhermore, it can not have a CCO license.
 
-* [Het Binnenhof en Het Vaderland, 1956](https://commons.wikimedia.org/w/index.php?title=File:Een_oproep_van_Duco_Sickinghe_(1888-1983)_in_dagblad_Het_Binnenhof_en_Het_Vaderland_(1956).jpg&action=edit&redlink=1)
+* [Het Binnenhof en Het Vaderland, 1956](https://commons.wikimedia.org/w/index.php?title=File:Een_oproep_van_Duco_Sickinghe_(1888-1983)_in_dagblad_Het_Binnenhof_en_Het_Vaderland_(1956).jpg)
 his is a text by Duco Sickinghe in a Dutch newspaper from 1956. According to Dutch coppyright law, this article is still under copyright, as the author only died in 1983 AND the article was published less than 70 years ago. So we must assume that the copyright of this publication is still with the (heirs of the) author or with the newspaper publisher, unless proven otherwise. Futhermore, it can not have a CC-BY license
 
 **The final dataset**<br/>
