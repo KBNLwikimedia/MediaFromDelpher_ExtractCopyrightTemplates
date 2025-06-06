@@ -124,17 +124,8 @@ This left us with [6,496 'non-Internet Archive' files from Delpher](https://pets
 **Excluding files without publication/creation dates**<br/>
 As we plan to assess the validity of copyright claims against the actual publication or creation dates of the underlying works, we also designed the script to extract simplified date information. Files that provided no publication or creation dates were excluded from further analysis. We will discuss the date extraction process in more detail in SECTIONXXXXXXXXXXXXXXXXXXX.
 
-**The final dataset**<br/>
-In the end, we were able to retrieve 6,248 distinct files that contained both (one or more) copyright templates and a publication or creation date. This is the [dataset used in our further analysis](link to Excel). XXXXX TODO XXXXXXXX
 
-
-##  Why are Delpher sourced files in the public domain, according to Wikimedia Commons?
-
-
-<div style="min-height:839px" id="datawrapper-vis-gZqMt"><script type="text/javascript" defer src="https://datawrapper.dwcdn.net/gZqMt/embed.js" charset="utf-8" data-target="#datawrapper-vis-gZqMt"></script><noscript><img src="https://datawrapper.dwcdn.net/gZqMt/full.png" alt="This donut chart shows the reasons why media files that were sourced from Delpher are out of copyright, according to Wikimedia Commons. For instance, the 6,191 files in the blue sector are in the public domain because the historical newspapers, books and magazines they were sourced from, are too old to carry copyrights. One file can contain multiple out-of-copyright claims. All such claims are taken &quot;as observed&quot;. Data as of 9 April 2025." /></noscript></div>
-
-## Copyright violations
-
+**Excluding obvious copyright violations**<br/> NOGUITWERKEN
 After having done the scan, from the Excel, we could quite ealiy look for opublications that possibly did copyvio, based on the yerar of publication. We looked for content that was published in the last 70 years, and that still was marked as public domain or under CC-licensing. We found 4 files that were published in the last 70 years (after 1955), but that were marked as public domain or under CC-licensing.In total 4 deletion trequerst due to copyvio, all of which were granted and the fielswere deleted very quicly. 
 
 * [De Telegraaf, 1985](https://commons.wikimedia.org/w/index.php?title=File:Newspaper_article_-_De_Telegraaf_-_Date_09-07-1985_-_Bank_robbery_-_Rob_Kaman_-_Kickboxing.jpg&action=edit&redlink=1)
@@ -149,6 +140,57 @@ This is a file from Dutch newspaper 'Algemeen Dagblad' from 1966. This article i
 
 * [Het Binnenhof en Het Vaderland, 1956](https://commons.wikimedia.org/w/index.php?title=File:Een_oproep_van_Duco_Sickinghe_(1888-1983)_in_dagblad_Het_Binnenhof_en_Het_Vaderland_(1956).jpg&action=edit&redlink=1)
 his is a text by Duco Sickinghe in a Dutch newspaper from 1956. According to Dutch coppyright law, this article is still under copyright, as the author only died in 1983 AND the article was published less than 70 years ago. So we must assume that the copyright of this publication is still with the (heirs of the) author or with the newspaper publisher, unless proven otherwise. Futhermore, it can not have a CC-BY license
+
+**The final dataset**<br/>
+In the end, we were able to retrieve 6,248 distinct files that contained both (one or more) copyright templates and a publication or creation date. This is the [dataset used in our further analysis](link to Excel). XXXXX TODO XXXXXXXX
+
+========DIT NOG UITWERKEN!! ============
+
+##  Why are Delpher sourced files in the public domain, according to Wikimedia Commons?
+
+NOG UITWRRKEN!!! 
+What insights can be gained from this dataset? Let's start by looking at the main reasons why these files are in the public domain. 
+
+
+**Grouping templates**<br/> NOG UITWERKEN!!
+for this we had to first group the copyright templates by their main reason for categorizing files into the public domain.  - the main reasons why these files are in the public domain.
+
+1) Copyrights expired because of age (xx% of files): This is the most common reason, because the underlying works are too old to carry copyrights. Its digital reproduction (2D scan, photo) is generally also considered to be in the in the PD
+   - Example templates: [\{\{PD-old-70\}\}](https://commons.wikimedia.org/wiki/Template:PD-old-70)
+
+2) Copyrights waived or made free (% of files): This includes files that have been released into the public domain by their creators or rights holders
+   - Example templates: [CC0 license](https://creativecommons.org/public-domain/cc0/), [\{\{CC-BY-SA-4.0\}\}](https://commons.wikimedia.org/wiki/Template:Cc-by-sa-4.0)
+   
+3) Not eligible for copyrights due to lack of sufficient originality (% of files): This includes files that are not eligible for copyright protection because they lack sufficient originality, such as simple logos, signatures, or other works that do not meet the threshold for copyrightability.
+   - Example templates: [\{\{PD-ineligible\}\}](https://commons.wikimedia.org/wiki/Template:PD-ineligible)
+
+4) Government work, not subject to copyright (% of files): This includes files that are created by government employees in the course of their official duties, which are not subject to copyright protection in many jurisdictions, including the Netherlands and the United States.
+   - Example templates: 
+
+5) Other reasons (% of files): This includes files that are in the public domain for other reasons, such as being published before 1923, or being in the public domain in the United States but not in the Netherlands.
+   - Example templates: 
+
+The resutls are visualized in the donut chart below, which shows the main reasons why these files are in the public domain, according to the copyright templates applied by the Wikimedia community.
+
+This donut chart shows the reasons why media files that were sourced from Delpher are out of copyright, according to Wikimedia Commons. For instance, the 6,191 files in the blue sector are in the public domain because the historical newspapers, books and magazines they were sourced from, are too old to carry copyrights. One file can contain multiple out-of-copyright claims. All such claims are taken &quot;as observed&quot;
+
+<div style="min-height:839px" id="datawrapper-vis-gZqMt"><script type="text/javascript" defer src="https://datawrapper.dwcdn.net/gZqMt/embed.js" charset="utf-8" data-target="#datawrapper-vis-gZqMt"></script><noscript><img src="https://datawrapper.dwcdn.net/gZqMt/full.png" alt="This donut chart shows the reasons why media files that were sourced from Delpher are out of copyright, according to Wikimedia Commons. For instance, the 6,191 files in the blue sector are in the public domain because the historical newspapers, books and magazines they were sourced from, are too old to carry copyrights. One file can contain multiple out-of-copyright claims. All such claims are taken &quot;as observed&quot;. Data as of 9 April 2025." /></noscript></div>
+
+If we break down the data, we can see that the files are in the public domain for the following reasons (the percentages are based on the total number of files, 6,248):
+
+
+1) Copyrights expired because of age : xx, yy% of files
+
+2) Copyrights waived or made free xx, yy% of files
+   
+3) Not eligible for copyrights due to lack of sufficient originality xx, yy% of files
+
+4) Government work, not subject to copyright (% of files) xx, yy% of files
+
+5) Other reasons (% of files) xx, yy% of files
+
+
+
 
 ><big><b><em>Quote 1</em></b></big>
 
