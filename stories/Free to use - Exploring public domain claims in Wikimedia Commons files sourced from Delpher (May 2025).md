@@ -127,10 +127,10 @@ As we plan to assess the validity of copyright claims against the actual publica
 **Deleting obvious copyright violations**<br/> 
 After the extraction of templates and associated dates, we did a preliminary scan to identify obvious instances of copyright infringement, which we wanted to exclude from our dataset. Specifically, we examined content published within the last 70 years (post-1955) that were nonetheless marked as public domain or Creative Commons-licensed. This process led to the identification of four copyvio files for which we subsequently submitted deletion requests to Wikimedia Commons administrators: 
 
-1) An article from the Dutch newspaper [De Telegraaf from 1985](https://commons.wikimedia.org/w/index.php?title=File:Newspaper_article_-_De_Telegraaf_-_Date_09-07-1985_-_Bank_robbery_-_Rob_Kaman_-_Kickboxing.jpg), still under copyright, as it was published less than 70 years ago. It cannot have a CC0 license.
-2) An article from the Dutch newspaper [Trouw from 1974](https://commons.wikimedia.org/w/index.php?title=File:Advertentie_Pottenbakkerij_Henk_en_Lieske_Potters_in_Trouw_dd_22_maart_1974.jpg). Still under copyright, as it was published less than 70 years ago. We must assume that the copyright is held by the newspaper publisher, unless proven otherwise. 
-3) An article from the Dutch newspaper [Algemeen Dagblad from 1966](https://commons.wikimedia.org/w/index.php?title=File:Ad_25_6_1966.jpg). Still under copyright, as it was published less than 70 years ago. We must assume that the copyright is held by the newspaper publisher, unless proven otherwise. Futhermore, it can not have a CCO license.
-4) The text [Het Binnenhof en Het Vaderland from 1956](https://commons.wikimedia.org/w/index.php?title=File:Een_oproep_van_Duco_Sickinghe_(1888-1983)_in_dagblad_Het_Binnenhof_en_Het_Vaderland_(1956).jpg) by [Duco Wilhelm Sickinghe](https://nl.wikipedia.org/wiki/Duco_Wilhelm_Sickinghe). According to Dutch coppyright law, this article is still under copyright, as the author died in 1983 and the article was published less than 70 years ago. So we must assume that the copyright is still with the (heirs of the) author or with the newspaper publisher, unless proven otherwise. Futhermore, it cannot have a CC-BY license.
+1. An article from the Dutch newspaper [De Telegraaf from 1985](https://commons.wikimedia.org/w/index.php?title=File:Newspaper_article_-_De_Telegraaf_-_Date_09-07-1985_-_Bank_robbery_-_Rob_Kaman_-_Kickboxing.jpg), still under copyright, as it was published less than 70 years ago. It cannot have a CC0 license.
+2. An article from the Dutch newspaper [Trouw from 1974](https://commons.wikimedia.org/w/index.php?title=File:Advertentie_Pottenbakkerij_Henk_en_Lieske_Potters_in_Trouw_dd_22_maart_1974.jpg). Still under copyright, as it was published less than 70 years ago. We must assume that the copyright is held by the newspaper publisher, unless proven otherwise. 
+3. An article from the Dutch newspaper [Algemeen Dagblad from 1966](https://commons.wikimedia.org/w/index.php?title=File:Ad_25_6_1966.jpg). Still under copyright, as it was published less than 70 years ago. We must assume that the copyright is held by the newspaper publisher, unless proven otherwise. Futhermore, it can not have a CCO license.
+4. The text [Het Binnenhof en Het Vaderland from 1956](https://commons.wikimedia.org/w/index.php?title=File:Een_oproep_van_Duco_Sickinghe_(1888-1983)_in_dagblad_Het_Binnenhof_en_Het_Vaderland_(1956).jpg) by [Duco Wilhelm Sickinghe](https://nl.wikipedia.org/wiki/Duco_Wilhelm_Sickinghe). According to Dutch coppyright law, this article is still under copyright, as the author died in 1983 and the article was published less than 70 years ago. So we must assume that the copyright is still with the (heirs of the) author or with the newspaper publisher, unless proven otherwise. Futhermore, it cannot have a CC-BY license.
 
 All deletion requests were granted immediately and the files were deleted quickly. 
 
@@ -144,29 +144,29 @@ What insights can be gained from this dataset? A useful starting point is to exa
 **Grouping templates**<br/> 
 To do this, we grouped the copyright templates according to their underlying rationale for placing files in the public domain. This process resulted in five distinct categories:
 
-1) *Copyrights expired because of age*: This is the most common reason, because the underlying work is too old to carry copyrights. Its digital reproduction (2D scan, photo) is generally also considered to be in the in the public domain.<br/>
+1. *Copyrights expired because of age*: This is the most common reason, because the underlying work is too old to carry copyrights. Its digital reproduction (2D scan, photo) is generally also considered to be in the in the public domain.<br/>
 Example templates: [\{\{PD-old-70\}\}](https://commons.wikimedia.org/wiki/Template:PD-old-70) or [\{\{PD-old-70-expired\}\}](https://commons.wikimedia.org/wiki/Template:PD-old-70-expired). 
 
-2) *Copyrights waived or made free*: For files that have been released into the public domain or under free licences by their creators or rights holders.<br/>
+2. *Copyrights waived or made free*: For files that have been released into the public domain or under free licences by their creators or rights holders.<br/>
 Example templates: [\{\{CC-zero\}\}](https://commons.wikimedia.org/wiki/Template:Cc-zero) or [\{\{CC-BY-SA-4.0\}\}](https://commons.wikimedia.org/wiki/Template:Cc-by-sa-4.0).
 
-3) *Government work, not subject to copyright*: For files that are created by government employees in the course of their official duties, which are not subject to copyright protection in many jurisdictions, including the Netherlands and the United States.<br/>
+3. *Government work, not subject to copyright*: For files that are created by government employees in the course of their official duties, which are not subject to copyright protection in many jurisdictions, including the Netherlands and the United States.<br/>
 Example template: [\{\{PD-DutchGov\}\}](https://commons.wikimedia.org/wiki/Template:PD-DutchGov)
    
-4) *Not eligible for copyrights due to lack of sufficient originality*: This includes files that are not eligible for copyright protection because they lack sufficient originality, such as simple logos, signatures, or other works that do not meet the threshold for copyrightability.<br/>
+4. *Not eligible for copyrights due to lack of sufficient originality*: This includes files that are not eligible for copyright protection because they lack sufficient originality, such as simple logos, signatures, or other works that do not meet the threshold for copyrightability.<br/>
 Example templates: [\{\{PD-ineligible\}\}](https://commons.wikimedia.org/wiki/Template:PD-ineligible) or [\{\{PD-textlogo\}\}](https://commons.wikimedia.org/wiki/Template:PD-textlogo)
    
-5) *Other reasons*: For files that are in the public domain for other reasons, such as being published before the introduction of copyright laws, or because they are not eligible for copyright protection for other reasons.<br/>
+5. *Other reasons*: For files that are in the public domain for other reasons, such as being published before the introduction of copyright laws, or because they are not eligible for copyright protection for other reasons.<br/>
 Example template: [\{\{PD-because\}\}](https://commons.wikimedia.org/wiki/Template:PD-because).
 
 **Visualizing the results**<br/> 
 If we break down the data, we see that our 6,329 templates classify our 6,248 files into the public domain for the following reasons. 
 
-1) Copyrights expired because of age: 6,191 templates (97,8%)
-2) Copyrights waived or made free: 97 templates (1,5%)
-3) Government work, not subject to copyright: 20 templates (0,3%)
-4) Not eligible for copyrights due to lack of sufficient originality: 18 templates (0,3%)
-5) Other reasons: 2 templates (0,03%)
+1. Copyrights expired because of age: 6,191 templates (97,8%)
+2. Copyrights waived or made free: 97 templates (1,5%)
+3. Government work, not subject to copyright: 20 templates (0,3%)
+4. Not eligible for copyrights due to lack of sufficient originality: 18 templates (0,3%)
+5. Other reasons: 2 templates (0,03%)
 
 The results are visualized in the donut chart below. For instance, the 6,191 files in the blue sector are in the public domain because the historical newspapers, books and magazines they were sourced from, are too old to carry copyrights. Please note that one file can contain multiple out-of-copyright claims, see [this example](https://commons.wikimedia.org/wiki/File:Zoebaida_ad.jpg). 
 All claims are taken taken 'as observed', ie. without further assessment, judgement or corrections. This means that the usage of these claims in Wikimedia Commons files has not been checked for correctness or completeness, nor have any files been adapted in case out-of-copyright claims were false or inconsistent.
