@@ -142,7 +142,7 @@ In the end, we were able to retrieve 6,247 distinct files that contained (one or
 What insights can be gained from this dataset? A useful starting point is to examine the main reasons why files have been classified as public domain.
 
 **Grouping templates**<br/> 
-To do this, we grouped the copyright templates according to their underlying rationale for placing files in the public domain. This process resulted in five distinct categories:
+To do this, we first grouped the copyright templates according to their underlying rationale for placing files in the public domain. This process resulted in five distinct categories:
 
 1. *Copyrights expired because of age*: This is the most common reason, because the underlying work is too old to carry copyrights. Its digital reproduction (2D scan, photo) is generally also considered to be in the in the public domain.<br/>
 Example templates: [\{\{PD-old-70\}\}](https://commons.wikimedia.org/wiki/Template:PD-old-70) or [\{\{PD-old-70-expired\}\}](https://commons.wikimedia.org/wiki/Template:PD-old-70-expired). 
@@ -160,20 +160,20 @@ Example templates: [\{\{PD-ineligible\}\}](https://commons.wikimedia.org/wiki/Te
 Example template: [\{\{PD-because\}\}](https://commons.wikimedia.org/wiki/Template:PD-because).
 
 **Visualizing the results**<br/> 
-If we break down the data, we see that our 6,247 files are classified into the public domain by 6,329 claims for the following reasons: 
+If we break down the data, we see that our 6,247 files are classified into the public domain by 6,329 templates for the following reasons: 
 
-| Reason for public domain  classification | Number of claims | Percentage |
-|---------|----------------------------|---|
-| Copyrights expired because of age | 6,191                      | 97,8%      |
-| Copyrights waived or made free | 97     | 1,5%       |
-| Government work, not subject to copyright | 20                         | 0,3%|
-| Not eligible for copyrights due to lack of sufficient originality | 18                         | 0,3% |
-| Other reasons | 3                          | 0,03%      |
-| **Total** | 6,329                      | 100%|
+| Reason for public domain  classification | Number of template uses  | Percentage |
+|---------|--------------------------|---|
+| Copyrights expired because of age | 6,191                    | 97,8%      |
+| Copyrights waived or made free | 97                       | 1,5%       |
+| Government work, not subject to copyright | 20                       | 0,3%|
+| Not eligible for copyrights due to lack of sufficient originality | 18                       | 0,3% |
+| Other reasons | 3                        | 0,03%      |
+| **Total** | **6,329**                | **100%**|
 
 <div style="min-height:839px" id="datawrapper-vis-gZqMt"><script type="text/javascript" defer src="https://datawrapper.dwcdn.net/gZqMt/embed.js" charset="utf-8" data-target="#datawrapper-vis-gZqMt"></script><noscript><img src="https://datawrapper.dwcdn.net/gZqMt/full.png" alt="This donut chart shows the reasons why media files that were sourced from Delpher are out of copyright, according to Wikimedia Commons. For instance, the 6,191 files in the blue sector are in the public domain because the historical newspapers, books and magazines they were sourced from, are too old to carry copyrights. One file can contain multiple out-of-copyright claims. All such claims are taken &quot;as observed&quot;. Data as of 9 April 2025." /></noscript></div>
 
-These results are visualized in the donut chart above. For instance, the 6,191 files in the blue sector are in the public domain because the historical newspapers, books and magazines they were sourced from, are too old to carry copyrights. Please note that one file can contain multiple out-of-copyright claims, see [this example](https://commons.wikimedia.org/wiki/File:Zoebaida_ad.jpg).
+These results are also visualized in the donut chart above. For instance, the 6,191 files in the blue sector are in the public domain because the historical newspapers, books and magazines they were sourced from, are too old to carry copyrights. Please note that one file can contain multiple out-of-copyright claims, see [this example](https://commons.wikimedia.org/wiki/File:Zoebaida_ad.jpg).
 
 
 ><big><b><em>Quote 1</em></b></big>
