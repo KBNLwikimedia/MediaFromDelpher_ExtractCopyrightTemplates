@@ -139,7 +139,7 @@ In the end, we were able to retrieve 6,247 distinct files that contained (one or
 
 ##  Why are Delpher sourced files in the public domain, according to Wikimedia Commons?
 
-What insights can be gained from this dataset? A useful starting point is to examine the main reasons why files have been classified as public domain.
+What insights can be gained from this dataset? A useful starting point is to examine the main reasons why files have been classified as public domain by their uploaders.
 
 **Grouping templates**<br/> 
 To do this, we first grouped the copyright templates according to their underlying rationale for placing files in the public domain. This process resulted in five distinct categories:
@@ -149,7 +149,7 @@ Example templates: [\{\{PD-old-70\}\}](https://commons.wikimedia.org/wiki/Templa
 
 2. *Copyrights waived or made free*: For files that have been released into the public domain or under free licences by their creators or rights holders. <br/>
 Example templates: [\{\{CC-zero\}\}](https://commons.wikimedia.org/wiki/Template:Cc-zero) or [\{\{CC-BY-SA-4.0\}\}](https://commons.wikimedia.org/wiki/Template:Cc-by-sa-4.0).<br/>
-Note: for the readability and flow of this article, we will not make distinctions between the files in this category that have been given CC0(-like) templates and the (very limited number of) files that have been given CC-BY or CC-BY-SA copyright claims. For the purposes of this article,these are all considered (or 'enforeced') to be in the public domain.
+Note: for the readability and flow of this article, we will not make distinctions between the files in this category that have been given CC0(-like) templates and the (very limited number of) files that have been given CC-BY or CC-BY-SA copyright claims. For the purposes of this article, these are all considered (or 'enforeced') to be in the public domain.
 
 3. *Government work, not subject to copyright*: For files that are created by government employees in the course of their official duties, which are not subject to copyright protection in many jurisdictions, including the Netherlands and the United States.<br/>
 Example template: [\{\{PD-DutchGov\}\}](https://commons.wikimedia.org/wiki/Template:PD-DutchGov)
