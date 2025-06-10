@@ -135,7 +135,7 @@ After the extraction of templates and associated dates, we did a preliminary sca
 All deletion requests were granted immediately and the files were deleted quickly. 
 
 **The final dataset**<br/>
-In the end, we were able to retrieve 6,248 distinct files that contained both (one or more) copyright templates and a publication or creation date. This is the [dataset used in our further analysis](link to Excel). XXXXX TODO XXXXXXXX
+In the end, we were able to retrieve 6,247 distinct files that contained (one or more) copyright templates (6,329 in total), as well as a publication or creation date. This is the [dataset used in our further analysis](link to Excel). XXXXX TODO XXXXXXXX
 
 ##  Why are Delpher sourced files in the public domain, according to Wikimedia Commons?
 
@@ -160,18 +160,21 @@ Example templates: [\{\{PD-ineligible\}\}](https://commons.wikimedia.org/wiki/Te
 Example template: [\{\{PD-because\}\}](https://commons.wikimedia.org/wiki/Template:PD-because).
 
 **Visualizing the results**<br/> 
-If we break down the data, we see that our 6,329 templates classify our 6,248 files into the public domain for the following reasons. 
+If we break down the data, we see that our 6,247 files are classified into the public domain by 6,329 claims for the following reasons: 
 
-1. Copyrights expired because of age: 6,191 templates (97,8%)
-2. Copyrights waived or made free: 97 templates (1,5%)
-3. Government work, not subject to copyright: 20 templates (0,3%)
-4. Not eligible for copyrights due to lack of sufficient originality: 18 templates (0,3%)
-5. Other reasons: 2 templates (0,03%)
-
-The results are visualized in the donut chart below. For instance, the 6,191 files in the blue sector are in the public domain because the historical newspapers, books and magazines they were sourced from, are too old to carry copyrights. Please note that one file can contain multiple out-of-copyright claims, see [this example](https://commons.wikimedia.org/wiki/File:Zoebaida_ad.jpg). 
-All claims are taken taken 'as observed', ie. without further assessment, judgement or corrections. This means that the usage of these claims in Wikimedia Commons files has not been checked for correctness or completeness, nor have any files been adapted in case out-of-copyright claims were false or inconsistent.
+| Reason for public domain  classification | Number of claims | Percentage |
+|---------|----------------------------|---|
+| Copyrights expired because of age | 6,191                      | 97,8%      |
+| Copyrights waived or made free | 97     | 1,5%       |
+| Government work, not subject to copyright | 20                         | 0,3%|
+| Not eligible for copyrights due to lack of sufficient originality | 18                         | 0,3% |
+| Other reasons | 3                          | 0,03%      |
+| **Total** | 6,329                      | 100%|
 
 <div style="min-height:839px" id="datawrapper-vis-gZqMt"><script type="text/javascript" defer src="https://datawrapper.dwcdn.net/gZqMt/embed.js" charset="utf-8" data-target="#datawrapper-vis-gZqMt"></script><noscript><img src="https://datawrapper.dwcdn.net/gZqMt/full.png" alt="This donut chart shows the reasons why media files that were sourced from Delpher are out of copyright, according to Wikimedia Commons. For instance, the 6,191 files in the blue sector are in the public domain because the historical newspapers, books and magazines they were sourced from, are too old to carry copyrights. One file can contain multiple out-of-copyright claims. All such claims are taken &quot;as observed&quot;. Data as of 9 April 2025." /></noscript></div>
+
+These results are visualized in the donut chart above. For instance, the 6,191 files in the blue sector are in the public domain because the historical newspapers, books and magazines they were sourced from, are too old to carry copyrights. Please note that one file can contain multiple out-of-copyright claims, see [this example](https://commons.wikimedia.org/wiki/File:Zoebaida_ad.jpg).
+
 
 ><big><b><em>Quote 1</em></b></big>
 
@@ -190,11 +193,11 @@ Explan which templates have been found
 xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 
 
-<div style="min-height:1625px" id="datawrapper-vis-UewJt"><script type="text/javascript" defer src="https://datawrapper.dwcdn.net/UewJt/embed.js" charset="utf-8" data-target="#datawrapper-vis-UewJt"></script><noscript><img src="https://datawrapper.dwcdn.net/UewJt/full.png" alt="This chart shows how often which copyright templates are used in Wikimedia Commons media files that were sourced from Delpher. The bars are grouped by the reason why the files are in the public domain. The template usage is taken &quot;as observed&quot;. The 3 key figures are: 1) Total number of distinct media files: 6,248. 2) Total number of template usages: 6,329 (one file can contain multiple copyright templates). 3) Total number of distinct templates used: 39. Data as of 9 April 2025." /></noscript></div>
+<div style="min-height:1625px" id="datawrapper-vis-UewJt"><script type="text/javascript" defer src="https://datawrapper.dwcdn.net/UewJt/embed.js" charset="utf-8" data-target="#datawrapper-vis-UewJt"></script><noscript><img src="https://datawrapper.dwcdn.net/UewJt/full.png" alt="This chart shows how often which copyright templates are used in Wikimedia Commons media files that were sourced from Delpher. The bars are grouped by the reason why the files are in the public domain. The template usage is taken &quot;as observed&quot;. The 3 key figures are: 1) Total number of distinct media files: 6,247. 2) Total number of template usages: 6,329 (one file can contain multiple copyright templates). 3) Total number of distinct templates used: 39. Data as of 9 April 2025." /></noscript></div>
 
 
 
-<!-- <a href="../media/media-from-delpher-in-wikimedia-commons-usage-of-copyright-templates-grouped-by-reason.png" target="_blank"><img src="../media/media-from-delpher-in-wikimedia-commons-usage-of-copyright-templates-grouped-by-reason.png" border="1" align="left" width="90%" hspace="30" alt="This chart shows how often which copyright templates are used in Wikimedia Commons media files that were sourced from Delpher. The bars are grouped by the main reason why the files are in the public domain. The template usage is taken \&quot;as observed\&quot;. The 3 key figures are: 1) Total number of distinct media files: 6,248. 2) Total number of template usages: 6,329 (one file can contain multiple copyright templates). 3) Total number of distinct templates used: 39. Data as of 9 April 2025."/></a>
+<!-- <a href="../media/media-from-delpher-in-wikimedia-commons-usage-of-copyright-templates-grouped-by-reason.png" target="_blank"><img src="../media/media-from-delpher-in-wikimedia-commons-usage-of-copyright-templates-grouped-by-reason.png" border="1" align="left" width="90%" hspace="30" alt="This chart shows how often which copyright templates are used in Wikimedia Commons media files that were sourced from Delpher. The bars are grouped by the main reason why the files are in the public domain. The template usage is taken \&quot;as observed\&quot;. The 3 key figures are: 1) Total number of distinct media files: 6,247. 2) Total number of template usages: 6,329 (one file can contain multiple copyright templates). 3) Total number of distinct templates used: 39. Data as of 9 April 2025."/></a>
 <br clear="all"/> -->
 
 ### Section 2.1 - Zooming in on copyrights expired because of age 
