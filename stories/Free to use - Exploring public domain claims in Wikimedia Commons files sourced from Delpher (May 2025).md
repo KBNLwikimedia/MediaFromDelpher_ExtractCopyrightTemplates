@@ -147,8 +147,9 @@ To do this, we first grouped the copyright templates according to their underlyi
 1. *Copyrights expired because of age*: This is the most common reason, because the underlying work is too old to carry copyrights. Its digital reproduction (2D scan, photo) is generally also considered to be in the in the public domain.<br/>
 Example templates: [\{\{PD-old-70\}\}](https://commons.wikimedia.org/wiki/Template:PD-old-70) or [\{\{PD-old-70-expired\}\}](https://commons.wikimedia.org/wiki/Template:PD-old-70-expired). 
 
-2. *Copyrights waived or made free*: For files that have been released into the public domain or under free licences by their creators or rights holders.<br/>
-Example templates: [\{\{CC-zero\}\}](https://commons.wikimedia.org/wiki/Template:Cc-zero) or [\{\{CC-BY-SA-4.0\}\}](https://commons.wikimedia.org/wiki/Template:Cc-by-sa-4.0).
+2. *Copyrights waived or made free*: For files that have been released into the public domain or under free licences by their creators or rights holders. <br/>
+Example templates: [\{\{CC-zero\}\}](https://commons.wikimedia.org/wiki/Template:Cc-zero) or [\{\{CC-BY-SA-4.0\}\}](https://commons.wikimedia.org/wiki/Template:Cc-by-sa-4.0).<br/>
+Note: for the readability and flow of this article, we will not make distinctions between the files in this category that have been given CC0(-like) templates and the (very limited number of) files that have been given CC-BY or CC-BY-SA copyright claims. For the purposes of this article,these are all considered (or 'enforeced') to be in the public domain.
 
 3. *Government work, not subject to copyright*: For files that are created by government employees in the course of their official duties, which are not subject to copyright protection in many jurisdictions, including the Netherlands and the United States.<br/>
 Example template: [\{\{PD-DutchGov\}\}](https://commons.wikimedia.org/wiki/Template:PD-DutchGov)
