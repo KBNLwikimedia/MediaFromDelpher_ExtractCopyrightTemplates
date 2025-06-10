@@ -124,23 +124,15 @@ This left us with [6,496 'non-Internet Archive' files from Delpher](https://pets
 **Excluding files without publication/creation dates**<br/>
 As we plan to assess the validity of copyright claims against the actual publication or creation dates of the underlying works, we also designed the script to extract simplified date information. Files that provided no publication or creation dates were excluded from further analysis. We will discuss the date extraction process in more detail in SECTIONXXXXXXXXXXXXXXXXXXX.
 
-**Excluding obvious copyright violations**<br/> NOGUITWERKEN
-After having done the scan, from the Excel, we did a quick scan of very abvoius copyvio we antete to exclude from iour dataset.
-  
-could quite ealiy look for opublications that possibly did copyvio, based on the yerar of publication. We looked for content that was published in the last 70 years, and that still was marked as public domain or under CC-licensing. We found 4 files that were after 1955, but that were marked as public domain or under CC-licensing.In total 4 deletion trequerst due to copyvio, all of which were granted and the fielswere deleted very quicly. 
+**Deleting obvious copyright violations**<br/> 
+After the extraction of templates and associated dates, we did a preliminary scan to identify obvious instances of copyright infringement, which we wanted to exclude from our dataset. Specifically, we examined content published within the last 70 years (post-1955) that were nonetheless marked as public domain or Creative Commons-licensed. This process led to the identification of four files for which we subsequently submitted deletion requests to Wikimedia Commons administrators: 
 
-* [De Telegraaf, 1985](https://commons.wikimedia.org/w/index.php?title=File:Newspaper_article_-_De_Telegraaf_-_Date_09-07-1985_-_Bank_robbery_-_Rob_Kaman_-_Kickboxing.jpg)
-This is a file from Dutch newspaper 'De Telegraaf' from 1985, this article is still under copyright, as it was published less than 70 years ago. It cannot have a CC0 license
+* [De Telegraaf, 1985](https://commons.wikimedia.org/w/index.php?title=File:Newspaper_article_-_De_Telegraaf_-_Date_09-07-1985_-_Bank_robbery_-_Rob_Kaman_-_Kickboxing.jpg) - an article from the Dutch newspaper 'De Telegraaf' from 1985, still under copyright, as it was published less than 70 years ago. It cannot have a CC0 license.
+* [Trouw, 1974](https://commons.wikimedia.org/w/index.php?title=File:Advertentie_Pottenbakkerij_Henk_en_Lieske_Potters_in_Trouw_dd_22_maart_1974.jpg) - an article from the Dutch newspaper 'Trouw' from 1974. Still under copyright, as it was published less than 70 years ago. We must assume that the copyright is held by the newspaper publisher, unless proven otherwise. 
+* [Algemeen Dagblad, 1966](https://commons.wikimedia.org/w/index.php?title=File:Ad_25_6_1966.jpg) - an article from the Dutch newspaper 'Algemeen Dagblad' from 1966. Still under copyright, as it was published less than 70 years ago. We must assume that the copyright is held by the newspaper publisher, unless proven otherwise. Futhermore, it can not have a CCO license.
+* [Het Binnenhof en Het Vaderland, 1956](https://commons.wikimedia.org/w/index.php?title=File:Een_oproep_van_Duco_Sickinghe_(1888-1983)_in_dagblad_Het_Binnenhof_en_Het_Vaderland_(1956).jpg) - a text by [Duco Wilhelm Sickinghe](https://nl.wikipedia.org/wiki/Duco_Wilhelm_Sickinghe) in a Dutch newspaper from 1956. According to Dutch coppyright law, this article is still under copyright, as the author died in 1983 and the article was published less than 70 years ago. So we must assume that the copyright is still with the (heirs of the) author or with the newspaper publisher, unless proven otherwise. Futhermore, it cannot have a CC-BY license.
 
-* [Trouw, 1974](https://commons.wikimedia.org/w/index.php?title=File:Advertentie_Pottenbakkerij_Henk_en_Lieske_Potters_in_Trouw_dd_22_maart_1974.jpg)
-This is a file from Dutch newspaper 'Trouw' from 1974. This article is still under copyright, as it was published less than 70 years ago. So we must assume that the copyright of this publication is with the newspaper publisher, unless proven otherwise.) 
-
-
-* [Algemeen Dagblad, 1966](https://commons.wikimedia.org/w/index.php?title=File:Ad_25_6_1966.jpg)
-This is a file from Dutch newspaper 'Algemeen Dagblad' from 1966. This article is still under copyright, as it was published less than 70 years ago. So we must assume that the copyright of this publication is with the newspaper publisher, unless proven otherwise. Futhermore, it can not have a CCO license.
-
-* [Het Binnenhof en Het Vaderland, 1956](https://commons.wikimedia.org/w/index.php?title=File:Een_oproep_van_Duco_Sickinghe_(1888-1983)_in_dagblad_Het_Binnenhof_en_Het_Vaderland_(1956).jpg)
-his is a text by Duco Sickinghe in a Dutch newspaper from 1956. According to Dutch coppyright law, this article is still under copyright, as the author only died in 1983 AND the article was published less than 70 years ago. So we must assume that the copyright of this publication is still with the (heirs of the) author or with the newspaper publisher, unless proven otherwise. Futhermore, it can not have a CC-BY license
+All deletion requests were granted immediately and the files were deleted quickly. 
 
 **The final dataset**<br/>
 In the end, we were able to retrieve 6,248 distinct files that contained both (one or more) copyright templates and a publication or creation date. This is the [dataset used in our further analysis](link to Excel). XXXXX TODO XXXXXXXX
@@ -157,19 +149,19 @@ What insights can be gained from this dataset? Let's start by looking at the mai
 for this we had to first group the copyright templates by their main reason for categorizing files into the public domain.  - the main reasons why these files are in the public domain.
 
 1) Copyrights expired because of age (xx% of files): This is the most common reason, because the underlying works are too old to carry copyrights. Its digital reproduction (2D scan, photo) is generally also considered to be in the in the PD
-   - Example templates: [\{\{PD-old-70\}\}](https://commons.wikimedia.org/wiki/Template:PD-old-70)
+   - Example templates: [\{\{PD-old-70\}\}](https://commons.wikimedia.org/wiki/Template:PD-old-70), see overview belaow for all templates in this groupt
 
 2) Copyrights waived or made free (% of files): This includes files that have been released into the public domain by their creators or rights holders
-   - Example templates: [CC0 license](https://creativecommons.org/public-domain/cc0/), [\{\{CC-BY-SA-4.0\}\}](https://commons.wikimedia.org/wiki/Template:Cc-by-sa-4.0)
+   - Example templates: [CC0 license](https://creativecommons.org/public-domain/cc0/), [\{\{CC-BY-SA-4.0\}\}](https://commons.wikimedia.org/wiki/Template:Cc-by-sa-4.0) see overview belaow for all templates in this groupt
    
 3) Not eligible for copyrights due to lack of sufficient originality (% of files): This includes files that are not eligible for copyright protection because they lack sufficient originality, such as simple logos, signatures, or other works that do not meet the threshold for copyrightability.
-   - Example templates: [\{\{PD-ineligible\}\}](https://commons.wikimedia.org/wiki/Template:PD-ineligible)
+   - Example templates: [\{\{PD-ineligible\}\}](https://commons.wikimedia.org/wiki/Template:PD-ineligible) see overview belaow for all templates in this groupt
 
 4) Government work, not subject to copyright (% of files): This includes files that are created by government employees in the course of their official duties, which are not subject to copyright protection in many jurisdictions, including the Netherlands and the United States.
-   - Example templates: 
+   - Example templates: see overview belaow for all templates in this groupt
 
 5) Other reasons (% of files): This includes files that are in the public domain for other reasons, such as being published before 1923, or being in the public domain in the United States but not in the Netherlands.
-   - Example templates: 
+   - Example templates: see overview belaow for all templates in this groupt
 
 The resutls are visualized in the donut chart below, which shows the main reasons why these files are in the public domain, according to the copyright templates applied by the Wikimedia community.
 
