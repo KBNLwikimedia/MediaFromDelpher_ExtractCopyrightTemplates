@@ -168,7 +168,6 @@ Example template: [\{\{PD-because\}\}](https://commons.wikimedia.org/wiki/Templa
 **Visualizing the results**<br/> 
 If we break down the data, we see that our 6,248 files are classified into the public domain by 6,329 templates for the following reasons: 
 
-
 <style>
     .table1 {
         width: 100%;
@@ -188,18 +187,15 @@ If we break down the data, we see that our 6,248 files are classified into the p
     .table1 tr:nth-child(5) { background: #ff7f0e; }
 </style>
 
-<div class="table1">
-
-| Reason for public domain  classification <br/> *(NoCopyrightReason)* | Number of template usages | Percentage |
-|----------------------------------------------------------------------|-------------------------|---|
-| Copyrights expired because of age                                    | 6,191                       | 97,8%      |
+| Reason for public domain  classification <br/> *(NoCopyrightReason)* | Number of template usages | Percentage   |
+|----------------------------------------------------------------------|-------------------------|----------------|
+| <span style="background: #1093e6;">Copyrights expired because of age</span>             | 6,191                       | 97,8%      |
 | Copyrights waived or made free                                       | 97                          | 1,5%       |
-| Government work, not subject to copyright                            | 20                          | 0,3%|
-| Not eligible for copyrights due to lack of sufficient originality    | 18                          | 0,3% |
+| Government work, not subject to copyright                            | 20                          | 0,3%       |
+| Not eligible for copyrights due to lack of sufficient originality    | 18                          | 0,3%       |
 | Other reasons                                                        | 3                           | 0,03%      |
-| **Total**                                                            | **6,329**                   | **100%**|
+| **Total**                                                            | **6,329**                   | **100%**   |
 
-</div>
 
 These results are also visualized in the donut chart below. For instance, the 6,191 files in the blue sector are in the public domain because the historical newspapers, books and magazines they were sourced from, are too old to carry copyrights. Please note that one file can contain multiple out-of-copyright claims, see [this example](https://commons.wikimedia.org/wiki/File:Zoebaida_ad.jpg).
 
