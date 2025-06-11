@@ -190,14 +190,14 @@ If we break down the data, we see that our 6,248 files are classified into the p
 
 <div class="table1">
 
-| Reason for public domain  classification<br/>*(NoCopyrightReason)*            | Number of template usages | Percentage |
-|-------------------------------------------------------------------------------|-----------------------------|---|
-| Copyrights expired because of age | 6,191                       | 97,8%      |
-| Copyrights waived or made free                                                | 97                          | 1,5%       |
-| Government work, not subject to copyright                                     | 20                          | 0,3%|
-| Not eligible for copyrights due to lack of sufficient originality             | 18                          | 0,3% |
-| Other reasons                                                                 | 3                           | 0,03%      |
-| **Total**                                                                     | **6,329**                   | **100%**|
+| Reason for public domain  classification <br/> *(NoCopyrightReason)* | Number of template usages | Percentage |
+|----------------------------------------------------------------------|-------------------------|---|
+| Copyrights expired because of age                                    | 6,191                       | 97,8%      |
+| Copyrights waived or made free                                       | 97                          | 1,5%       |
+| Government work, not subject to copyright                            | 20                          | 0,3%|
+| Not eligible for copyrights due to lack of sufficient originality    | 18                          | 0,3% |
+| Other reasons                                                        | 3                           | 0,03%      |
+| **Total**                                                            | **6,329**                   | **100%**|
 
 </div>
 
