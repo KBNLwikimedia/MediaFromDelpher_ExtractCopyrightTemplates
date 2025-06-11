@@ -1,8 +1,8 @@
 {
-  "title": "Explanation of Wikimedia Commons copyright templates, as used in files sourced from Delpher",
+  "title": "Summary of Wikimedia Commons copyright templates, as used in files sourced from Delpher",
   "description": {
     "intro": "This table describes the 39 distinct copyright templates that are used in Wikimedia Commons media files that were sourced from Delpher.<em>(*, **)</em>. The templates are sorted and color-coded by the reason why they categorise files into the public domain (<em>NoCopyrightReason</em>). The template usage is taken \"as observed\" (***). <br><br>Data as of 9 April 2025.<br><br>",
-    "byline": "Olaf Janssen, Wikimedia-coördinator @KB - 25 April 2025 - CC-BY-SA 4.0 ",
+    "byline": "Olaf Janssen, Wikimedia coordinator @KB - 11 June 2025 - CC-BY-SA 4.0 ",
     "source-name": "KB, national library of the Netherlands",
     "source-url": "https://github.com/KBNLwikimedia/xxxxxx",
     "aria-description": "This table describes the 39 distinct copyright templates that are used in Wikimedia Commons media files that were sourced from Delpher. The templates are sorted and color-coded by the reason why they categorise files into the public domain. The template usage is taken \"as observed\". Data as of 9 April 2025."

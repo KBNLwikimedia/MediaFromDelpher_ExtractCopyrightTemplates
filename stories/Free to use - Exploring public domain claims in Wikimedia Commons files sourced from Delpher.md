@@ -157,10 +157,10 @@ Example templates: [\{\{CC-zero\}\}](https://commons.wikimedia.org/wiki/Template
 Note: for the readability and flow of this article, we will not make further distinctions between files that were given CC0(-like) templates and the (very limited number of) files that were given CC-BY or CC-BY-SA copyright claims. For the purposes of this article, these are all considered (or 'enforeced') to be parts of the public domain.
 
 3. *Government work, not subject to copyright*: For files that are created by government employees in the course of their official duties, which are not subject to copyright protection in many jurisdictions, including the Netherlands and the United States.<br/>
-Example template: [\{\{PD-DutchGov\}\}](https://commons.wikimedia.org/wiki/Template:PD-DutchGov)
+Example template: [\{\{PD-DutchGov\}\}](https://commons.wikimedia.org/wiki/Template:PD-DutchGov).
    
 4. *Not eligible for copyrights due to lack of sufficient originality*: This includes files that are not eligible for copyright protection because they lack sufficient originality, such as simple logos, signatures, or other works that do not meet the threshold for copyrightability.<br/>
-Example templates: [\{\{PD-ineligible\}\}](https://commons.wikimedia.org/wiki/Template:PD-ineligible) or [\{\{PD-textlogo\}\}](https://commons.wikimedia.org/wiki/Template:PD-textlogo)
+Example templates: [\{\{PD-ineligible\}\}](https://commons.wikimedia.org/wiki/Template:PD-ineligible) or [\{\{PD-textlogo\}\}](https://commons.wikimedia.org/wiki/Template:PD-textlogo).
    
 5. *Other reasons*: For files that are in the public domain for other reasons, such as being published before the introduction of copyright laws, or because they are not eligible for copyright protection for other reasons.<br/>
 Example template: [\{\{PD-because\}\}](https://commons.wikimedia.org/wiki/Template:PD-because).
@@ -168,14 +168,38 @@ Example template: [\{\{PD-because\}\}](https://commons.wikimedia.org/wiki/Templa
 **Visualizing the results**<br/> 
 If we break down the data, we see that our 6,248 files are classified into the public domain by 6,329 templates for the following reasons: 
 
-| Reason for public domain  classification | Number of template usages | Percentage |
-|---------|-----------------------------|---|
+
+<style>
+    .table1 {
+        width: 100%;
+        text-align: left;
+        color: black; /* Correct property name */
+    }
+    .table1 th,tr {
+        background: white;
+        word-wrap: break-word;
+        text-align: left;
+        color: black;
+    }
+    .table1 tr:nth-child(1) { background: #1093e6; }
+    .table1 tr:nth-child(2) { background: #d73445; }
+    .table1 tr:nth-child(3) { background: #00b148; }
+    .table1 tr:nth-child(4) { background: #f2f27e; }
+    .table1 tr:nth-child(5) { background: #ff7f0e; }
+</style>
+
+<div class="table1">
+
+| Reason for public domain  classification<br/>*(NoCopyrightReason)*            | Number of template usages | Percentage |
+|-------------------------------------------------------------------------------|-----------------------------|---|
 | Copyrights expired because of age | 6,191                       | 97,8%      |
-| Copyrights waived or made free | 97                          | 1,5%       |
-| Government work, not subject to copyright | 20                          | 0,3%|
-| Not eligible for copyrights due to lack of sufficient originality | 18                          | 0,3% |
-| Other reasons | 3                           | 0,03%      |
-| **Total** | **6,329**                   | **100%**|
+| Copyrights waived or made free                                                | 97                          | 1,5%       |
+| Government work, not subject to copyright                                     | 20                          | 0,3%|
+| Not eligible for copyrights due to lack of sufficient originality             | 18                          | 0,3% |
+| Other reasons                                                                 | 3                           | 0,03%      |
+| **Total**                                                                     | **6,329**                   | **100%**|
+
+</div>
 
 These results are also visualized in the donut chart below. For instance, the 6,191 files in the blue sector are in the public domain because the historical newspapers, books and magazines they were sourced from, are too old to carry copyrights. Please note that one file can contain multiple out-of-copyright claims, see [this example](https://commons.wikimedia.org/wiki/File:Zoebaida_ad.jpg).
 
@@ -186,13 +210,11 @@ These results are also visualized in the donut chart below. For instance, the 6,
 
 ><big><b><em>Quote 2</em></b></big>
 
-### Section 2.1 
+## 39 templates, grouped by reason for public domain classification
 
-Explan which templates have been foun - Which tempatd are exactly in each of the 5 groups - 39 in total
+Next, let's look in more detail at the templates that are in each of the five categories. It turns out that Delpher-sourced files contains 39 distinct templates. These are detailed in the table below, where they are grouped abd color-coded by the reason why they categorise files into the public domain. *(NoCopyrightReason)*. 
 
 <div style="min-height:748px" id="datawrapper-vis-PJ96v"><script type="text/javascript" defer src="https://datawrapper.dwcdn.net/PJ96v/embed.js" charset="utf-8" data-target="#datawrapper-vis-PJ96v"></script><noscript><img src="https://datawrapper.dwcdn.net/PJ96v/full.png" alt="This table describes the 39 distinct copyright templates that are used in Wikimedia Commons media files that were sourced from Delpher. The templates are sorted and color-coded by the reason why they categorise files into the public domain. The template usage is taken &quot;as observed&quot;. Data as of 9 April 2025." /></noscript></div>
-
-
 
 xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 

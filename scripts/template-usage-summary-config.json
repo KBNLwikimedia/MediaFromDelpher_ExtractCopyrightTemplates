@@ -2,7 +2,7 @@
   "title": "Usage of copyright templates in Wikimedia Commons files sourced from Delpher, grouped by reason",
   "description": {
     "intro": "This chart shows how often which copyright templates are used in Wikimedia Commons media files that were sourced from Delpher.<em>(*)</em>. The bars are grouped by the reason why the files are in the public domain. The template usage is taken \"as observed\" (**). <br><br>Key figures: <br> - Total number of distinct media files: {total_unique_files:,} <em>(***)</em><br> - Total number of template usages: {total_template_usages:,} (one file can contain multiple copyright templates)<br> - Total number of distinct templates used: {unique_templates_used} <br><br>Data as of 9 April 2025.<br><br>",
-    "byline": "Olaf Janssen, Wikimedia-coördinator @KB - 10 June 2025 - CC-BY-SA 4.0 ",
+    "byline": "Olaf Janssen, Wikimedia coordinator @KB - 10 June 2025 - CC-BY-SA 4.0 ",
     "source-name": "KB, national library of the Netherlands",
     "source-url": "https://github.com/KBNLwikimedia/xxxxxx",
     "aria-description": "This chart shows how often which copyright templates are used in Wikimedia Commons media files that were sourced from Delpher. The bars are grouped by the reason why the files are in the public domain. The template usage is taken \"as observed\". The 3 key figures are: 1) Total number of distinct media files: {total_unique_files:,}. 2) Total number of template usages: {total_template_usages:,} (one file can contain multiple copyright templates). 3) Total number of distinct templates used: {unique_templates_used}. Data as of 9 April 2025."
