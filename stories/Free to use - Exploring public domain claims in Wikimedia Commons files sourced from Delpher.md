@@ -189,7 +189,7 @@ These results are also visualized in the donut chart below. For instance, the 6,
 
 ## 39 templates, grouped by reason for public domain classification
 
-Next, let's look in more detail at the templates that are in each of the five categories. It turns out that Delpher-sourced files use a total of 39 distinct templates. These are detailed in the table below, where they are grouped and color-coded by the reason why they categorise files into the public domain *(NoCopyrightReason)*. You can cick on the name of the template to go to its description page on Wikimedia Commons. 
+Next, let's look in more detail at the templates that are in each of the five categories. It turns out that Delpher-sourced files use a total of 39 distinct templates. These are detailed in the table below, where they are grouped and color-coded by the reason why they categorise files into the public domain *(NoCopyrightReason)*. You can click on the names of the templates in the first column to go to their description pages on Wikimedia Commons. 
 
 <div style="min-height:748px" id="datawrapper-vis-PJ96v"><script type="text/javascript" defer src="https://datawrapper.dwcdn.net/PJ96v/embed.js" charset="utf-8" data-target="#datawrapper-vis-PJ96v"></script><noscript><img src="https://datawrapper.dwcdn.net/PJ96v/full.png" alt="This table describes the 39 distinct copyright templates that are used in Wikimedia Commons media files that were sourced from Delpher. The templates are sorted and color-coded by the reason why they categorise files into the public domain. The template usage is taken &quot;as observed&quot;. Data as of 9 April 2025." /></noscript></div>
 
