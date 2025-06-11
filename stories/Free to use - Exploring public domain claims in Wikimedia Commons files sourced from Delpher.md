@@ -213,31 +213,37 @@ Next., lets';s zoom in on the copyright templates that are used for files that a
 
 
 
-## Section 3 Compliance of the community to the copyrights stramtrwents
-Are thre any violations of big mistakes?
+## Section 3 Compliance of the community to the copyrights statements
+Are there any violations of big mistakes?
 
-forthe "pd becauase of age groop" (98% of uses) we will llok at the year in which the orginalwork was published or creaed (column F "DateOfPublicationOrCreation" in the Excel)
+for the "pd because of age group" (98% of uses) we will look at the year in which the orginal work was published or created (column F "DateOfPublicationOrCreation" in the Excel)
 
-- The years of publication or creation have been extrachred from the Wikitext, typically the "Date-field"
-- for most fies the date could be extracted as a single year, for instance files taken from newspapers that were published in [1863](https://commons.wikimedia.org/wiki/File:1863_03_14_De_Spoorbrug_te_Venlo.jpg), [1926](https://commons.wikimedia.org/wiki/File:Nieuwe_Venlosche_Courant_vol_064_no_185_obituary_m%C3%A8re_Louise_Hanrath.jpg) or [1952](https://commons.wikimedia.org/wiki/File:Portret_van_Eug%C3%A8ne_Brands,_1952.jpg).
-- In case this date was not a single year the latest/most recent year has been taken. For isntance [1920s]() *(--> YYYY)* , [before 1880]() *(--> YYYY)* or [circa 1949]()*(--> YYYY)*.  
+- The years of publication or creation have been extracted from the Wikitext, typically the "Date-field"
+- for most files the date could be extracted as a single year, for instance files taken from newspapers that were published in [1863](https://commons.wikimedia.org/wiki/File:1863_03_14_De_Spoorbrug_te_Venlo.jpg), [1926](https://commons.wikimedia.org/wiki/File:Nieuwe_Venlosche_Courant_vol_064_no_185_obituary_m%C3%A8re_Louise_Hanrath.jpg) or [1952](https://commons.wikimedia.org/wiki/File:Portret_van_Eug%C3%A8ne_Brands,_1952.jpg).
+- In case this date was not a single year the latest/most recent year has been taken, with a safety margin where possible. For instance [1920s]() *(--> 1930)* , [before 1880]() *(--> 1880)* or [circa 1949]()*(--> 1949)*.  
 
 Interesting cases to study, in the Excel 
-* Files classified ""Copyrights waived or made free""
-* Fioles from publ;ications 1955 or later that are marked as public domain
 
-Make Datarwapper for trhat
-https://commons.wikimedia.org/wiki/File:Proclamatie1955-Amigoe.jpg	File:Proclamatie1955-Amigoe.jpg	M147748690	Klik	1	1955	{{PD-anon-70-EU}}	https://commons.wikimedia.org/wiki/Template:PD-anon-70-EU	Klik	Copyrights expired because of age
-https://commons.wikimedia.org/wiki/File:1957_Foto-album_van_burgemeester_P.M.J.S._Cremers%2C_1957_18.jpg	File:1957_Foto-album_van_burgemeester_P.M.J.S._Cremers,_1957_18.jpg	M150325640	Klik	1	1957	{{Cc-by-4.0}}	https://commons.wikimedia.org/wiki/Template:Cc-by-4.0	Klik	Copyrights waived or made free
-https://commons.wikimedia.org/wiki/File:Hindeloopen_vlag_1650.svg	File:Hindeloopen_vlag_1650.svg	M81840054	Klik	1	1957	{{PD-self}}	https://commons.wikimedia.org/wiki/Template:PD-self	Klik	Copyrights waived or made free
-https://commons.wikimedia.org/wiki/File:Handtekening_George_van_den_Bergh.jpg	File:Handtekening_George_van_den_Bergh.jpg	M89816821	Klik	1	1960	{{PD-signature}}	https://commons.wikimedia.org/wiki/Template:PD-signature	Klik	Not eligible for copyrights due to lack of sufficient originality
-https://commons.wikimedia.org/wiki/File:Expositie_van_18_jonge_Nederlandse_striptekenaars_in_Kunstcentrum_Lijnbaan%2C_1971.jpg	File:Expositie_van_18_jonge_Nederlandse_striptekenaars_in_Kunstcentrum_Lijnbaan,_1971.jpg	M112239095	Klik	1	1971	{{Cc-zero}}	https://commons.wikimedia.org/wiki/Template:Cc-zero	Klik	Copyrights waived or made free
-https://commons.wikimedia.org/wiki/File:IJ_with_two_acute_accents_in_Staatsblad_van_het_Koninkrijk_der_Nederlanden%2C_no._394%2C_1996%2C_p._17.png	File:IJ_with_two_acute_accents_in_Staatsblad_van_het_Koninkrijk_der_Nederlanden,_no._394,_1996,_p._17.png	M129412274	Klik	1	1996	{{PD-text}}	https://commons.wikimedia.org/wiki/Template:PD-text	Klik	Not eligible for copyrights due to lack of sufficient originality
+### 1. Files from publications published or created in 1955 or later, that are marked as public domain
+
+| File                                                                                                                                                                                                                                                       | Year of publication or creation | License Template |  Copyright Status | Remarks |
+|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|-----------|----|---------|----|
+| [Proclamatie1955-Amigoe.jpg](https://commons.wikimedia.org/wiki/File:Proclamatie1955-Amigoe.jpg)                                                                                                                                                           | 1955 | [PD-anon-70-EU](https://commons.wikimedia.org/wiki/Template:PD-anon-70-EU) | Copyrights expired because of age | aa |
+| [1957 Foto-album van burgemeester P.M.J.S. Cremers, 1957 18.jpg](https://commons.wikimedia.org/wiki/File:1957_Foto-album_van_burgemeester_P.M.J.S._Cremers%2C_1957_18.jpg)                                                                                 | 1957 | [Cc-by-4.0](https://commons.wikimedia.org/wiki/Template:Cc-by-4.0) | Copyrights waived or made free | aa |
+| [Hindeloopen vlag 1650.svg](https://commons.wikimedia.org/wiki/File:Hindeloopen_vlag_1650.svg)                                                                                                                                                             | 1957 | [PD-self](https://commons.wikimedia.org/wiki/Template:PD-self) | Copyrights waived or made free | aa |
+| [Handtekening George van den Bergh.jpg](https://commons.wikimedia.org/wiki/File:Handtekening_George_van_den_Bergh.jpg)                                                                                                                                     | 1960 | [PD-signature](https://commons.wikimedia.org/wiki/Template:PD-signature) | Not eligible for copyrights due to lack of sufficient originality | aa |
+| [Expositie van 18 jonge Nederlandse striptekenaars in Kunstcentrum Lijnbaan, 1971.jpg](https://commons.wikimedia.org/wiki/File:Expositie_van_18_jonge_Nederlandse_striptekenaars_in_Kunstcentrum_Lijnbaan%2C_1971.jpg)                                     |  1971 | [Cc-zero](https://commons.wikimedia.org/wiki/Template:Cc-zero) |  Copyrights waived or made free | aa |
+| [IJ with two acute accents in Staatsblad van het Koninkrijk der Nederlanden, no. 394, 1996, p. 17.png](https://commons.wikimedia.org/wiki/File:IJ_with_two_acute_accents_in_Staatsblad_van_het_Koninkrijk_der_Nederlanden%2C_no._394%2C_1996%2C_p._17.png) | 1996 | [PD-text](https://commons.wikimedia.org/wiki/Template:PD-text) | Not eligible for copyrights due to lack of sufficient originality | aa |
 
 
+TODO: Make Datawrapper  for this table
 
+### 2. Files classified "Copyrights waived or made free"
 
-## Section 4: Commonmly made mistakes of the community when aplying PD templtes to Delphetr files
+## Section 4: Commonly made mistakes of the community when applying PD templates to Delpher files
+
+Commons mistakes: 
+1) fail to include separate template for PD in the US, see for instance [this file](https://commons.wikimedia.org/wiki/File:1923_Jos._Schrijnen_%E2%80%94_MMKB02_000118508_00004_image_(cropped).jpg) that is marked with the [\{\{PD-old-70\}\}](https://commons.wikimedia.org/wiki/Template:PD-old-70) template, but lacks a US-specific template such as [\{\{PD-US-expired\}\}](https://commons.wikimedia.org/wiki/Template:PD-US-expired) template.
 
 ## Section 5: Recommendactions to the 
 * Wikimedia community to improve the copyright templates and their usage
