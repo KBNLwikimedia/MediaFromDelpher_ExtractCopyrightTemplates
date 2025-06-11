@@ -5,8 +5,8 @@
 </td></tr></table>
 <hr/>
 
-# Free to use? Exploring public domain claims in Wikimedia Commons files sourced from Delpher (May 2025)
-<sup>Olaf Janssen, xx May 2025</sup>
+# Free to use? Exploring public domain claims in Wikimedia Commons files sourced from Delpher (June 2025)
+<sup>Olaf Janssen, xx June 2025</sup>
 
 This article is also [available as PDF](ongithub.pdf).
 

@@ -1,3 +1,10 @@
+<table width="100%" border="0"><tr><td align="left">
+<a href="https://kbnlwikimedia.github.io/tools/"><< Back to tools and scripts index</a>
+</td><td align="right">
+<a href="https://github.com/KBNLwikimedia/wikimedia-commons_copyright-templates" target="_blank">>> To the Github repo of this page</a>
+</td></tr></table>
+<hr/>
+
 # Extract and analyse usage of PD-like templates for Wikimedia Commons files
 
 This repo....
@@ -5,7 +12,7 @@ This repo....
 
 ## Purpose of this repo
 This repo can help you to  identify potentially public domain (PD) or PD-like license templates
-in Wikimedia Commons files:
+in Wikimedia Commons files.
 
 These templates are often indicative of public domain status, but not explicitly
 tagged as such. The script extracts them, alongside simplified creation/publication
@@ -16,7 +23,7 @@ dates, for review and documentation purposes.
 ## Who canm benefit?
 
 ## Application 1: Media from Delpher
-For Category:Media from Delpher : [Free to use? Exploring public domain claims in Wikimedia Commons files sourced from Delpher (May 2025)](https://kbnlwikimedia.github.io/wikimedia-commons_copyright-templates/stories/Free%20to%20use%20-%20Exploring%20public%20domain%20claims%20in%20Wikimedia%20Commons%20files%20sourced%20from%20Delpher%20(May%202025).html)
+For Category:Media from Delpher : [Free to use? Exploring public domain claims in Wikimedia Commons files sourced from Delpher (June 2025)](https://kbnlwikimedia.github.io/wikimedia-commons_copyright-templates/stories/Free%20to%20use%20-%20Exploring%20public%20domain%20claims%20in%20Wikimedia%20Commons%20files%20sourced%20from%20Delpher.html) (June 2025)
 
 * Category:Media from Delpher
 * Excluding: Category:Scans from the Internet Archive
