@@ -75,7 +75,7 @@ def count_template_usages(
     - Counts how many files use each unique copyright template.
     - Builds a summary table with:
         - Template name (HTML-formatted as a clickable link),
-        - Number of files using the template,
+        - Number of times this template was used,
         - Corresponding Template URL,
         - Reason for no copyright (NoCopyrightReason).
     - Sorts the output first by NoCopyrightReason (A–Z), then by template usage (highest first).
@@ -121,7 +121,7 @@ def count_template_usages(
 
         # Calculate the number of files using each template
         usage_counts = df["Template"].value_counts().reset_index()
-        usage_counts.columns = ["Template", "Number of files using this template"]
+        usage_counts.columns = ["Template", "Number of times this template is used"]
 
         # Merge counts with TemplateURL and NoCopyrightReason (remove duplicates first)
         summary = usage_counts.merge(
@@ -141,7 +141,7 @@ def count_template_usages(
 
         # Sort summary: first by NoCopyrightReason (A–Z), then by Number of files (desc)
         summary = summary.sort_values(
-            by=["NoCopyrightReason", "Number of files using this template"],
+            by=["NoCopyrightReason", "Number of times this template is used"],
             ascending=[True, False]
         )
 
@@ -207,16 +207,16 @@ def generate_template_stats(df: pd.DataFrame, summary: pd.DataFrame) -> dict:
         if missing_cols_df:
             raise ValueError(f"Missing required column(s) in the main data: {', '.join(missing_cols_df)}")
 
-        if "Number of files using this template" not in summary.columns:
-            raise ValueError("Summary data is missing 'Number of files using this template' column.")
+        if "Number of times this template is used" not in summary.columns:
+            raise ValueError("Summary data is missing 'Number of times this template is used' column.")
 
         # Use the provided summary table for the counts
-        total_template_usages = summary["Number of files using this template"].sum()
+        total_template_usages = summary["Number of times this template is used"].sum()
         unique_templates_used = df["Template"].nunique()
         total_files_with_templates = df["FileURL"].nunique()
         total_unique_files = df["FileMid"].nunique()
         most_used_template = summary.iloc[0]["Template"]
-        most_used_template_count = summary.iloc[0]["Number of files using this template"]
+        most_used_template_count = summary.iloc[0]["Number of times this template is used"]
 
         stats = {
             "total_template_usages": total_template_usages,

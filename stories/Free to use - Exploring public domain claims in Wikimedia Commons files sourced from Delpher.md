@@ -195,7 +195,7 @@ Next, let's look in more detail at the templates that are in each of the five ca
 
 We can also look at how often each copyright template is used. The bar chart below shows the number of usages for each of the 39 templates, grouped and color-coded by the reason why the files are in the public domain, as explained before. The total number of template usages is 6,329 across 6,248 distinct files. 
 
-We can for instance see that the template [\{\{PD-anon-70-EU\}\}](https://commons.wikimedia.org/wiki/Template:PD-anon-70-EU) is used most frequently, 2,044 times, to indicate copyright has expired in (among others) the EU and the author's identity was never disclosed. The second most used template is [\{\{PD-old-70-expired\}\}](https://commons.wikimedia.org/wiki/Template:PD-old-70-expired), which is used 1,329 times to indicate that the author died more than 70 years ago and the work was first published in the US more than 95 years ago.
+We can for instance see that the template [\{\{PD-anon-70-EU\}\}](https://commons.wikimedia.org/wiki/Template:PD-anon-70-EU) is used most frequently, 2,044 times, to indicate copyright has expired in (among others) the EU and the author's identity was never disclosed. The second most used template is [\{\{PD-old-70-expired\}\}](https://commons.wikimedia.org/wiki/Template:PD-old-70-expired), which is used 1,329 times to indicate that the author died more than 70 years ago *and* the work was first published in the US more than 95 years ago.
 
 <div style="min-height:1664px" id="datawrapper-vis-UewJt"><script type="text/javascript" defer src="https://datawrapper.dwcdn.net/UewJt/embed.js" charset="utf-8" data-target="#datawrapper-vis-UewJt"></script><noscript><img src="https://datawrapper.dwcdn.net/UewJt/full.png" alt="This chart shows how often which copyright templates are used in Wikimedia Commons media files that were sourced from Delpher. The bars are grouped and color-coded by the reason why the files are in the public domain. The template usage is taken &quot;as observed&quot;. You can click on the names of the templates to go to their description pages on Wikimedia Commons. The 3 key figures are: 1) Total number of distinct media files: 6,248. 2) Total number of template usages: 6,329 (one file can contain multiple copyright templates). 3) Total number of distinct templates used: 39. Data as of 9 April 2025." /></noscript></div>
 
@@ -204,9 +204,16 @@ We can for instance see that the template [\{\{PD-anon-70-EU\}\}](https://common
 
 ### H3 - Zooming in: copyrights expired because of age 
 
-Let's now zoom in on the blue bars, that is on the copyright templates for files that are in the public domain because of age. For the underlying works of these files, enough time has passed since the author’s death, since the work was first published, or since its creation. 
+Let's now zoom in on the blue bars, that is on the copyright templates for files that are in the public domain because of age. For the underlying works of these files, enough time has passed since the author’s death, since the work was first published, or since its creation. This group represents 24 templates used 6,191 times in 6,114 distinct files.
 
-This group represents 24 templates used 6,191 times in 6,114 distinct files
+The overview below  shows the the number of usages for each template, similar to the previous bar chart.  
+summarizes the expiration periodes.
+ 1 author’s death, 
+ 2 since the work was first published, 
+ 3 or since its creation. 
+4 remarks: 
+
+xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 
 <div style="min-height:1333px" id="datawrapper-vis-2NsXE"><script type="text/javascript" defer src="https://datawrapper.dwcdn.net/2NsXE/embed.js" charset="utf-8" data-target="#datawrapper-vis-2NsXE"></script><noscript><img src="https://datawrapper.dwcdn.net/2NsXE/full.png" alt="This table summarizes the expiration periodes specified in Wikimedia Commons copyright templates for Delpher-sourced media files. These files are now in the public domain because of age. Copyrights on a work can expire when enough time has passed since the author’s death, the work’s first publication, or its creation. The template usage is taken &quot;as observed&quot;. You can click on the names of the templates to view their description pages on Wikimedia Commons. The 3 key figures are: 1) Total number of distinct media files: 6,114. 2) Total number of template usages: 6,191 (one file can contain multiple copyright templates). 3) Total number of distinct templates used: 24. Data as of 9 April 2025." /></noscript></div>
 

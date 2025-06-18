@@ -64,7 +64,7 @@ def load_and_process_data(excel_path: str, sheet_name: str) -> pd.DataFrame:
     Returns:
         pd.DataFrame: Filtered and formatted DataFrame with the following columns:
             - 'Template' (HTML link format)
-            - 'Number of files using this template'
+            - 'Number of times this template is used'
             - 'Years after death of author'
             - 'Years after first publication'
             - 'Years after creation'
@@ -82,7 +82,7 @@ def load_and_process_data(excel_path: str, sheet_name: str) -> pd.DataFrame:
         required_columns = [
             'Template',
             'TemplateURL',
-            'Number of files using this template',
+            'Number of times this template is used',
             'NoCopyrightReason',
             'Years after death of author',
             'Years after first publication',
@@ -110,7 +110,7 @@ def load_and_process_data(excel_path: str, sheet_name: str) -> pd.DataFrame:
         # Final column order selection
         final_df = filtered_df[[
             'Template',
-            'Number of files using this template',
+            'Number of times this template is used',
             'Years after death of author',
             'Years after first publication',
             'Years after creation',
