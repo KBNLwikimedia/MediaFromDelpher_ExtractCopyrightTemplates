@@ -208,9 +208,9 @@ Let's now zoom in on the blue bars, that is on the copyright templates for files
 
 The overview below  shows the the number of usages for each template, similar to the previous bar chart.  
 summarizes the expiration periodes.
- 1 author’s death, 
- 2 since the work was first published, 
- 3 or since its creation. 
+ 1 author’s death: We see values iof 100. 70, years,. or unknoe because of anonumouts/pseudonmiem
+ 2 since the work was first published, 25, 50, 70, 95, 120 years
+ 3 or since its creation. 120 years, N/A
 4 remarks: 
 
 xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
