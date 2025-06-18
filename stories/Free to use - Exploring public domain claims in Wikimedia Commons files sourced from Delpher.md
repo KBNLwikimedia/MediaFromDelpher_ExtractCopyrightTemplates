@@ -5,7 +5,7 @@
 </td></tr></table>
 <hr/>
 
-# Free to use? Exploring public domain claims in Wikimedia Commons files sourced from Delpher (June 2025)
+# H1 - Free to use? Exploring public domain claims in Wikimedia Commons files sourced from Delpher (June 2025)
 <sup>Olaf Janssen, xx June 2025</sup>
 
 This article is also [available as PDF](ongithub.pdf).
@@ -17,7 +17,7 @@ This article is also [available as PDF](ongithub.pdf).
 _**[Delpher](https://www.delpher.nl)** offers access to millions of digitized pages from Dutch historical newspapers, books, and magazines — a valuable resource frequently used on Wikimedia Commons. In the first part of this data story, we examine how the Wikimedia community has assigned public domain status to Commons files that have been [sourced from Delpher](https://commons.wikimedia.org/wiki/Category:Media_from_Delpher). <br/>
 In the second part, we explore the validity of these claims and assess whether they align with the actual copyright status of the works. We identify common mistakes made by the Wikimedia community when applying public domain templates to files. Finally, we examine whether these errors have resulted in any serious copyright violations._
 
-## Key figures and findings
+## H2 kop -  Key figures and findings
 The most important key figures and findings of this story are:
 * kf 1
 * kf 2
@@ -31,21 +31,21 @@ Much of the historical content from [Delpher](https://www.delpher.nl) falls into
 
 For this reason, the KB wants to gain a better understanding of which newspaper articles, books, magazines and other materials from Delpher have been uploaded to Wikimedia Commons, and how public domain claims to those files have been assigned by the Wikimedia community. In doing so, it is important to emphasize that the KB has absolutely **no** intention to act as a copyright police force. The goal is to work together with the Wikimedia community to handle copyright matters responsibly, with respect for both creators and users.
 
-###  H3 kopje - What this article aims to do
+###  H3 - What this article aims to do
 This article aims to 
 1. Provide a **practical case study** of how public domain claims are applied in a real-world open environment — specifically, how Wikimedia Commons contributors handle copyright claims for [files sourced from Delpher](https://commons.wikimedia.org/wiki/Category:Media_from_Delpher).
 2. Offer insight into the **complexity of public domain claims** on Wikimedia Commons — even for the relatively simple case where files originate from a single source (Delpher) from a single country (the Netherlands).
 3. Explore **how accurately Wikimedia contributors apply public domain claims**, and assess to what extent potential copyright violations may occur — including whether any really serious violations are present.
 4. Share a **practical data story** of how to machine-analyze and visualize copyright claims for files in (subsets of) Wikimedia Commons using data analysis and visualization techniques.  
 
-###  H3 kopje - What this article does <u>not</u> aim to do
+###  H3 - What this article does <u>not</u> aim to do
 This article is not trying to  
 1. Provide a **comprehensive overview of all public domain claims** on Wikimedia Commons. This article focuses specifically on files sourced from Delpher, which is a manageable subset of the total number of files in Commons.
 2. Provide a **formal and/or detailed legal analysis** of every public domain claim for these files — such an approach would be far too deep for the scope of this data story.
 3. XXXXXXXXX **Identify and flag every potential copyright infringement** — aside from highlighting a few obvious and illustrative cases mentioned later in this story. XXXXXXXXXXXX (besides the 4 obvious cases mentioned below)
 4. Offer **recommendations or proposals on how to simplify public domain claims** on Wikimedia Commons. This article takes the current public domain landscape "as is," observing how it functions in practice without suggesting reform.
 
-###  H3 kopje -  Who is this article relevant for? 
+###  H3 - Who is this article relevant for? 
 This analysis of public domain template usage on Wikimedia Commons applied to files sourced from Delpher may be of interest to:
 * **The Wikimedia community** – to gain insights into how (accurately) they have implemented public domain copyright templates, especially for Delpher-sourced files.
 * **The Delpher development team and user community** – to better understand how a decentralized, international community of content reusers deals with public domain Delpher-sourced materials in a real-world scenario, i.e. on Wikimedia Commons.
@@ -54,7 +54,7 @@ This analysis of public domain template usage on Wikimedia Commons applied to fi
 * **Rights holders, publishers and collective rights organizations** – to assess whether there should be reasons for serious concern about large-scale copyright violations by the Wikimedia community (*spoiler: our findings suggest there is little to no cause for such concern*).
 
 
-## H2 kopje- Copyrights templates in Wikimedia Commons
+## H2 - Copyrights templates in Wikimedia Commons
 
 [Wikimedia Commons](https://commons.wikimedia.org/) is one of the largest open-access media repositories in the world, used daily by Wikipedia and countless other businesses and projects. To protect the open and reusable nature of its content, strict legal rules must be followed for files that are uploaded to Commons:  
 
@@ -73,7 +73,7 @@ See for instance the [public domain claim](https://commons.wikimedia.org/w/index
    - [\{\{CC-BY-SA-4.0\}\}](https://commons.wikimedia.org/wiki/Template:Cc-by-sa-4.0) — Creative Commons Attribution-ShareAlike 4.0 license.  
    - [\{\{PD-ineligible\}\}](https://commons.wikimedia.org/wiki/Template:PD-ineligible) — The file is in the public domain because it (and/or its underlying work) lacks sufficient originality to be eligible for copyright protection. 
 
-### The copyright template jungle   
+###  H3 - The copyright template jungle   
 
 But here’s the problem: although the purpose of these templates is to provide a clear and standardized way to declare copyright status, the practical reality is that the license tagging system — built over the years by the international Wikimedia community — has evolved into a very complex beast. The number of different copyright templates in use on Commons is enormous.
 
@@ -83,7 +83,7 @@ Both insiders and outsiders will struggle to find their ways in this system, it 
 
 However, this complexity is not entirely surprising. Wikimedia Commons accepts media in many formats (image, document, audio, video etc.) from any country, any jurisdiction and any historical period, and must therefore be able to handle the copyright rules and exceptions from dozens of legal systems worldwide. The elaborate system is necessary because Wikimedia Commons is a global, evolving platform. Templates are regularly added or updated as contributors find new sources for uploads or as local copyright regulations change.
 
-###  H3 kopje - Zooming in: public domain templates
+###  H3 - Zooming in: public domain templates
 To somewhat trim down this jungle, we can narrow the scope and look only at public domain templates, used for files that are out of copyright. Yet even within this limited scope, things remain complicated, as the number and variety of such templates is still pretty large.
 
 The [general public domain templates](https://commons.wikimedia.org/wiki/Commons:Copyright_tags/General_public_domain) page provides an overview of more than 70 templates based on general criteria, not tied to a specific country or source of the work. The complexity becomes more apparent when examining the [Category:PD license tags](https://commons.wikimedia.org/wiki/Category:PD_license_tags) and its subcategories. These include numerous [country-specific public domain templates](https://commons.wikimedia.org/wiki/Commons:Copyright_tags/Country-specific_tags), each reflecting the legal nuances of copyright legislation in the country of origin.
@@ -94,7 +94,7 @@ In practice, this means that many Commons files require multiple templates:<br/>
 * One or more templates describing the copyright status in the country of origin;
 * An additional template confirming the file's public domain status in the United States.
 
-###  H3 kopje - Zooming in further: copyright templates used in Delpher files
+###  H3 - Zooming in further: templates used in Delpher files
 
 For the purposes of this article, we aim to narrow the scope even further. We are interested only in public domain copyright templates used for files sourced from [Delpher](https://www.delpher.nl), the Dutch platform providing access to millions of full-text pages from Dutch historical newspapers, books, and magazines. Delpher is a frequently used resource for illustrating Wikipedia articles and for uploads to Wikimedia Commons.
 
@@ -103,7 +103,7 @@ By limiting our focus to this single source, our dataset and analysis become rel
 <a href="../media/wmc-pd-templates-sample.png"><img src="../media/wmc-pd-templates-sample.png" align="left" width="100%" vspace="5" alt="A non-exhaustive collage of screenshots of public domain template description pages used in Wikimedia Commons files that have been sourced from Delpher."/></a>
 <br clear="all"/><sub>*A (non-exhaustive) collage of screenshots of public domain template description pages, as used in Wikimedia Commons [files that have been sourced from Delpher](https://commons.wikimedia.org/wiki/Category:Media_from_Delpher) (Click to enlarge).<br/>Image license: <a href="https://creativecommons.org/licenses/by-sa/4.0/deed.nl" target="_blank">CC-BY-SA 4.0</a> / Olaf Janssen, KB national library of the Netherlands.*</sub>
 
-## H2 kopje - Creating the dataset
+## H2 - Creating the dataset
 
 To examine how the Wikimedia community has assigned public domain status to Commons files sourced from Delpher, we first needed a robust and reliable dataset. Let's look at the steps we took to create it.
 
@@ -142,14 +142,13 @@ All deletion requests were granted immediately and the files were deleted quickl
 **The final dataset**<br/>
 In the end, we were able to retrieve 6,248 distinct files that contained (one or more) copyright templates (6,329 in total), as well as a publication or creation date. This is the [dataset used in our further analysis](link to Excel). XXXXX TODO XXXXXXXX
 
-## H2 kopje-  Why are Delpher sourced files in the public domain, according to Wikimedia Commons?
+## H2 - Why are Delpher sourced files in the public domain, according to Wikimedia Commons?
 
-What insights can be gained from this dataset? A useful starting point is to understand the main reasons why files have been classified as public domain by their uploaders.
+One of the main reasons to write this data story is to gain a better understanding which Delpher-sourced materials have been uploaded to Wikimedia Commons and how public domain claims to those files have been assigned by the Wikimedia community. What insights can be gained from the dataset? 
 
-### H3 kopje - the main reasons why files have been classified as public domain by their uploaders.
+### H3 - 5 main reasons for public domain classification
 
-**Grouping templates**<br/> 
-To do this, we first grouped the copyright templates according to their underlying rationale for placing files in the public domain. This process resulted in five distinct categories:
+For this we first needed to group the copyright templates according to their underlying rationale for placing files in the public domain. This resulted in five distinct main reasons:
 
 1. <span style="background: #1093e6;">&nbsp;&nbsp;&nbsp;&nbsp;</span> *Copyrights expired because of age*: This is the most common reason, because the underlying work is too old to carry copyrights. Its digital reproduction (2D scan, photo) is generally also considered to be in the in the public domain.<br/>
 Example templates: [\{\{PD-old-70\}\}](https://commons.wikimedia.org/wiki/Template:PD-old-70) or [\{\{PD-old-70-expired\}\}](https://commons.wikimedia.org/wiki/Template:PD-old-70-expired). 
@@ -167,7 +166,6 @@ Example templates: [\{\{PD-ineligible\}\}](https://commons.wikimedia.org/wiki/Te
 5. <span style="background: #ff7f0e;">&nbsp;&nbsp;&nbsp;&nbsp;</span> *Other reasons*: For files that are in the public domain for other reasons, such as being published before the introduction of copyright laws, or because they are not eligible for copyright protection for other reasons.<br/>
 Example template: [\{\{PD-because\}\}](https://commons.wikimedia.org/wiki/Template:PD-because).
 
-**Visualizing the results**<br/> 
 If we break down the data, we see that our 6,248 files are classified into the public domain by 6,329 templates for the following reasons: 
 
 | Reason for public domain  classification <br/> *(NoCopyrightReason)*                                                                              | Number of template usages | Percentage   |
@@ -179,17 +177,13 @@ If we break down the data, we see that our 6,248 files are classified into the p
 | <span style="background: #ff7f0e;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>&nbsp; Other reasons                                                           | 3                           | 0,03%      |
 | **Total**                                                                                                                                         | **6,329**                   | **100%**   |
 
-
 These results are also visualized in the donut chart below. For instance, the 6,191 files in the blue sector are in the public domain because the historical newspapers, books and magazines they were sourced from, are too old to carry copyrights. Please note that a single file can contain multiple out-of-copyright claims, see [this example](https://commons.wikimedia.org/wiki/File:Zoebaida_ad.jpg).
 
 <div style="min-height:839px" id="datawrapper-vis-gZqMt"><script type="text/javascript" defer src="https://datawrapper.dwcdn.net/gZqMt/embed.js" charset="utf-8" data-target="#datawrapper-vis-gZqMt"></script><noscript><img src="https://datawrapper.dwcdn.net/gZqMt/full.png" alt="This donut chart shows the reasons why media files that were sourced from Delpher are out of copyright, according to Wikimedia Commons. For instance, the 6,191 files in the blue sector are in the public domain because the historical newspapers, books and magazines they were sourced from, are too old to carry copyrights. One file can contain multiple out-of-copyright claims. All such claims are taken &quot;as observed&quot;. Data as of 9 April 2025." /></noscript></div>
 <br/>
 
-><big><b><em>Quote 1</em></b></big>
 
-><big><b><em>Quote 2</em></b></big>
-
-### H3 kopje - 39 templates, grouped by public domain classification reason
+### H3 - 39 distinct public domain claims
 
 Next, let's look in more detail at the templates that are in each of the five categories. It turns out that Delpher-sourced files use a total of 39 distinct templates to communicate their public domain status. These are detailed in the table below, where they are sorted and grouped by the reason why they categorise files into the public domain *(NoCopyrightReason)*. Each group is color-coded for clarity. You can click on the names of the templates in the first column to view their description pages on Wikimedia Commons. 
 
@@ -197,7 +191,7 @@ Next, let's look in more detail at the templates that are in each of the five ca
 
 **TODO: add static version of this chart for PDF**
 
-### Geschikt H3 kopje
+### H3 - Usage of public domain templates
 
 We can also look at how often each copyright template is used. The bar chart below shows the number of usages for each of the 39 templates, grouped and color-coded by the reason why the files are in the public domain, as explained before.
  The total number of template usages is 6,329 across 6,248 distinct files. We can for instance see that the template [\{\{PD-anon-70-EU\}\}](https://commons.wikimedia.org/wiki/Template:PD-anon-70-EU) is used most frequently, 2044 times, to indicate copyright has expired in (among others) the EU and the author's identity was never disclosed. The second most used template is [\{\{PD-old-70-expired\}\}](https://commons.wikimedia.org/wiki/Template:PD-old-70-expired), which is used in 1,329 files to indicate that the author died more than 70 years ago and the work was first published in the US more than 95 years ago.
@@ -207,7 +201,7 @@ We can also look at how often each copyright template is used. The bar chart bel
 <!-- <a href="../media/media-from-delpher-in-wikimedia-commons-usage-of-copyright-templates-grouped-by-reason.png" target="_blank"><img src="../media/media-from-delpher-in-wikimedia-commons-usage-of-copyright-templates-grouped-by-reason.png" border="1" align="left" width="90%" hspace="30" alt="This chart shows how often which copyright templates are used in Wikimedia Commons media files that were sourced from Delpher. The bars are grouped by the main reason why the files are in the public domain. The template usage is taken \&quot;as observed\&quot;. The 3 key figures are: 1) Total number of distinct media files: 6,248. 2) Total number of template usages: 6,329 (one file can contain multiple copyright templates). 3) Total number of distinct templates used: 39. Data as of 9 April 2025."/></a>
 <br clear="all"/> -->
 
-### H3 kopje - Zooming in on copyrights expired because of age 
+### H3 - Zooming in: copyrights expired because of age 
 
 Next., lets';s zoom in on the copyright templates that are used for files that are in the public domain because of age. The blue colors.
  In total theis comprises 24 templates 6191 used in xx distinct files
@@ -215,6 +209,9 @@ Next., lets';s zoom in on the copyright templates that are used for files that a
 
 <div style="min-height:1333px" id="datawrapper-vis-2NsXE"><script type="text/javascript" defer src="https://datawrapper.dwcdn.net/2NsXE/embed.js" charset="utf-8" data-target="#datawrapper-vis-2NsXE"></script><noscript><img src="https://datawrapper.dwcdn.net/2NsXE/full.png" alt="This table summarizes the expiration periodes specified in Wikimedia Commons copyright templates for Delpher-sourced media files. These files are now in the public domain because of age. Copyright on a work can expire when enough time has passed since the author’s death, the work’s first publication, or its creation. The template usage is taken &quot;as observed&quot;. Data as of 9 April 2025." /></noscript></div>
 
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 
 
 ## H2 kop - Section xx - Compliance of the community to the copyrights statements
@@ -255,6 +252,10 @@ Commons mistakes:
 * KB copyright lawyers
 * CBO's & publishers 
 
+
+><big><b><em>Quote 1</em></b></big>
+
+><big><b><em>Quote 2</em></b></big>
 
 ## Raw data
 All data used for the visualisations and analytics in this article is [available on Github](https://github.com/KBNLwikimedia/xxxx). You can also [download the main Excel file directly](https://kbnlwikimedia.github.io/xxxx.xlsx).
