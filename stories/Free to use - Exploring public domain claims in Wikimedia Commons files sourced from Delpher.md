@@ -5,8 +5,8 @@
 </td></tr></table>
 <hr/>
 
-# H1 - Free to use? Exploring public domain claims in Wikimedia Commons files sourced from Delpher (June 2025)
-<sup>Olaf Janssen, xx June 2025</sup>
+# H1 - Free to use? Exploring public domain claims in Wikimedia Commons files sourced from Delpher (April 2025)
+<sup>Olaf Janssen, 22 June 2025</sup>
 
 This article is also [available as PDF](ongithub.pdf).
 
@@ -254,7 +254,11 @@ TODO: Make Datawrapper  for this table
 ## Section 4: Commonly made mistakes of the community when applying PD templates to Delpher files
 
 Commons mistakes: 
-1) fail to include separate template for PD in the US, see for instance [this file](https://commons.wikimedia.org/wiki/File:1923_Jos._Schrijnen_%E2%80%94_MMKB02_000118508_00004_image_(cropped).jpg) that is marked with the [\{\{PD-old-70\}\}](https://commons.wikimedia.org/wiki/Template:PD-old-70) template, but lacks a US-specific template such as [\{\{PD-US-expired\}\}](https://commons.wikimedia.org/wiki/Template:PD-US-expired) template.
+1. fail to include separate template for PD in the US, see for instance [this file](https://commons.wikimedia.org/wiki/File:1923_Jos._Schrijnen_%E2%80%94_MMKB02_000118508_00004_image_(cropped).jpg) that is marked with the [\{\{PD-old-70\}\}](https://commons.wikimedia.org/wiki/Template:PD-old-70) template, but lacks a US-specific template such as [\{\{PD-US-expired\}\}](https://commons.wikimedia.org/wiki/Template:PD-US-expired) template.
+
+2. Apply Creativ Commons licenses for fiels that arein the pblic domain becuase copyright have expioered. 
+The case of CC0 where normally you would use PDM, to make sure any right are waived.
+
 
 ## Section 5: Recommendactions to the 
 * Wikimedia community to improve the copyright templates and their usage
