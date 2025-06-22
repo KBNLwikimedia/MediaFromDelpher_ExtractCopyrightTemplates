@@ -182,7 +182,6 @@ These results are also visualized in the donut chart below. For instance, the fi
 <div style="min-height:823px" id="datawrapper-vis-gZqMt"><script type="text/javascript" defer src="https://datawrapper.dwcdn.net/gZqMt/embed.js" charset="utf-8" data-target="#datawrapper-vis-gZqMt"></script><noscript><img src="https://datawrapper.dwcdn.net/gZqMt/full.png" alt="This donut chart shows the reasons why media files that were sourced from Delpher are out of copyright, according to Wikimedia Commons. For instance, the files in the blue sector use 6,191 templates indicating they are in the public domain because the historical newspapers, books and magazines they were sourced from, are too old to carry copyrights. One file can contain multiple out-of-copyright claims. All such claims are taken &quot;as observed&quot;. Data as of 9 April 2025." /></noscript></div>
 <br/>
 
-
 ### H3 - 39 distinct public domain claims
 
 Next, let's look in more detail at the templates that are in each of the five categories. It turns out that Delpher-sourced files use a total of 39 distinct templates to communicate their public domain status. These are detailed in the table below, where they are sorted and grouped by the reason why they categorise files into the public domain *(NoCopyrightReason)*. Each group is color-coded for clarity. You can click on the names of the templates in the first column to view their description pages on Wikimedia Commons. 
@@ -193,7 +192,7 @@ Next, let's look in more detail at the templates that are in each of the five ca
 
 ### H3 - Usage of public domain templates
 
-We can also look at how often each copyright template is used. The bar chart below shows the number of usages for each of the 39 templates, grouped and color-coded by the reason why the files are in the public domain, as explained before. The total number of template usages is 6,329 across 6,248 distinct files. 
+We can also look at how often each of the 39 copyright template is used. The bar chart below shows the number of usages for each template, grouped and color-coded by the reason why the files are in the public domain, as explained before. The total number of template usages is 6,329 across 6,248 distinct files. 
 
 We can for instance see that the template [\{\{PD-anon-70-EU\}\}](https://commons.wikimedia.org/wiki/Template:PD-anon-70-EU) is used most frequently, 2,044 times, to indicate copyright has expired in (among others) the EU and the author's identity was never disclosed. The second most used template is [\{\{PD-old-70-expired\}\}](https://commons.wikimedia.org/wiki/Template:PD-old-70-expired), which is used 1,329 times to indicate that the author died more than 70 years ago *and* the work was first published in the US more than 95 years ago.
 
@@ -204,14 +203,14 @@ We can for instance see that the template [\{\{PD-anon-70-EU\}\}](https://common
 
 ### H3 - Zooming in: copyrights expired because of age 
 
-Let's now zoom in on the blue bars, that is on the copyright templates for files that are in the public domain because of age. For the underlying works of these files, enough time has passed since the author’s death, since the work was first published, or since its creation. This group represents 24 templates used 6,191 times in 6,114 distinct files.
+Let's now zoom in on the blue bars, that is on the copyright templates for files that are in the public domain because of age. This group represents 24 templates, used 6,191 times in 6,114 distinct files.
 
-The overview below  shows the the number of usages for each template, similar to the previous bar chart.  
-summarizes the expiration periodes.
- 1 author’s death: We see values iof 100. 70, years,. or unknoe because of anonumouts/pseudonmiem
- 2 since the work was first published, 25, 50, 70, 95, 120 years
- 3 or since its creation. 120 years, N/A
-4 remarks: 
+The table below  shows the number of usages for each template, similar to the previous bar chart. Where possible and applicable, it also lists the specific expiration period(s) implied by the template, as well as any remarks. Copyrights on a work can expire when enough time has passed since
+ 1) *the author’s death*: we see values of 100 years (eg. [in Mexico](https://commons.wikimedia.org/wiki/Commons:Copyright_rules_by_territory/Mexico)), 70 years (eg. [in the EU](https://en.wikipedia.org/wiki/Copyright_law_of_the_European_Union)), or N/A because the author's year of death is unknown, or because the author is unknown for anonymous or pseudonymous works. 
+ 2) *the work was first published*: we see values of 120 years (for collective works), 95 years (eg. [in the US](https://commons.wikimedia.org/wiki/Commons:Copyright_rules_by_territory/United_States)), 70 years (eg. [in the EU](https://en.wikipedia.org/wiki/Copyright_law_of_the_European_Union) for anonymous or pseudonymous works) and 50 or 25 years [in Indonesia](https://commons.wikimedia.org/wiki/Commons:Copyright_rules_by_territory/Indonesia).
+ 3) *the work was created*: 120 years, N/A
+
+4) 4 remarks: 
 
 <div style="min-height:1333px" id="datawrapper-vis-2NsXE"><script type="text/javascript" defer src="https://datawrapper.dwcdn.net/2NsXE/embed.js" charset="utf-8" data-target="#datawrapper-vis-2NsXE"></script><noscript><img src="https://datawrapper.dwcdn.net/2NsXE/full.png" alt="This table summarizes the expiration periodes specified in Wikimedia Commons copyright templates for Delpher-sourced media files. These files are now in the public domain because of age. Copyrights on a work can expire when enough time has passed since the author’s death, the work’s first publication, or its creation. The template usage is taken &quot;as observed&quot;. You can click on the names of the templates to view their description pages on Wikimedia Commons. The 3 key figures are: 1) Total number of distinct media files: 6,114. 2) Total number of template usages: 6,191 (one file can contain multiple copyright templates). 3) Total number of distinct templates used: 24. Data as of 9 April 2025." /></noscript></div>
 
