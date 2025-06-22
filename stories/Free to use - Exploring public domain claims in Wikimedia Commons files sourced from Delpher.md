@@ -177,9 +177,9 @@ If we break down the data, we see that our 6,248 files are classified into the p
 | <span style="background: #ff7f0e;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>&nbsp; Other reasons                                                           | 3                           | 0,03%      |
 | **Total**                                                                                                                                         | **6,329**                   | **100%**   |
 
-These results are also visualized in the donut chart below. For instance, the 6,191 files in the blue sector are in the public domain because the historical newspapers, books and magazines they were sourced from, are too old to carry copyrights. Please note that a single file can contain multiple out-of-copyright claims, see [this example](https://commons.wikimedia.org/wiki/File:Zoebaida_ad.jpg).
+These results are also visualized in the donut chart below. For instance, the files in the blue sector use 6,191 templates indicating they are in the public domain because the historical newspapers, books and magazines they were sourced from, are too old to carry copyrights. Please note that a single file can contain multiple out-of-copyright claims, see [this example](https://commons.wikimedia.org/wiki/File:Zoebaida_ad.jpg).
 
-<div style="min-height:839px" id="datawrapper-vis-gZqMt"><script type="text/javascript" defer src="https://datawrapper.dwcdn.net/gZqMt/embed.js" charset="utf-8" data-target="#datawrapper-vis-gZqMt"></script><noscript><img src="https://datawrapper.dwcdn.net/gZqMt/full.png" alt="This donut chart shows the reasons why media files that were sourced from Delpher are out of copyright, according to Wikimedia Commons. For instance, the 6,191 files in the blue sector are in the public domain because the historical newspapers, books and magazines they were sourced from, are too old to carry copyrights. One file can contain multiple out-of-copyright claims. All such claims are taken &quot;as observed&quot;. Data as of 9 April 2025." /></noscript></div>
+<div style="min-height:823px" id="datawrapper-vis-gZqMt"><script type="text/javascript" defer src="https://datawrapper.dwcdn.net/gZqMt/embed.js" charset="utf-8" data-target="#datawrapper-vis-gZqMt"></script><noscript><img src="https://datawrapper.dwcdn.net/gZqMt/full.png" alt="This donut chart shows the reasons why media files that were sourced from Delpher are out of copyright, according to Wikimedia Commons. For instance, the files in the blue sector use 6,191 templates indicating they are in the public domain because the historical newspapers, books and magazines they were sourced from, are too old to carry copyrights. One file can contain multiple out-of-copyright claims. All such claims are taken &quot;as observed&quot;. Data as of 9 April 2025." /></noscript></div>
 <br/>
 
 
@@ -212,8 +212,6 @@ summarizes the expiration periodes.
  2 since the work was first published, 25, 50, 70, 95, 120 years
  3 or since its creation. 120 years, N/A
 4 remarks: 
-
-xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 
 <div style="min-height:1333px" id="datawrapper-vis-2NsXE"><script type="text/javascript" defer src="https://datawrapper.dwcdn.net/2NsXE/embed.js" charset="utf-8" data-target="#datawrapper-vis-2NsXE"></script><noscript><img src="https://datawrapper.dwcdn.net/2NsXE/full.png" alt="This table summarizes the expiration periodes specified in Wikimedia Commons copyright templates for Delpher-sourced media files. These files are now in the public domain because of age. Copyrights on a work can expire when enough time has passed since the author’s death, the work’s first publication, or its creation. The template usage is taken &quot;as observed&quot;. You can click on the names of the templates to view their description pages on Wikimedia Commons. The 3 key figures are: 1) Total number of distinct media files: 6,114. 2) Total number of template usages: 6,191 (one file can contain multiple copyright templates). 3) Total number of distinct templates used: 24. Data as of 9 April 2025." /></noscript></div>
 

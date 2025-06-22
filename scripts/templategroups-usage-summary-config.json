@@ -1,11 +1,11 @@
 {
   "title": "Reasons why files sourced from Delpher are in the public domain, according to Wikimedia Commons",
   "description": {
-    "intro": "This donut chart shows the reasons why media files that were sourced from Delpher <em>(*, **)</em> are out of copyright, according to Wikimedia Commons. For instance, the 6,191 files in the blue sector are in the public domain because the historical newspapers, books and magazines they were sourced from, are too old to carry copyrights. One file can contain multiple out-of-copyright claims. All such claims are taken \"as observed\" (***). <br><br>Data as of 9 April 2025.<br><br>",
+    "intro": "This donut chart shows the reasons why media files that were sourced from Delpher <em>(*, **)</em> are out of copyright, according to Wikimedia Commons. For instance, the files in the blue sector use 6,191 templates indicating they are in the public domain because the historical newspapers, books and magazines they were sourced from, are too old to carry copyrights. One file can contain multiple out-of-copyright claims. All such claims are taken \"as observed\" (***). <br><br>Data as of 9 April 2025.<br><br>",
     "byline": "Olaf Janssen, Wikimedia coordinator @KB - 10 June 2025 - CC-BY-SA 4.0 ",
     "source-name": "KB, national library of the Netherlands",
     "source-url": "https://github.com/KBNLwikimedia/xxxxxx",
-    "aria-description": "This donut chart shows the reasons why media files that were sourced from Delpher are out of copyright, according to Wikimedia Commons. For instance, the 6,191 files in the blue sector are in the public domain because the historical newspapers, books and magazines they were sourced from, are too old to carry copyrights. One file can contain multiple out-of-copyright claims. All such claims are taken \"as observed\". Data as of 9 April 2025."
+    "aria-description": "This donut chart shows the reasons why media files that were sourced from Delpher are out of copyright, according to Wikimedia Commons. For instance, the files in the blue sector use 6,191 templates indicating they are in the public domain because the historical newspapers, books and magazines they were sourced from, are too old to carry copyrights. One file can contain multiple out-of-copyright claims. All such claims are taken \"as observed\". Data as of 9 April 2025."
   },
   "visualize":{
   "dark-mode-invert": true,
