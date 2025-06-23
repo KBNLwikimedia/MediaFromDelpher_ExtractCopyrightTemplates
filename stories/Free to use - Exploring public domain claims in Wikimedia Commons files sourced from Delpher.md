@@ -14,10 +14,8 @@ This article is also [available as PDF](ongithub.pdf).
 
 <img src="../media/delpher_logo_new.png" align="right" width="170" hspace="20" alt="Logo Delpher"/>
 
-_**[Delpher](https://www.delpher.nl)** offers access to millions of digitized pages from Dutch historical newspapers, books, and magazines — a valuable resource frequently used on Wikimedia Commons. 
-
-*MZ: Ik mis nog een stellingname. Wat wil je communiceren met het artikel. Dat dit veel maatschappelijke meerwaarde is? Dat er een juridisch risico is? etc.*
-
+_**[Delpher](https://www.delpher.nl)** offers access to millions of digitized pages from Dutch historical newspapers, books, and magazines — a valuable resource frequently used on Wikimedia Commons. <br/>
+*MZ: Ik mis nog een stellingname. Wat wil je communiceren met het artikel. Dat dit veel maatschappelijke meerwaarde is? Dat er een juridisch risico is? etc.*<br/>
 In the first part of this article, we examine how the Wikimedia community has assigned public domain status to Commons files that have been [sourced from Delpher](https://commons.wikimedia.org/wiki/Category:Media_from_Delpher). <br/>
 In the second part, we explore the validity of these claims and assess whether they align with the actual copyright status of the works. We identify common mistakes made by the Wikimedia community when applying public domain templates to files. Finally, we examine whether these errors have resulted in any serious copyright violations._
 
@@ -30,7 +28,12 @@ The most important key figures and findings of this story are:
 
 ## Introduction and background
 
-*MZ: Ik mis hier nog een introductiezin wat Delpher precies is, hoeveel records het heeft, welke type media het ontsluit en wat de onstaansgeschiedenis is. En ook hoe Delpher zelf PD markeert?*
+MZ: Ik mis hier nog 
+ 1. een introductiezin wat Delpher precies is, 
+ 2. hoeveel records het heeft, 
+ 3. welke type media het ontsluit en 
+ 4. wat de onstaansgeschiedenis is. 
+ 5. En ook hoe Delpher zelf PD markeert?
 
 Much of the historical content from [Delpher](https://www.delpher.nl) falls into the public domain due to its age and can therefore be uploaded to Wikimedia Commons without much concern. At the same time, the KB — being the operator of Delpher — has contractual obligations towards authors and publishers to monitor potential copyright infringements and to prevent them as much as possible. This includes Delpher content that has been uploaded to Wikimedia Commons by Wikimedia contributors. Due to this obligation content on Delpher can be seen as high quality material that is rightfully marked as public domain.
 
@@ -46,7 +49,7 @@ This article aims to
 At the same time, this article is not trying to  
 1. Provide a **comprehensive overview of all public domain claims** on Wikimedia Commons. This article focuses specifically on files sourced from Delpher, which is a manageable subset of the total number of files in Commons.
 2. Provide a **formal and/or detailed legal analysis** of every public domain claim for these files — such an approach would be far too deep for the scope of this data story.
-3. **Identify and flag every potential or small copyright infringement** — aside from highlighting a few obvious and illustrative cases mentioned in the XXXXXXXXXXXXXXXXXXXXXXXXXXXX [Deleting obvious copyright violations](#deleting-obvious-copyright-violations) paragraph. 
+3. **Identify and flag every potential or small copyright infringement** — aside from highlighting a few obvious and illustrative cases mentioned in the [Deleting obvious copyright violations](#deleting-obvious-copyright-violations) paragraph. 
 4. Offer **recommendations or proposals on how to simplify public domain claims** on Wikimedia Commons. This article takes the current public domain landscape "as is", observing how it functions in practice. Suggesting reform or improvements are out of scope for this article. We do however make some **recommendations to stakeholders** (see below) in the [XXXXXXXXXXXXXXXXXXXXSection 5: Recommendations to stakeholders](#conclusion-and-recommendations) section, based on our findings.
 
 ###  Who is this article relevant for? 
@@ -101,7 +104,7 @@ Adding to this complexity is a crucial requirement: *Every file on Wikimedia Com
    ccccccccccccc<br/><br/>
    dddddddd
 </div>
-
+<br/>
 In practice, this means that many Commons files require multiple templates:<br/>
 * One or more templates describing the copyright status in the country of origin;
 * An additional template confirming the file's public domain status in the United States.
@@ -133,7 +136,7 @@ Adding a [\{\{Delpher\}\} source template](https://commons.wikimedia.org/wiki/Te
 
 As you can see in the category, a significant part is filled with files claimed to be uploaded from the Internet Archive, but that find their real origins in Delpher. These are the PDFs with *IA ddd ...mpeg21* in their titles ([example](https://commons.wikimedia.org/wiki/File:%27s_Gravenhaagsche_courant_02-09-1822_(IA_ddd_010124645_mpeg21).pdf)). In total there are [55,761 files from the Internet Archive](https://petscan.wmcloud.org/?templates_yes=&ores_prob_from=&search_query=&edits%5Bflagged%5D=both&show_disambiguation_pages=both&common_wiki_other=&wikidata_prop_item_use=&edits%5Banons%5D=both&combination=subset&larger=&min_sitelink_count=&language=commons&manual_list_wiki=&search_max_results=500&edits%5Bbots%5D=both&project=wikimedia&rxp_filter=&negcats=&cb_labels_no_l=1&since_rev0=&sparql=&ores_type=any&links_to_any=&outlinks_no=&sitelinks_yes=&langs_labels_yes=&output_compatability=catscan&sitelinks_no=&categories=Scans_from_the_Internet_Archive%0D%0AMedia+from+Delpher&min_redlink_count=1&interface_language=en&cb_labels_any_l=1&pagepile=&cb_labels_yes_l=1&ores_prob_to=&format=html&wikidata_source_sites=&labels_any=&ns%5B6%5D=1&smaller=&doit) (d.d. 9 April 2025) that were originally sourced from Delpher. 
 
-* XXXXXXXXXXXXX MZ: dit mag nog wel wat meer uitleg. Hoe komen ze van Delpher naar IA en wat voor markering hebben ze daar?*
+*XXXXXXXXXXXXX MZ: dit mag nog wel wat meer uitleg. Hoe komen ze van Delpher naar IA en wat voor markering hebben ze daar?*
 
 All of these files are marked with the [\{\{PD-old-70-expired\}\} copyright template](https://commons.wikimedia.org/wiki/Template:PD-old-70-expired), which means that they are safely in the public domain in the Netherlands (and its predecessors), the rest of the EU and the United States. 
 
