@@ -28,12 +28,17 @@ The most important key figures and findings of this story are:
 
 ## Introduction and background
 
-MZ: Ik mis hier nog 
- 1. een introductiezin wat Delpher precies is, 
- 2. hoeveel records het heeft, 
- 3. welke type media het ontsluit en 
- 4. wat de onstaansgeschiedenis is. 
- 5. En ook hoe Delpher zelf PD markeert?
+<div style="border:1px solid #ccc; padding:10px; border-radius:5px;">
+  <b>Introductie Delpher </b><br/>
+  <ul>  
+    <li>Een introductiezin wat Delpher precies is</li> 
+    <li>Hoeveel records het heeft, </li>
+    <li>Welke type media het ontsluit en </li> 
+    <li>Wat de onstaansgeschiedenis is. </li>
+    <li>En ook hoe Delpher zelf PD markeert? </li>
+  </ul>
+</div>
+<br/>
 
 Much of the historical content from [Delpher](https://www.delpher.nl) falls into the public domain due to its age and can therefore be uploaded to Wikimedia Commons without much concern. At the same time, the KB — being the operator of Delpher — has contractual obligations towards authors and publishers to monitor potential copyright infringements and to prevent them as much as possible. This includes Delpher content that has been uploaded to Wikimedia Commons by Wikimedia contributors. Due to this obligation content on Delpher can be seen as high quality material that is rightfully marked as public domain.
 
