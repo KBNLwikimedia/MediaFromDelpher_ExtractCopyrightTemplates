@@ -26,33 +26,33 @@ The most important key figures and findings of this story are:
 
 ## Introduction and background
 
-###  Why did I write this article? 
 Much of the historical content from [Delpher](https://www.delpher.nl) falls into the public domain due to its age and can therefore be uploaded to Wikimedia Commons without concern. At the same time, the KB — being the operator of Delpher — has contractual obligations towards authors and publishers to monitor potential copyright infringements and to prevent them as much as possible. This includes Delpher content that has been uploaded to Wikimedia Commons by Wikimedia contributors.
 
 For this reason, the KB wants to gain a better understanding of which newspaper articles, books, magazines and other materials from Delpher have been uploaded to Wikimedia Commons, and how public domain claims to those files have been assigned by the Wikimedia community. In doing so, it is important to emphasize that the KB has absolutely **no** intention to act as a copyright police force. The goal is to work together with the Wikimedia community to handle copyright matters responsibly, with respect for both creators and users.
 
 ### What this article aims to do
-This article aims to 
+We have written this article aiming to  
 1. Provide a **practical case study** of how public domain claims are applied in a real-world open environment — specifically, how Wikimedia Commons contributors handle copyright claims for [files sourced from Delpher](https://commons.wikimedia.org/wiki/Category:Media_from_Delpher).
 2. Offer insight into the **complexity of public domain claims** on Wikimedia Commons — even for the relatively simple case where files originate from a single source (Delpher) from a single country (the Netherlands).
 3. Explore **how accurately Wikimedia contributors apply public domain claims**, and assess to what extent potential copyright violations may occur — including whether any really serious violations are present.
 4. Share a **practical data story** of how to machine-analyze and visualize copyright claims for files in (subsets of) Wikimedia Commons using data analysis and visualization techniques.  
 
 ### What this article does <u>not</u> aim to do
-This article is not trying to  
+At the same time, this article is not trying to  
 1. Provide a **comprehensive overview of all public domain claims** on Wikimedia Commons. This article focuses specifically on files sourced from Delpher, which is a manageable subset of the total number of files in Commons.
 2. Provide a **formal and/or detailed legal analysis** of every public domain claim for these files — such an approach would be far too deep for the scope of this data story.
-3. XXXXXXXXX **Identify and flag every potential copyright infringement** — aside from highlighting a few obvious and illustrative cases mentioned later in this story. XXXXXXXXXXXX (besides the 4 obvious cases mentioned below)
-4. Offer **recommendations or proposals on how to simplify public domain claims** on Wikimedia Commons. This article takes the current public domain landscape "as is," observing how it functions in practice without suggesting reform.
+3. **Identify and flag every potential or small copyright infringement** — aside from highlighting a few obvious and illustrative cases mentioned in the [Creating the dataset - Deleting obvious copyright violations](#creating-the-dataset) paragraph. 
+4. Offer **recommendations or proposals on how to simplify public domain claims** on Wikimedia Commons. This article takes the current public domain landscape "as is", observing how it functions in practice. Suggesting reform or improvements are out of scope for this article. We do however make some **recommendations to stakeholders** (see below) in the [XXXXXXXXXXXXXXXXXXXXSection 5: Recommendations to stakeholders](#conclusion-and-recommendations) section, based on our findings.
 
 ###  Who is this article relevant for? 
-This analysis of public domain template usage on Wikimedia Commons applied to files sourced from Delpher may be of interest to:
+This analysis of public domain template usage on Wikimedia Commons applied to files sourced from Delpher may be of interest to the following stakeholders:
 * **The Wikimedia community** – to gain insights into how (accurately) they have implemented public domain copyright templates, especially for Delpher-sourced files.
 * **The Delpher development team and user community** – to better understand how a decentralized, international community of content reusers deals with public domain Delpher-sourced materials in a real-world scenario, i.e. on Wikimedia Commons.
 * **Other GLAM institutions with collections on Wikimedia Commons** – to explore how this Delpher case study could be replicated for their own Wikimedia Commons files, supported by the freely available code, data and documentation shared via this article.
 * **KB copyright lawyers and the wider legal/copyright community** – to see how copyright law and public domain issues play out in a real-world, open, community-driven environment, and to reflect on the practical implications for heritage institutions like the KB.
 * **Rights holders, publishers and collective rights organizations** – to assess whether there should be reasons for serious concern about large-scale copyright violations by the Wikimedia community (*spoiler: our findings suggest there is little to no cause for such concern*).
 
+OK, so far for this introduction. Let's now take a closer look at public domain claims used in files on Wikimedia Commons in general, and in Commons files sourced from Delpher in particular.
 
 ## Copyrights templates in Wikimedia Commons
 
@@ -256,11 +256,11 @@ Commons mistakes:
 The case of CC0 where normally you would use PDM, to make sure any right are waived.
 
 
-## Section 5: Recommendactions to the 
-* Wikimedia community to improve the copyright templates and their usage
-* Delpher/ KB team
-* KB copyright lawyers
-* CBO's & publishers 
+## Section 5: Recommendations to stakeholders
+* Wikimedia community to improve the copyright templates and their usage --> avoind commn misyakes, see above
+* Delpher/ KB team: do not worry, the community is doing a good job in applying the copyright templates to Delpher sourced files.
+* KB copyright lawyers: same as above
+* CBO's & publishers : same as above
 
 
 ><big><b><em>Quote 1</em></b></big>
