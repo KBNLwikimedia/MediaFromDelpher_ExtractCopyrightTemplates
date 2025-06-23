@@ -29,6 +29,8 @@ The most important key figures and findings of this story are:
 ## Introduction and background
 
 <div style="border:1px solid #ccc; padding:10px; border-radius:5px;">
+<br/>
+<img src="../media/delpher_logo_new.png" align="right" width="170" hspace="20" alt="Logo Delpher"/>
   <b>Introductie Delpher </b><br/>
   <ul>  
     <li>Een introductiezin wat Delpher precies is</li> 
@@ -38,7 +40,6 @@ The most important key figures and findings of this story are:
     <li>En ook hoe Delpher zelf PD markeert? </li>
   </ul>
 </div>
-<br/>
 
 Much of the historical content from [Delpher](https://www.delpher.nl) falls into the public domain due to its age and can therefore be uploaded to Wikimedia Commons without much concern. At the same time, the KB — being the operator of Delpher — has contractual obligations towards authors and publishers to monitor potential copyright infringements and to prevent them as much as possible. This includes Delpher content that has been uploaded to Wikimedia Commons by Wikimedia contributors. Due to this obligation content on Delpher can be seen as high quality material that is rightfully marked as public domain.
 
